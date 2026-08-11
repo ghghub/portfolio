@@ -109,7 +109,22 @@
   .step .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6c6a66;margin-bottom:5px}
   .shots{padding:60px 0 0;font-size:0}
   .shots img{border:0}
-  .credits{text-align:center;padding:56px 0 110px;max-width:66ch;margin:0 auto}
+  /* Barra de links dentro del proyecto */
+  .dtop{position:absolute;top:34px;left:40px;display:flex;gap:26px;font-size:14px}
+  .dtop a{color:#6c6a66;text-decoration:none}
+  .dtop a:hover{color:#16171a}
+  @media(max-width:700px){.dtop{position:static;padding:22px 22px 0}}
+
+  /* Seguir viendo */
+  .next{border-top:1px solid #dbd9d5;padding:60px 0 110px}
+  .next .eyebrow{color:#6c6a66;border-color:#dbd9d5;margin-bottom:34px}
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:700px){.next-grid{grid-template-columns:1fr}}
+  .next .card h3{color:#16171a;font-size:18px;margin-top:14px}
+  .next .card .desc{color:#6c6a66;font-size:15px}
+  .next .card .thumb{border-color:#dbd9d5;background:#e6e4e0}
+
+  .credits{text-align:center;padding:56px 0 90px;max-width:66ch;margin:0 auto}
   .credits h4{font-size:19px;font-weight:600;color:#16171a}
   .credits .sub{font-size:17px;color:#3a3b3e;margin-top:4px}
   .credits .roles{font-size:13px;color:#6c6a66;margin-top:14px}
@@ -121,8 +136,8 @@
 <main id="site">
   <div class="top">
     <a href="mailto:gabrielhgonzalez@gmail.com">Mail</a>
-    <a href="https://www.behance.net/gabrielhgonzalez" target="_blank" rel="noopener">Behance</a>
-    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
+    <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
     <a href="cv-gabriel-gonzalez.pdf" download>CV</a>
   </div>
 
@@ -147,7 +162,7 @@
       <div class="eyebrow">Proyectos</div>
       <div class="grid" id="grid"></div>
       <div class="more-wrap">
-        <a class="more" href="https://www.behance.net/gabrielhgonzalez" target="_blank" rel="noopener">
+        <a class="more" href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">
           Seguir viendo trabajos <span>&rarr;</span>
         </a>
       </div>
@@ -316,6 +331,34 @@ var WORKS = [
       sub:"Sistema de identidad, lettering y piezas de marca",
       roles:"Dirección creativa: Gabriel González / Dirección de proyecto: Federico Gunther / Diseño e ilustración: Fernanda Parchomczuk / Lettering: María Eugenia Robledo"
     }
+  },
+  {
+    title:"Primicia",
+    desc:"Una yerba con historia, reconectada con su comunidad.",
+    cats:["Identidad de marca","Consumo masivo"],
+    tag:"Yerba mate · Ecosistema de marca",
+    cover:"img/primicia/primicia-00.jpg",
+    shots:[
+      "img/primicia/primicia-01.jpg","img/primicia/primicia-02.jpg","img/primicia/primicia-03.jpg",
+      "img/primicia/primicia-04.jpg","img/primicia/primicia-05.jpg","img/primicia/primicia-06.jpg",
+      "img/primicia/primicia-07.jpg","img/primicia/primicia-08.jpg","img/primicia/primicia-09.jpg",
+      "img/primicia/primicia-10.jpg","img/primicia/primicia-11.jpg","img/primicia/primicia-12.jpg",
+      "img/primicia/primicia-13.jpg","img/primicia/primicia-14.jpg","img/primicia/primicia-15.jpg",
+      "img/primicia/primicia-16.jpg","img/primicia/primicia-17.jpg","img/primicia/primicia-18.jpg",
+      "img/primicia/primicia-19.jpg"
+    ],
+    body:[
+      "De los yerbales más australes de la Argentina nace la yerba mate Primicia, una molienda de campo que te acompaña en tu día a día. El producto acompaña una tradición de conversaciones y contacto con la naturaleza que se presentó como desafío reconocer y relatar en su sentido conocido y en su dedicación.",
+      "El desafío: ¿cómo conectar una yerba popular, con historia y un sentido de responsabilidad con su entorno, con su comunidad, sin perder la identidad fuertemente arraigada a la tradición?",
+      "La relación del producto con su cultura de origen y su vinculación con los Esteros del Iberá fueron parte del camino a recorrer en la comunicación: con historias de campo, de encuentros con amigos, recetas hechas por las abuelas y momentos cargados de tradición y juego.",
+      "Primicia nos llevó a recorrer una biodiversidad llena de color, en vinculación con los esteros y montes nativos que rodean a los yerbales, y nos reconocimos en nuestra responsabilidad con el medio ambiente. En el proceso observamos los paisajes del Iberá llenos de colores, con postales del proceso de elaboración de las variedades Tradicional, Tu instante y Selección, y compartimos encuentros con la comunidad en eventos y ferias.",
+      "El resultado: un ecosistema de marca que habla con valores y en el código de la cultura local. La historia de una empresa relatada desde diversos ángulos, expresando sus valores en relación con su comunidad, acompañando sus acciones comerciales, de producción y del día a día hasta su molienda seleccionada."
+    ],
+    credits:{
+      title:"Ecosistema de marca | Identidad de producto",
+      sub:"Proyecto integral de imagen | Comunicación 360, RSE y Redes Sociales",
+      roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano"
+    }
   }
 ];
 
@@ -358,7 +401,13 @@ WORKS.forEach(function(w,i){
 var detail = document.getElementById("detail"), dbody = document.getElementById("detail-body");
 function openWork(i){
   var w = WORKS[i];
-  var h = '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
+  var h = '<div class="dtop">'+
+    '<a href="mailto:gabrielhgonzalez@gmail.com">Mail</a>'+
+    '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>'+
+    '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
+    '<a href="cv-gabriel-gonzalez.pdf" download>CV</a>'+
+    '<a href="#" id="volver">&larr; Volver</a></div>';
+  h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
   if (w.body) {
     h += '<div class="dbody">';
     w.body.forEach(function(p){ h += '<p>'+p+'</p>'; });
@@ -380,7 +429,27 @@ function openWork(i){
     if (w.credits.roles) h += '<p class="roles">'+w.credits.roles+'</p>';
     h += '</div>';
   }
+  // Seguir viendo: el resto de los proyectos
+  var otros = WORKS.map(function(_,k){return k}).filter(function(k){return k !== i});
+  if (otros.length) {
+    h += '<div class="next"><div class="eyebrow">Seguir viendo</div><div class="next-grid">';
+    otros.forEach(function(k){
+      var o = WORKS[k];
+      h += '<button class="card" data-go="'+k+'">'+
+           '<div class="thumb">'+(o.cover?'<img src="'+encodeURI(o.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</div>'+
+           '<h3>'+o.title+'</h3>'+
+           (o.desc?'<div class="desc">'+o.desc+'</div>':'')+
+           '</button>';
+    });
+    h += '</div></div>';
+  }
+
   dbody.innerHTML = h;
+  var volver = document.getElementById("volver");
+  if (volver) volver.onclick = function(e){ e.preventDefault(); closeWork(); };
+  [].forEach.call(dbody.querySelectorAll("[data-go]"), function(b){
+    b.onclick = function(){ openWork(+b.getAttribute("data-go")); };
+  });
   detail.classList.add("open");
   detail.scrollTop = 0;
   document.body.style.overflow = "hidden";
