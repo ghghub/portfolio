@@ -19,10 +19,6 @@
   .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
   @media(max-width:700px){.wrap{padding:0 22px}}
 
-  /* Gate */
-  #gate{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
-  #gate p{color:var(--fg-dim);max-width:380px}
-  #site{display:none}
 
   /* Nav lateral fija */
   nav{position:fixed;right:34px;bottom:34px;z-index:30;text-align:right;display:flex;flex-direction:column;gap:7px}
@@ -121,8 +117,6 @@
 </style>
 </head>
 <body>
-
-<div id="gate"><p id="gate-msg">Cargando…</p></div>
 
 <main id="site">
   <div class="top">
@@ -404,19 +398,6 @@ window.addEventListener("scroll", function(){
   links.forEach(function(a,i){ a.classList.toggle("on", i===cur); });
 });
 
-// --- Bloqueo por región ---
-var gate=document.getElementById("gate"), gateMsg=document.getElementById("gate-msg"), site=document.getElementById("site");
-function showSite(){ gate.style.display="none"; site.style.display="block"; }
-function block(){ gateMsg.textContent="Este contenido no está disponible en tu región."; }
-
-if (location.protocol === "file:" || /localhost|127\.0\.0\.1/.test(location.hostname)) {
-  showSite();
-} else {
-  fetch("https://ipwho.is/?fields=country_code")
-    .then(function(r){return r.json()})
-    .then(function(d){ d && d.country_code === "AR" ? block() : showSite(); })
-    .catch(function(){ showSite(); });
-}
 </script>
 </body>
 </html>
