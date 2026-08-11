@@ -7,6 +7,7 @@
 <meta name="description" content="Ayudo a empresas de complejidad técnica a crecer y escalar con claridad y coherencia." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -58,7 +59,7 @@
   .arrow[hidden]{opacity:0;pointer-events:none;display:flex}
   @media(max-width:700px){.arrow{width:52px;height:52px;font-size:32px;right:2px}}
 
-  .grid{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
+  .grid{display:flex;gap:26px;overflow-x:auto;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
   .grid::-webkit-scrollbar{height:6px}
   .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
   .grid > .card{flex:0 0 clamp(280px,42vw,520px);scroll-snap-align:start}
@@ -166,7 +167,7 @@
 
   <header>
     <div class="wrap">
-      <h1>Ayudo a empresas de complejidad técnica<br><span class="rot" id="rot"><span></span></span></h1>
+      <h1>Ayudo a empresas de complejidad técnica<br><span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
       <p class="hook">+ 15 años asesorando en sectores: industrial, consumo masivo y público.</p>
     </div>
   </header>
@@ -267,8 +268,8 @@
   <section id="sobre" class="about">
     <div class="wrap">
       <div class="eyebrow">Sobre mí</div>
-      <p>+15 años dirigiendo proyectos de branding, identidad y diseño de información para industria, consumo masivo y sector público.</p>
-      <p>El problema casi nunca es la falta de diseño. Es la distancia entre lo que una empresa hace, cómo lo explica y cómo opera. Ahí trabajo yo.</p>
+      <p>Dirijo proyectos que requieren pensamiento estratégico, investigación en diseño e innovación, asesoro en industria, consumo masivo y sector público.</p>
+      <p>Trabajo en la coherencia entre lo que una empresa hace, cómo lo explica y cómo opera.</p>
     </div>
   </section>
 
@@ -474,9 +475,7 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
 
 // --- Carrusel: avanza con el scroll de la página ---
 (function(){
-  var sec = document.getElementById("trabajo");
   var arrow = document.getElementById("arrow");
-  var manual = 0;
 
   function maxScroll(){ return grid.scrollWidth - grid.clientWidth; }
 
@@ -486,36 +485,12 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
   }
 
   arrow.onclick = function(){
-    manual = Date.now();
     var fin = maxScroll();
     grid.scrollTo({ left: grid.scrollLeft >= fin - 8 ? 0 : grid.scrollLeft + paso(), behavior:"smooth" });
   };
 
-  grid.addEventListener("wheel", function(){ manual = Date.now(); }, {passive:true});
-  grid.addEventListener("touchstart", function(){ manual = Date.now(); }, {passive:true});
-
-  function actualizar(){
-    var fin = maxScroll();
-    arrow.hidden = fin <= 4;
-    if (fin <= 4) return;
-
-    // Progreso de la sección a través de la pantalla
-    var r = sec.getBoundingClientRect();
-    var total = r.height + window.innerHeight;
-    var p = (window.innerHeight - r.top) / total;
-    p = Math.max(0, Math.min(1, (p - 0.22) / 0.56));
-
-    // No pisar el scroll manual del usuario
-    if (Date.now() - manual > 1200) grid.scrollLeft = p * fin;
-  }
-
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var tick = false;
-    window.addEventListener("scroll", function(){
-      if (tick) return; tick = true;
-      requestAnimationFrame(function(){ actualizar(); tick = false; });
-    }, {passive:true});
-  }
+  function actualizar(){ arrow.hidden = maxScroll() <= 4; }
+  grid.addEventListener("scroll", actualizar, {passive:true});
   window.addEventListener("resize", actualizar);
   actualizar();
 })();
