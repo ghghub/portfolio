@@ -27,7 +27,8 @@
   @media(max-width:860px){nav{display:none}}
 
   /* Top links */
-  .top{position:absolute;top:34px;right:40px;display:flex;gap:26px;font-size:14px}
+  #site{position:relative}
+  .top{position:absolute;top:34px;right:40px;z-index:20;display:flex;gap:26px;font-size:14px}
   .top a{color:var(--fg-dim);text-decoration:none}
   .top a:hover{color:var(--fg)}
   @media(max-width:700px){.top{position:static;padding:22px;justify-content:flex-end}}
@@ -47,9 +48,12 @@
   .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-bottom:8px;border-bottom:1px solid var(--line);display:inline-block;margin-bottom:56px}
 
   /* Grilla de trabajos */
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px 26px}
-  .grid .card:nth-child(even){margin-top:80px}
-  @media(max-width:700px){.grid{grid-template-columns:1fr;gap:46px}.grid .card:nth-child(even){margin-top:0}}
+  /* Carrusel horizontal de proyectos */
+  .grid{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
+  .grid::-webkit-scrollbar{height:6px}
+  .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
+  .grid > .card{flex:0 0 clamp(280px,42vw,520px);scroll-snap-align:start}
+  @media(max-width:700px){.grid > .card{flex:0 0 82vw}}
   .card{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block;width:100%}
   .card .thumb{aspect-ratio:4/3;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden;transition:opacity .25s}
   .card:hover .thumb{opacity:.75}
@@ -102,6 +106,8 @@
   .dhead{padding:100px 0 34px}
   .dhead h2{font-family:"Archivo Black",Archivo,sans-serif;font-size:clamp(30px,6vw,60px);font-weight:400;letter-spacing:-.03em;text-transform:uppercase;line-height:.95}
   .dhead .tag{color:#6c6a66;font-size:14px;display:block;margin-top:14px}
+  .lead{margin:0 0 56px}
+  .lead img{width:100%;display:block}
   .dbody{max-width:66ch;margin:0 auto 20px;font-size:17px;color:#3a3b3e}
   .dbody p{margin-bottom:2px}
   .dhead{text-align:center}
@@ -208,7 +214,7 @@
       </div>
 
       <div class="job">
-        <div><h3>Dirección visual corporativa</h3><div class="org">Personal Partner · Electro Misiones S.A.</div></div>
+        <div><h3>Dirección visual corporativa</h3><div class="org">Personal Partner · Electro Misiones</div></div>
         <div class="when">2014 — 2016</div>
         <div>
           <p>Identidad corporativa y consistencia de marca de una empresa regional, en alianza con Personal. Supervisión de comunicación corporativa y comercial, punto de venta y marketing online.</p>
@@ -342,9 +348,7 @@ var WORKS = [
       "img/primicia/primicia-04.jpg","img/primicia/primicia-05.jpg","img/primicia/primicia-06.jpg",
       "img/primicia/primicia-07.jpg","img/primicia/primicia-08.jpg","img/primicia/primicia-09.jpg",
       "img/primicia/primicia-10.jpg","img/primicia/primicia-11.jpg","img/primicia/primicia-12.jpg",
-      "img/primicia/primicia-13.jpg","img/primicia/primicia-14.jpg","img/primicia/primicia-15.jpg",
-      "img/primicia/primicia-16.jpg","img/primicia/primicia-17.jpg","img/primicia/primicia-18.jpg",
-      "img/primicia/primicia-19.jpg"
+      "img/primicia/primicia-13.jpg","img/primicia/primicia-14.jpg"
     ],
     body:[
       "De los yerbales más australes de la Argentina nace la yerba mate Primicia, una molienda de campo que te acompaña en tu día a día. El producto acompaña una tradición de conversaciones y contacto con la naturaleza que se presentó como desafío reconocer y relatar en su sentido conocido y en su dedicación.",
@@ -356,7 +360,7 @@ var WORKS = [
     credits:{
       title:"Ecosistema de marca | Identidad de producto",
       sub:"Proyecto integral de imagen | Comunicación 360, RSE y Redes Sociales",
-      roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano"
+      roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto y estrategia: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano"
     }
   }
 ];
@@ -405,6 +409,7 @@ function openWork(i){
     '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
     '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
   h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
+  if (w.cover) h += '<div class="lead"><img src="'+encodeURI(w.cover)+'" alt=""></div>';
   if (w.body) {
     h += '<div class="dbody">';
     w.body.forEach(function(p){ h += '<p>'+p+'</p>'; });
