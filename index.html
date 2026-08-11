@@ -49,6 +49,15 @@
 
   /* Grilla de trabajos */
   /* Carrusel horizontal de proyectos */
+  .rail{position:relative}
+  .arrow{position:absolute;top:24%;right:-6px;z-index:5;width:66px;height:66px;border-radius:50%;
+    background:rgba(20,20,20,.72);border:1px solid var(--line);color:var(--fg);
+    font-size:40px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    padding-bottom:5px;backdrop-filter:blur(6px);transition:opacity .25s,transform .2s,background .2s}
+  .arrow:hover{background:rgba(20,20,20,.95);transform:scale(1.06)}
+  .arrow[hidden]{opacity:0;pointer-events:none;display:flex}
+  @media(max-width:700px){.arrow{width:52px;height:52px;font-size:32px;right:2px}}
+
   .grid{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
   .grid::-webkit-scrollbar{height:6px}
   .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
@@ -165,7 +174,10 @@
   <section id="trabajo">
     <div class="wrap">
       <div class="eyebrow">Proyectos</div>
-      <div class="grid" id="grid"></div>
+      <div class="rail">
+        <div class="grid" id="grid"></div>
+        <button class="arrow" id="arrow" aria-label="Ver siguiente proyecto">&#8250;</button>
+      </div>
       <div class="more-wrap">
         <a class="more" href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">
           Seguir viendo trabajos <span>&rarr;</span>
@@ -459,6 +471,54 @@ function openWork(i){
 function closeWork(){ detail.classList.remove("open"); document.body.style.overflow = ""; }
 document.getElementById("close").onclick = closeWork;
 document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork(); });
+
+// --- Carrusel: avanza con el scroll de la página ---
+(function(){
+  var sec = document.getElementById("trabajo");
+  var arrow = document.getElementById("arrow");
+  var manual = 0;
+
+  function maxScroll(){ return grid.scrollWidth - grid.clientWidth; }
+
+  function paso(){
+    var card = grid.querySelector(".card");
+    return card ? card.offsetWidth + 26 : grid.clientWidth * 0.8;
+  }
+
+  arrow.onclick = function(){
+    manual = Date.now();
+    var fin = maxScroll();
+    grid.scrollTo({ left: grid.scrollLeft >= fin - 8 ? 0 : grid.scrollLeft + paso(), behavior:"smooth" });
+  };
+
+  grid.addEventListener("wheel", function(){ manual = Date.now(); }, {passive:true});
+  grid.addEventListener("touchstart", function(){ manual = Date.now(); }, {passive:true});
+
+  function actualizar(){
+    var fin = maxScroll();
+    arrow.hidden = fin <= 4;
+    if (fin <= 4) return;
+
+    // Progreso de la sección a través de la pantalla
+    var r = sec.getBoundingClientRect();
+    var total = r.height + window.innerHeight;
+    var p = (window.innerHeight - r.top) / total;
+    p = Math.max(0, Math.min(1, (p - 0.22) / 0.56));
+
+    // No pisar el scroll manual del usuario
+    if (Date.now() - manual > 1200) grid.scrollLeft = p * fin;
+  }
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var tick = false;
+    window.addEventListener("scroll", function(){
+      if (tick) return; tick = true;
+      requestAnimationFrame(function(){ actualizar(); tick = false; });
+    }, {passive:true});
+  }
+  window.addEventListener("resize", actualizar);
+  actualizar();
+})();
 
 // Nav activa según scroll
 var links = [].slice.call(document.querySelectorAll("nav a"));
