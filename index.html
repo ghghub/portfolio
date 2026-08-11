@@ -135,10 +135,9 @@
 
 <main id="site">
   <div class="top">
-    <a href="mailto:gabrielhgonzalez@gmail.com">Mail</a>
-    <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
     <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="cv-gabriel-gonzalez.pdf" download>CV</a>
+    <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
+    <a href="#contacto">Contacto</a>
   </div>
 
   <nav>
@@ -258,9 +257,9 @@
   <section id="contacto" class="contact">
     <div class="wrap">
       <div class="eyebrow">Contacto</div>
-      <div class="row"><span>Mail</span><a href="mailto:gabrielhgonzalez@gmail.com">gabrielhgonzalez@gmail.com</a></div>
-      <div class="row"><span>Ubicación</span><a href="#" style="border:0;cursor:default">Posadas, Argentina — trabajo remoto</a></div>
-      <div class="row"><span>CV</span><a href="cv-gabriel-gonzalez.pdf" download>Descargar CV (PDF)</a></div>
+      <p class="hook" style="margin:0 0 34px">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Escribime por LinkedIn y lo conversamos.</p>
+      <div class="row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">Escribime por LinkedIn</a></div>
+      <div class="row"><span>Behance</span><a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Ver más trabajos</a></div>
     </div>
   </section>
 
@@ -402,11 +401,9 @@ var detail = document.getElementById("detail"), dbody = document.getElementById(
 function openWork(i){
   var w = WORKS[i];
   var h = '<div class="dtop">'+
-    '<a href="mailto:gabrielhgonzalez@gmail.com">Mail</a>'+
-    '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>'+
+    '<a href="#" id="volver">&larr; Volver</a>'+
     '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
-    '<a href="cv-gabriel-gonzalez.pdf" download>CV</a>'+
-    '<a href="#" id="volver">&larr; Volver</a></div>';
+    '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
   h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
   if (w.body) {
     h += '<div class="dbody">';
