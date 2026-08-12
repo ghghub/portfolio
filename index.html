@@ -105,6 +105,24 @@
   .contact .row span{display:block;color:var(--fg-dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
   .contact a{color:var(--fg);text-decoration:none;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:2px}
   .contact a:hover{border-color:var(--fg)}
+  /* Formulario */
+  .form{max-width:620px}
+  .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+  .form input,.form textarea{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
+    font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:13px 15px;border-radius:2px}
+  .form input:focus,.form textarea:focus{outline:0;border-color:var(--fg-dim)}
+  .form textarea{resize:vertical}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+  @media(max-width:600px){.f2{grid-template-columns:1fr}}
+  .form button{background:var(--fg);color:var(--bg);border:0;font:inherit;font-weight:600;font-size:16px;
+    padding:14px 30px;border-radius:2px;cursor:pointer;transition:opacity .2s}
+  .form button:hover{opacity:.85}
+  .form button[disabled]{opacity:.5;cursor:default}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px}
+  .form-msg{margin-top:16px;font-size:15px;color:var(--fg-dim);min-height:22px}
+  .form-msg.ok{color:#7fd6a2}
+  .form-msg.err{color:#e08585}
+
   footer{padding:50px 0 80px;color:var(--fg-dim);font-size:13px}
 
   /* Detalle de caso */
@@ -277,8 +295,22 @@
     <div class="wrap">
       <div class="eyebrow">Contacto</div>
       <p class="hook" style="margin:0 0 34px">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Escribime por LinkedIn y lo conversamos.</p>
-      <div class="row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">Escribime por LinkedIn</a></div>
-      <div class="row"><span>Behance</span><a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Ver más trabajos</a></div>
+      <form id="form" class="form">
+        <!-- Reemplazá TU_ACCESS_KEY_ACA por la clave de web3forms.com -->
+        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_ACA">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde el portfolio">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="f2">
+          <label>Nombre<input type="text" name="nombre" required></label>
+          <label>Mail<input type="email" name="email" required></label>
+        </div>
+        <label>Empresa u organización<input type="text" name="empresa"></label>
+        <label>Contame brevemente el proyecto<textarea name="mensaje" rows="5" required></textarea></label>
+        <button type="submit">Enviar mensaje</button>
+        <p id="form-msg" class="form-msg"></p>
+      </form>
+
+      <div class="row" style="margin-top:44px"><span>También</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
     </div>
   </section>
 
@@ -494,6 +526,48 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
   grid.addEventListener("scroll", actualizar, {passive:true});
   window.addEventListener("resize", actualizar);
   actualizar();
+})();
+
+// --- Formulario de contacto (Web3Forms) ---
+(function(){
+  var form = document.getElementById("form");
+  if (!form) return;
+  var msg = document.getElementById("form-msg");
+  var btn = form.querySelector("button");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var key = form.access_key.value;
+    if (key === "TU_ACCESS_KEY_ACA") {
+      msg.className = "form-msg err";
+      msg.textContent = "El formulario todavía no está configurado.";
+      return;
+    }
+    btn.disabled = true;
+    msg.className = "form-msg";
+    msg.textContent = "Enviando…";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type":"application/json", Accept:"application/json"},
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        form.reset();
+        msg.className = "form-msg ok";
+        msg.textContent = "Mensaje enviado. Te respondo a la brevedad.";
+      } else {
+        throw new Error();
+      }
+    })
+    .catch(function(){
+      msg.className = "form-msg err";
+      msg.textContent = "No se pudo enviar. Probá de nuevo o escribime por LinkedIn.";
+    })
+    .finally(function(){ btn.disabled = false; });
+  });
 })();
 
 // Nav activa según scroll
