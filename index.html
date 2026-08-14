@@ -30,6 +30,9 @@
   /* Top links */
   #site{position:relative}
   .top{position:absolute;top:34px;right:40px;z-index:20;display:flex;gap:26px;font-size:14px}
+  .lang{background:none;border:1px solid var(--line);color:var(--fg-dim);font:inherit;font-size:12px;
+    letter-spacing:.1em;padding:3px 10px;border-radius:3px;cursor:pointer;transition:color .2s,border-color .2s}
+  .lang:hover{color:var(--fg);border-color:var(--fg-dim)}
   .top a{color:var(--fg-dim);text-decoration:none}
   .top a:hover{color:var(--fg)}
   @media(max-width:700px){.top{position:static;padding:22px;justify-content:flex-end}}
@@ -175,28 +178,29 @@
   <div class="top">
     <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#contacto" data-i="navc">Contacto</a>
+    <button id="lang" class="lang" type="button">EN</button>
   </div>
 
   <nav>
-    <a href="#trabajo">Trabajo</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#formacion">Formación</a>
-    <a href="#sobre">Sobre mí</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#trabajo" data-i="nav1">Trabajo</a>
+    <a href="#servicios" data-i="nav2">Servicios</a>
+    <a href="#experiencia" data-i="nav3">Experiencia</a>
+    <a href="#formacion" data-i="nav4">Formación</a>
+    <a href="#sobre" data-i="nav5">Sobre mí</a>
+    <a href="#contacto" data-i="nav6">Contacto</a>
   </nav>
 
   <header>
     <div class="wrap">
-      <h1>Ayudo a empresas de complejidad técnica<br><span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
-      <p class="hook">+ 15 años asesorando en sectores: industrial, consumo masivo y público.</p>
+      <h1 data-i="h1">Ayudo a empresas de complejidad técnica<br><span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
+      <p class="hook" data-i="hook">+ 15 años asesorando en sectores: industrial, consumo masivo y público.</p>
     </div>
   </header>
 
   <section id="trabajo">
     <div class="wrap">
-      <div class="eyebrow">Proyectos</div>
+      <div class="eyebrow" data-i="s_proy">Proyectos</div>
       <div class="rail">
         <div class="grid" id="grid"></div>
         <button class="arrow" id="arrow" aria-label="Ver siguiente proyecto">&#8250;</button>
@@ -211,14 +215,14 @@
 
   <section id="servicios">
     <div class="wrap">
-      <div class="eyebrow">Servicios</div>
+      <div class="eyebrow" data-i="s_serv">Servicios</div>
       <div class="skills">
-        <div>Proyectos estratégicos y de innovación</div>
-        <div>Identidad de productos y servicios</div>
-        <div>Diseño de información</div>
-        <div>Branding y sistemas visuales</div>
-        <div>Dirección creativa</div>
-        <div>Investigación aplicada</div>
+        <div data-i="sv1">Proyectos estratégicos y de innovación</div>
+        <div data-i="sv2">Identidad de productos y servicios</div>
+        <div data-i="sv3">Diseño de información</div>
+        <div data-i="sv4">Branding y sistemas visuales</div>
+        <div data-i="sv5">Dirección creativa</div>
+        <div data-i="sv6">Investigación aplicada</div>
       </div>
       <div class="more-wrap">
         <a class="more" href="#contacto">Arranquemos <span>&rarr;</span></a>
@@ -228,49 +232,49 @@
 
   <section id="experiencia">
     <div class="wrap">
-      <div class="eyebrow">Trayectoria</div>
+      <div class="eyebrow" data-i="s_tray">Trayectoria</div>
 
       <div class="job">
-        <div><h3>Diseñador · Dirección creativa &amp; estrategia</h3><div class="org">Consultor freelance</div></div>
-        <div class="when">2012 — Presente</div>
+        <div><h3 data-i="j1t">Diseñador · Dirección creativa &amp; estrategia</h3><div class="org" data-i="j1o">Consultor freelance</div></div>
+        <div class="when" data-i="j1w">2012 — Presente</div>
         <div>
-          <p>Proyectos de branding, identidad de producto y campañas, de la estrategia a la implementación, para industria, sector público y ONGs. Trabajo con dirección ejecutiva ordenando la relación entre operación, comunicación y decisión.</p>
+          <p data-i="j1p">Proyectos de branding, identidad de producto y campañas, de la estrategia a la implementación, para industria, sector público y ONGs. Trabajo con dirección ejecutiva ordenando la relación entre operación, comunicación y decisión.</p>
           <div class="tags"><span>Diseño de información</span><span>Estrategia</span><span>Identidad de producto</span></div>
         </div>
       </div>
 
       <div class="job">
-        <div><h3>Co-Director · Dirección creativa &amp; estrategia</h3><div class="org">Satélite Agencia</div></div>
+        <div><h3 data-i="j2t">Co-Director · Dirección creativa &amp; estrategia</h3><div class="org">Satélite Agencia</div></div>
         <div class="when">2018 — 2024</div>
         <div>
-          <p>Dirección creativa y estratégica de proyectos de branding en industria, salud, alimentos y atención al cliente. Desarrollé procesos de trabajo y sistemas de diseño para alinear equipos con los objetivos de negocio.</p>
+          <p data-i="j2p">Dirección creativa y estratégica de proyectos de branding en industria, salud, alimentos y atención al cliente. Desarrollé procesos de trabajo y sistemas de diseño para alinear equipos con los objetivos de negocio.</p>
           <div class="tags"><span>Dirección creativa</span><span>Sistemas de diseño</span><span>Procesos</span></div>
         </div>
       </div>
 
       <div class="job">
-        <div><h3>Dirección visual corporativa</h3><div class="org">Personal Partner · Electro Misiones</div></div>
+        <div><h3 data-i="j3t">Dirección visual corporativa</h3><div class="org">Personal Partner · Electro Misiones</div></div>
         <div class="when">2014 — 2016</div>
         <div>
-          <p>Identidad corporativa y consistencia de marca de una empresa regional, en alianza con Personal. Supervisión de comunicación corporativa y comercial, punto de venta y marketing online.</p>
+          <p data-i="j3p">Identidad corporativa y consistencia de marca de una empresa regional, en alianza con Personal. Supervisión de comunicación corporativa y comercial, punto de venta y marketing online.</p>
           <div class="tags"><span>Identidad corporativa</span><span>POS</span><span>Comunicación</span></div>
         </div>
       </div>
 
       <div class="job">
-        <div><h3>Co-Fundador · Dirección de arte</h3><div class="org">Somos Gráficos</div></div>
+        <div><h3 data-i="j4t">Co-Fundador · Dirección de arte</h3><div class="org">Somos Gráficos</div></div>
         <div class="when">2013 — 2015</div>
         <div>
-          <p>Estudio boutique enfocado en diseño de identidad y resolución visual de problemas para pymes.</p>
+          <p data-i="j4p">Estudio boutique enfocado en diseño de identidad y resolución visual de problemas para pymes.</p>
           <div class="tags"><span>Identidad</span><span>Dirección de arte</span></div>
         </div>
       </div>
 
       <div class="job">
-        <div><h3>Profesor adjunto</h3><div class="org">Universidad de la Cuenca del Plata</div><div class="loc">Posadas, Argentina</div></div>
-        <div class="when">2015 — Presente</div>
+        <div><h3 data-i="j5t">Profesor adjunto</h3><div class="org">Universidad de la Cuenca del Plata</div><div class="loc">Posadas, Argentina</div></div>
+        <div class="when" data-i="j5w">2015 — Presente</div>
         <div>
-          <p>Semiótica, Talleres de Diseño Gráfico I y III, y Taller de Proyecto Final de Carrera. Dirijo proyectos de graduación con foco en aplicación real, planificación de recursos y factibilidad.</p>
+          <p data-i="j5p">Semiótica, Talleres de Diseño Gráfico I y III, y Taller de Proyecto Final de Carrera. Dirijo proyectos de graduación con foco en aplicación real, planificación de recursos y factibilidad.</p>
           <div class="tags"><span>Semiótica</span><span>Docencia</span><span>Investigación aplicada</span></div>
         </div>
       </div>
@@ -279,55 +283,55 @@
 
   <section id="formacion">
     <div class="wrap">
-      <div class="eyebrow">Formación</div>
-      <div class="edu"><h3>Maestría en Diseño, Gestión de la Estrategia y la Innovación</h3><p>UNNOBA · Cursado completo</p></div>
-      <div class="edu"><h3>Diseñador Gráfico</h3><p>Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Medalla de Oro</p></div>
-      <div class="edu"><h3>Investigación</h3><p>Publicaciones en revistas científicas y libros de congreso (Diseño Editorial y Semiótica Visual). Expositor en AISV, ELaDDi, DiSUR, SEMA y APOAVA. Becas de CEDIT y CIN.</p></div>
-      <div class="edu"><h3>Idiomas</h3><p>Español nativo · Inglés avanzado (Cambridge FCE, B2) · Portugués intermedio</p></div>
+      <div class="eyebrow" data-i="s_form">Formación</div>
+      <div class="edu"><h3 data-i="e1t">Maestría en Diseño, Gestión de la Estrategia y la Innovación</h3><p data-i="e1p">UNNOBA · Cursado completo</p></div>
+      <div class="edu"><h3 data-i="e2t">Diseñador Gráfico</h3><p data-i="e2p">Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Medalla de Oro</p></div>
+      <div class="edu"><h3 data-i="e3t">Investigación</h3><p data-i="e3p">Publicaciones en revistas científicas y libros de congreso (Diseño Editorial y Semiótica Visual). Expositor en AISV, ELaDDi, DiSUR, SEMA y APOAVA. Becas de CEDIT y CIN.</p></div>
+      <div class="edu"><h3 data-i="e4t">Idiomas</h3><p data-i="e4p">Español nativo · Inglés avanzado (Cambridge FCE, B2) · Portugués intermedio</p></div>
     </div>
   </section>
 
   <section id="sobre" class="about">
     <div class="wrap">
-      <div class="eyebrow">Sobre mí</div>
-      <p>Dirijo proyectos que requieren pensamiento estratégico, investigación en diseño e innovación, asesoro en industria, consumo masivo y sector público.</p>
-      <p>Trabajo en la coherencia entre lo que una empresa hace, cómo lo explica y cómo opera.</p>
+      <div class="eyebrow" data-i="s_sobre">Sobre mí</div>
+      <p data-i="ab1">Dirijo proyectos que requieren pensamiento estratégico, investigación en diseño e innovación, asesoro en industria, consumo masivo y sector público.</p>
+      <p data-i="ab2">Trabajo en la coherencia entre lo que una empresa hace, cómo lo explica y cómo opera.</p>
     </div>
   </section>
 
   <section id="contacto" class="contact">
     <div class="wrap">
-      <div class="eyebrow">Contacto</div>
-      <p class="hook" style="margin:0 0 34px">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Mandame un mensaje ahora y lo conversamos.</p>
+      <div class="eyebrow" data-i="s_cont">Contacto</div>
+      <p class="hook" style="margin:0 0 34px" data-i="cint">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Mandame un mensaje ahora y lo conversamos.</p>
       <form id="form" class="form">
         <!-- Reemplazá TU_ACCESS_KEY_ACA por la clave de web3forms.com -->
         <input type="hidden" name="access_key" value="6dbc8b5a-0a14-4847-9605-6aacae7230ad">
         <input type="hidden" name="subject" value="Nuevo mensaje desde el portfolio">
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
         <div class="f2">
-          <label>Nombre y apellido<input type="text" name="nombre" required></label>
-          <label>Email<input type="email" name="email" required></label>
+          <label data-i="f1">Nombre y apellido<input type="text" name="nombre" required></label>
+          <label data-i="f2">Email<input type="email" name="email" required></label>
         </div>
         <div class="f2">
-          <label>Empresa<input type="text" name="empresa" required></label>
-          <label>Tu cargo o relación con la empresa<input type="text" name="cargo" required></label>
+          <label data-i="f3">Empresa<input type="text" name="empresa" required></label>
+          <label data-i="f4">Tu cargo o relación con la empresa<input type="text" name="cargo" required></label>
         </div>
-        <label>Cantidad de empleados
+        <label data-i="f5">Cantidad de empleados
           <select name="empleados" required>
-            <option value="">Elegí una opción</option>
+            <option value="" data-i="f5o">Elegí una opción</option>
             <option>1 a 10</option>
             <option>11 a 50</option>
             <option>51 a 200</option>
             <option>201 a 500</option>
-            <option>Más de 500</option>
+            <option data-i="f5x">Más de 500</option>
           </select>
         </label>
-        <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
-        <button type="submit">Enviar mensaje</button>
+        <label data-i="f6">Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
+        <button type="submit" data-i="fbtn">Enviar mensaje</button>
         <p id="form-msg" class="form-msg"></p>
       </form>
 
-      <div class="row" style="margin-top:44px"><span>También</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
+      <div class="row" style="margin-top:44px"><span data-i="ctb">También</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
     </div>
   </section>
 
@@ -347,6 +351,23 @@
 var WORKS = [
   {
     title:"Estancco",
+    en:{
+      desc:"From metal fabrication to critical-continuity asset.",
+      cats:["Product identity","Information design"],
+      tag:"Hydraulic infrastructure · Product identity",
+      body:[
+        "Estancco develops applied technology in high-quality gates, with the purpose of delivering reliable and efficient solutions for water management and control. Its team designs, manufactures and sells hydraulic gates for infrastructure, water and channelling works, water treatment, and other industries such as food, mining and energy.",
+        "The company's main product, its high-precision gates, features a set of components that enable optimised installation and maintenance, along with high-quality materials, manufacturing and development for an extended service life.",
+        "The challenge: translating high technical value into brand reputation and a solid product identity for a complex industrial product aimed at international markets.",
+        "The strategy: the value of a product built to last, applying engineering technology to infrastructure works. A company betting on innovation, materialised in a single product that makes the difference.",
+        "The outcome is a product identity that communicates the technical knowledge applied to each component, building fluency in the understanding of highly complex information for the multiple actors along the value chain."
+      ],
+      credits:{
+        title:"Strategic and product identity",
+        sub:"Integrated image, 360 communication and technical material project",
+        roles:"Product identity and image direction: Gabriel González / Brand strategy: Federico Gunther"
+      }
+    },
     desc:"De fierro metalúrgico a activo de continuidad crítica.",
     cats:["Identidad de producto","Diseño de información"],
     tag:"Infraestructura hidráulica · Identidad de producto",
@@ -375,6 +396,21 @@ var WORKS = [
   },
   {
     title:"Oda Vinoteca",
+    en:{
+      desc:"Twenty years of craft, with a story that holds them together again.",
+      cats:["Branding","Consumer goods"],
+      tag:"Consumer goods · Rebranding",
+      body:[
+        "Oda Vinoteca is a company with more than 20 years selling Argentine wines and sparkling wines in the triple border region.",
+        "During the redesign process, we developed an identity system around the concept of «mentors in the world of wine», echoing the strokes of a master's poetic and artistic handwriting. Taking the god Bacchus as the trigger for the concept, we used him as a guide and mentor throughout the tasting experience — acknowledging each of its stages.",
+        "The redesign invites you to move through the pages of a master's notebook, with its different notes and points of view. And with the overall proposal in place, Oda recovered its original song: a song to life, dedicated to those who visit."
+      ],
+      credits:{
+        title:"Rebranding &amp; Redesign",
+        sub:"Identity system, lettering and brand assets",
+        roles:"Creative direction: Gabriel González / Project direction: Federico Gunther / Design and illustration: Fernanda Parchomczuk / Lettering: María Eugenia Robledo"
+      }
+    },
     desc:"Veinte años de oficio con un relato que volvió a sostenerlos.",
     cats:["Branding","Consumo"],
     tag:"Consumo · Rebranding",
@@ -402,6 +438,23 @@ var WORKS = [
   },
   {
     title:"Primicia",
+    en:{
+      desc:"A yerba mate with history, reconnected to its community.",
+      cats:["Brand identity","Consumer goods"],
+      tag:"Yerba mate · Brand ecosystem",
+      body:[
+        "From the southernmost yerba fields in Argentina comes Primicia, a country-milled yerba mate that keeps you company day to day. The product carries a tradition of conversation and contact with nature that we took on as a challenge: to recognise and retell it in its familiar meaning and in its dedication.",
+        "The challenge: how do you connect a popular yerba mate — one with history and a sense of responsibility towards its surroundings — with its community, without losing an identity so deeply rooted in tradition?",
+        "The product's relationship with its culture of origin and its ties to the Iberá wetlands were part of the path we walked in its communication: with stories from the countryside, gatherings with friends, recipes made by grandmothers and moments full of tradition and play.",
+        "Primicia took us through a biodiversity full of colour, connected to the wetlands and native woodlands that surround the yerba fields, and we recognised ourselves in our responsibility towards the environment. Along the way we observed the colourful landscapes of Iberá, with images from the production process of the Tradicional, Tu instante and Selección varieties, and shared encounters with the community at events and fairs.",
+        "The outcome: a brand ecosystem that speaks through values and in the code of the local culture. The story of a company told from many angles, expressing its values in relation to its community, accompanying its commercial actions, its production and its day-to-day work through to its selected milling."
+      ],
+      credits:{
+        title:"Brand ecosystem | Product identity",
+        sub:"Integrated image project | 360 communication, CSR and social media",
+        roles:"Creative direction and design: Gabriel González / Project management and strategy: Luisina Portillo / Illustration and patterns: Fernanda Parchomczuk / Intern: Aldana Galeano"
+      }
+    },
     desc:"Una yerba con historia, reconectada con su comunidad.",
     cats:["Identidad de marca","Consumo masivo"],
     tag:"Yerba mate · Ecosistema de marca",
@@ -431,17 +484,23 @@ var WORKS = [
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // --- Frase rotativa del hero ---
-var FRASES = [
+var FRASES_ES = [
   "a aumentar su impacto<br>con claridad",
   "a alinear su percepción<br>con su capacidad",
   "a escalar con coherencia",
   "a transmitir su valor real"
 ];
-(function(){
-  var rot = document.getElementById("rot"), inner = rot.firstElementChild, i = 0;
+var FRASES = FRASES_ES;
+var rotTimer = null;
+
+function reiniciarRotador(){
+  var rot = document.getElementById("rot");
+  if (!rot) return;
+  var inner = rot.firstElementChild, i = 0;
   inner.innerHTML = FRASES[0];
+  if (rotTimer) clearInterval(rotTimer);
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  setInterval(function(){
+  rotTimer = setInterval(function(){
     rot.classList.add("out");
     setTimeout(function(){
       i = (i + 1) % FRASES.length;
@@ -450,25 +509,39 @@ var FRASES = [
       void inner.offsetHeight;
     }, 450);
   }, 6800);
-})();
+}
+reiniciarRotador();
+
+// Devuelve el campo en el idioma activo
+function T(w, campo){
+  if (typeof lang !== "undefined" && lang === "en" && w.en && w.en[campo] != null) return w.en[campo];
+  return w[campo];
+}
 
 var grid = document.getElementById("grid");
-WORKS.forEach(function(w,i){
-  var b = document.createElement("button");
-  b.className = "card";
-  var cover = w.cover ? '<img src="'+encodeURI(w.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">' : 'portada — 1600×1200';
-  b.innerHTML = '<div class="thumb">'+cover+'</div><h3>'+w.title+'</h3>'+
-                '<div class="desc">'+(w.desc||'')+'</div>'+
-                '<div class="cats"><span>'+(w.cats||[]).join('</span><span>')+'</span></div>';
-  b.onclick = function(){ openWork(i); };
-  grid.appendChild(b);
-});
+function render(){
+  grid.innerHTML = "";
+  WORKS.forEach(function(w,i){
+    var b = document.createElement("button");
+    b.className = "card";
+    var cover = w.cover ? '<img src="'+encodeURI(w.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">' : '';
+    b.innerHTML = '<div class="thumb">'+cover+'</div><h3>'+w.title+'</h3>'+
+                  '<div class="desc">'+(T(w,"desc")||'')+'</div>'+
+                  '<div class="cats"><span>'+(T(w,"cats")||[]).join('</span><span>')+'</span></div>';
+    b.onclick = function(){ openWork(i); };
+    grid.appendChild(b);
+  });
+}
+render();
 
 var detail = document.getElementById("detail"), dbody = document.getElementById("detail-body");
+var actual = null;
 function openWork(i){
   var w = WORKS[i];
+  actual = i;
+  var ES = (typeof lang === 'undefined' || lang === 'es');
   var h = '<div class="dtop">'+
-    '<a href="#" id="volver">&larr; Volver</a>'+
+    '<a href="#" id="volver">'+(ES?'&larr; Volver':'&larr; Back')+'</a>'+
     '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
     '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
   h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
@@ -497,13 +570,13 @@ function openWork(i){
   // Seguir viendo: el resto de los proyectos
   var otros = WORKS.map(function(_,k){return k}).filter(function(k){return k !== i});
   if (otros.length) {
-    h += '<div class="next"><div class="eyebrow">Seguir viendo</div><div class="next-grid">';
+    h += '<div class="next"><div class="eyebrow">'+(ES?'Seguir viendo':'Keep looking')+'</div><div class="next-grid">';
     otros.forEach(function(k){
       var o = WORKS[k];
       h += '<button class="card" data-go="'+k+'">'+
            '<div class="thumb">'+(o.cover?'<img src="'+encodeURI(o.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</div>'+
            '<h3>'+o.title+'</h3>'+
-           (o.desc?'<div class="desc">'+o.desc+'</div>':'')+
+           (T(o,"desc")?'<div class="desc">'+T(o,"desc")+'</div>':'')+
            '</button>';
     });
     h += '</div></div>';
@@ -586,6 +659,85 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
     .finally(function(){ btn.disabled = false; });
   });
 })();
+
+
+// ===================== IDIOMA (ES / EN) =====================
+var EN = {
+ navc:"Contact", nav1:"Work", nav2:"Services", nav3:"Experience", nav4:"Education", nav5:"About", nav6:"Contact",
+ h1:"I help technically complex companies",
+ hook:"15+ years advising industrial, consumer goods and public sector organisations.",
+ s_proy:"Projects", s_serv:"Services", s_tray:"Experience", s_form:"Education", s_sobre:"About", s_cont:"Contact",
+ sv1:"Strategic and innovation projects", sv2:"Product and service identity", sv3:"Information design",
+ sv4:"Branding and visual systems", sv5:"Creative direction", sv6:"Applied research",
+ j1t:"Designer · Creative direction & strategy", j1o:"Independent consultant", j1w:"2012 — Present",
+ j1p:"Branding, product identity and campaign projects, from strategy to implementation, for industry, the public sector and NGOs. I work with executive leadership to align operations, communication and decision-making.",
+ j2t:"Co-Director · Creative direction & strategy",
+ j2p:"Creative and strategic direction of branding projects across industry, healthcare, food and customer service. I built workflows and design systems to align teams with business objectives.",
+ j3t:"Corporate visual direction",
+ j3p:"Corporate identity and brand consistency for a regional company, in partnership with Personal. Oversight of corporate and commercial communication, point of sale and online marketing.",
+ j4t:"Co-Founder · Art direction",
+ j4p:"Boutique studio focused on identity design and visual problem-solving for small and medium businesses.",
+ j5t:"Assistant Professor", j5w:"2015 — Present",
+ j5p:"Semiotics, Graphic Design Workshops I and III, and Final Degree Project Workshop. I supervise graduation projects with a focus on real-world application, resource planning and feasibility.",
+ e1t:"MA in Design, Strategy and Innovation Management", e1p:"UNNOBA · Coursework completed",
+ e2t:"Graphic Designer", e2p:"Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Gold Medal",
+ e3t:"Research",
+ e3p:"Published in scientific journals and conference proceedings (Editorial Design and Visual Semiotics). Speaker at AISV, ELaDDi, DiSUR, SEMA and APOAVA. Research grants from CEDIT and CIN.",
+ e4t:"Languages", e4p:"Spanish native · English advanced (Cambridge FCE, B2) · Portuguese intermediate",
+ ab1:"I lead projects that call for strategic thinking, design research and innovation, advising companies in industry, consumer goods and the public sector.",
+ ab2:"I work on the coherence between what a company does, how it explains it and how it operates.",
+ cint:"Do you have a project where technical complexity became hard to explain? Send me a message and let's talk.",
+ f1:"Full name", f2:"Email", f3:"Company", f4:"Your role or relationship to the company",
+ f5:"Number of employees", f5o:"Select an option", f5x:"More than 500", f6:"Message",
+ fbtn:"Send message", ctb:"Also",
+ more:"See more work", next:"Keep looking", back:"← Back"
+};
+
+var FRASES_EN = [
+ "to increase their impact with clarity",
+ "to align perception with capability",
+ "to scale with coherence",
+ "to convey their real value"
+];
+
+var lang = localStorage.getItem("lang") ||
+           ((navigator.language||"es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
+
+function aplicarIdioma(){
+  document.documentElement.lang = lang;
+  document.getElementById("lang").textContent = (lang === "es" ? "EN" : "ES");
+
+  [].forEach.call(document.querySelectorAll("[data-i]"), function(el){
+    var k = el.getAttribute("data-i");
+    if (!el.dataset.es) {
+      // guardamos el original en español la primera vez
+      el.dataset.es = (k === "h1") ? el.innerHTML : el.childNodes[0].nodeValue;
+    }
+    if (lang === "en" && EN[k]) {
+      if (k === "h1") el.innerHTML = EN[k] + '<br><span class="rot" id="rot"><span>' + FRASES_EN[0] + '</span></span>';
+      else el.childNodes[0].nodeValue = EN[k];
+    } else {
+      if (k === "h1") el.innerHTML = el.dataset.es;
+      else el.childNodes[0].nodeValue = el.dataset.es;
+    }
+  });
+
+  var m = document.querySelector(".more");
+  if (m) m.childNodes[0].nodeValue = (lang === "en" ? "See more work " : "Seguir viendo trabajos ");
+
+  FRASES = (lang === "en") ? FRASES_EN : FRASES_ES;
+  reiniciarRotador();
+  render();
+  if (detail.classList.contains("open") && actual !== null) openWork(actual);
+}
+
+document.getElementById("lang").onclick = function(){
+  lang = (lang === "es") ? "en" : "es";
+  localStorage.setItem("lang", lang);
+  aplicarIdioma();
+};
+
+aplicarIdioma();
 
 // Nav activa según scroll
 var links = [].slice.call(document.querySelectorAll("nav a"));
