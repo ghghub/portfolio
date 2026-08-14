@@ -108,9 +108,13 @@
   /* Formulario */
   .form{max-width:620px}
   .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
-  .form input,.form textarea{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
+  .form input,.form textarea,.form select{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
     font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:13px 15px;border-radius:2px}
-  .form input:focus,.form textarea:focus{outline:0;border-color:var(--fg-dim)}
+  .form input:focus,.form textarea:focus,.form select:focus{outline:0;border-color:var(--fg-dim)}
+  .form select{appearance:none;-webkit-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='%238a8a86' d='M0 0l5 6 5-6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 15px center;background-size:10px;padding-right:40px}
+  .form select option{background:var(--bg-alt);color:var(--fg)}
   .form textarea{resize:vertical}
   .f2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
   @media(max-width:600px){.f2{grid-template-columns:1fr}}
@@ -294,18 +298,31 @@
   <section id="contacto" class="contact">
     <div class="wrap">
       <div class="eyebrow">Contacto</div>
-      <p class="hook" style="margin:0 0 34px">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Escribime por LinkedIn y lo conversamos.</p>
+      <p class="hook" style="margin:0 0 34px">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Mandame un mensaje ahora y lo conversamos.</p>
       <form id="form" class="form">
         <!-- Reemplazá TU_ACCESS_KEY_ACA por la clave de web3forms.com -->
         <input type="hidden" name="access_key" value="6dbc8b5a-0a14-4847-9605-6aacae7230ad">
         <input type="hidden" name="subject" value="Nuevo mensaje desde el portfolio">
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
         <div class="f2">
-          <label>Nombre<input type="text" name="nombre" required></label>
-          <label>Mail<input type="email" name="email" required></label>
+          <label>Nombre y apellido<input type="text" name="nombre" required></label>
+          <label>Email<input type="email" name="email" required></label>
         </div>
-        <label>Empresa u organización<input type="text" name="empresa"></label>
-        <label>Contame brevemente el proyecto<textarea name="mensaje" rows="5" required></textarea></label>
+        <div class="f2">
+          <label>Empresa<input type="text" name="empresa" required></label>
+          <label>Tu cargo o relación con la empresa<input type="text" name="cargo" required></label>
+        </div>
+        <label>Cantidad de empleados
+          <select name="empleados" required>
+            <option value="">Elegí una opción</option>
+            <option>1 a 10</option>
+            <option>11 a 50</option>
+            <option>51 a 200</option>
+            <option>201 a 500</option>
+            <option>Más de 500</option>
+          </select>
+        </label>
+        <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
         <button type="submit">Enviar mensaje</button>
         <p id="form-msg" class="form-msg"></p>
       </form>
@@ -557,7 +574,7 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
       if (d.success) {
         form.reset();
         msg.className = "form-msg ok";
-        msg.textContent = "Mensaje enviado. Te respondo a la brevedad.";
+        msg.textContent = "Gracias por contactarte. Te respondo a la brevedad.";
       } else {
         throw new Error();
       }
