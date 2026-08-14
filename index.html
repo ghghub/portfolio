@@ -41,9 +41,9 @@
   header{padding:190px 0 130px;position:relative}
   @media(max-width:700px){header{padding:70px 0 80px}}
   h1{font-size:clamp(28px,4.4vw,48px);line-height:1.18;font-weight:700;letter-spacing:-.02em;max-width:22ch}
-  .rot{display:block;position:relative;overflow:hidden;color:var(--fg-dim);min-height:2.36em}
-  .rot > span{display:inline-block;transition:transform .45s cubic-bezier(.4,0,.2,1),opacity .45s}
-  .rot.out > span{transform:translateY(-.9em);opacity:0}
+  .rot{color:var(--fg-dim)}
+  .rot > span{transition:opacity .4s ease}
+  .rot.out > span{opacity:0}
   @media(prefers-reduced-motion:reduce){.rot > span{transition:none}}
   .hook{margin-top:30px;color:var(--fg-dim);font-size:18px;max-width:54ch}
 
@@ -193,7 +193,7 @@
 
   <header>
     <div class="wrap">
-      <h1 data-i="h1">Ayudo a empresas de complejidad técnica<br><span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
+      <h1 data-i="h1">Ayudo a empresas de complejidad técnica <span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
       <p class="hook" data-i="hook">+ 15 años asesorando en sectores: industrial, consumo masivo y público.</p>
     </div>
   </header>
@@ -714,7 +714,7 @@ function aplicarIdioma(){
       el.dataset.es = (k === "h1") ? el.innerHTML : el.childNodes[0].nodeValue;
     }
     if (lang === "en" && EN[k]) {
-      if (k === "h1") el.innerHTML = EN[k] + '<br><span class="rot" id="rot"><span>' + FRASES_EN[0] + '</span></span>';
+      if (k === "h1") el.innerHTML = EN[k] + ' <span class="rot" id="rot"><span>' + FRASES_EN[0] + '</span></span>';
       else el.childNodes[0].nodeValue = EN[k];
     } else {
       if (k === "h1") el.innerHTML = el.dataset.es;
