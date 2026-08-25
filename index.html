@@ -510,6 +510,45 @@ var WORKS = [
       sub:"Proyecto integral de imagen | Comunicación 360, RSE y Redes Sociales",
       roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto y estrategia: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano"
     }
+  },
+  {
+    title:"Hidra",
+    desc:"Credibilidad institucional para competir en licitaciones públicas.",
+    cats:["Identidad institucional","Diseño de información"],
+    tag:"Obras hídricas · Identidad institucional",
+    cover:"img/hidra/hidra-00.jpg",
+    shots:[
+      "img/hidra/hidra-01.jpg","img/hidra/hidra-02.jpg","img/hidra/hidra-03.jpg",
+      "img/hidra/hidra-04.jpg","img/hidra/hidra-05.jpg","img/hidra/hidra-06.jpg",
+      "img/hidra/hidra-07.jpg","img/hidra/hidra-08.jpg","img/hidra/hidra-09.jpg"
+    ],
+    body:[
+      "Hidra es una empresa de ingeniería especializada en obras hídricas: bombas, tableros y metalmecánica para plantas potabilizadoras, estaciones de bombeo, acueductos y plantas de tratamiento.",
+      "El desafío: construir identidad institucional para una empresa joven que competía en licitaciones públicas contra estructuras largamente establecidas.",
+      "El desarrollo: se ordenó la experiencia técnica, las obras previas y los materiales en una señal de confiabilidad legible. El eje fue mapear la cadena de decisión de una obra —institución licitante, proyectista, constructora, inspección, usuarios y mantenimiento— y mostrar en qué punto de esa cadena interviene Hidra.",
+      "El sistema incluyó identidad y sistema gráfico, brochure corporativo y carpeta de antecedentes y obras, señalética y cartelería de obra, stand institucional y presencia digital unificada."
+    ],
+    credits:{
+      title:"Identidad institucional",
+      sub:"Sistema de marca, diseño de información y comunicación integral",
+      roles:"Dirección creativa y diseño: Gabriel González"
+    },
+    en:{
+      desc:"Institutional credibility to compete in public tenders.",
+      cats:["Institutional identity","Information design"],
+      tag:"Water infrastructure · Institutional identity",
+      body:[
+        "Hidra is an engineering company specialising in water infrastructure: pumps, control panels and metalwork for water treatment plants, pumping stations, aqueducts and wastewater plants.",
+        "The challenge: build institutional identity for a young engineering firm competing in public tenders against long-established structures.",
+        "The work: technical expertise, prior works and materials were packaged into a legible reliability signal. The core move was mapping the decision chain of a public works project — tendering authority, designer, contractor, inspection, users and maintenance — and showing exactly where Hidra intervenes in that chain.",
+        "The system included identity and graphic system, corporate brochure and a track-record folder, site signage, institutional stand and a unified digital presence."
+      ],
+      credits:{
+        title:"Institutional identity",
+        sub:"Brand system, information design and integrated communication",
+        roles:"Creative direction and design: Gabriel González"
+      }
+    }
   }
 ];
 
@@ -576,11 +615,12 @@ function openWork(i){
     '<a href="#" id="volver">'+(ES?'&larr; Volver':'&larr; Back')+'</a>'+
     '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
     '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
-  h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+w.tag+'</span></div>';
+  h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+T(w,"tag")+'</span></div>';
   if (w.cover) h += '<div class="lead"><img src="'+encodeURI(w.cover)+'" alt=""></div>';
-  if (w.body) {
+  var body = T(w,"body");
+  if (body) {
     h += '<div class="dbody">';
-    w.body.forEach(function(p){ h += '<p>'+p+'</p>'; });
+    body.forEach(function(p){ h += '<p>'+p+'</p>'; });
     h += '</div>';
   }
   if (w.steps) w.steps.forEach(function(s){ h += '<div class="step"><span class="k">'+s[0]+'</span>'+s[1]+'</div>'; });
@@ -592,11 +632,12 @@ function openWork(i){
       : '<img src="'+encodeURI(w.shots[j])+'" alt="" loading="lazy" style="width:100%;display:block">';
   }
   h += '</div>';
-  if (w.credits) {
+  var cr = T(w,"credits");
+  if (cr) {
     h += '<div class="credits">';
-    if (w.credits.title) h += '<h4>'+w.credits.title+'</h4>';
-    if (w.credits.sub) h += '<p class="sub">'+w.credits.sub+'</p>';
-    if (w.credits.roles) h += '<p class="roles">'+w.credits.roles+'</p>';
+    if (cr.title) h += '<h4>'+cr.title+'</h4>';
+    if (cr.sub) h += '<p class="sub">'+cr.sub+'</p>';
+    if (cr.roles) h += '<p class="roles">'+cr.roles+'</p>';
     h += '</div>';
   }
   // Seguir viendo: el resto de los proyectos
