@@ -5,11 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="dark light" />
 <title>Gabriel González · Diseño estratégico</title>
-<meta name="description" content="Ayudo a empresas de complejidad técnica a crecer y escalar con claridad y coherencia." />
+<link rel="canonical" href="https://gportfolio-web.vercel.app/" />
+<meta name="description" content="Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera." />
+<meta name="author" content="Gabriel González" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Gabriel González" />
+<meta property="og:title" content="Gabriel González · Diseño estratégico e información" />
+<meta property="og:description" content="Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera." />
+<meta property="og:url" content="https://gportfolio-web.vercel.app/" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg" />
+<meta property="og:image:width" content="1800" />
+<meta property="og:image:height" content="1350" />
+<meta property="og:image:alt" content="Sistema de identidad para Estancco, compuertas hidráulicas" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gabriel González · Diseño estratégico e información" />
+<meta name="twitter:description" content="Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera." />
+<meta name="twitter:image" content="https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%230a0a0a%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2764%27 font-weight=%27700%27 fill=%27%23f2f2f0%27 text-anchor=%27middle%27%3EG%3C/text%3E%3C/svg%3E" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<script>document.documentElement.className="js";</script>
 <style>
   :root{
     --bg:#0a0a0a; --bg-alt:#141414; --fg:#f2f2f0; --fg-dim:#8a8a86;
@@ -17,6 +41,51 @@
   }
   :root{color-scheme:dark}
   #detail{color-scheme:light}
+  html.js .solo-sin-js{display:none}
+  .solo-sin-js{padding:110px 0;border-top:1px solid var(--line)}
+  .solo-sin-js h2{font-size:28px;margin:40px 0 20px}
+  .solo-sin-js h3{font-size:22px;margin:34px 0 8px}
+  .solo-sin-js h4{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--fg-dim);margin:22px 0 8px}
+  .solo-sin-js p{margin-bottom:12px;color:var(--fg-dim);max-width:68ch}
+  .solo-sin-js li{color:var(--fg-dim);max-width:68ch;margin-bottom:8px}
+  .solo-sin-js img{width:100%;max-width:820px;display:block;margin:16px 0}
+
+  /* Curvas y tiempos */
+  :root{
+    --curva:cubic-bezier(.32,.72,0,1);
+    --rapido:150ms;
+    --medio:280ms;
+    --lento:420ms;
+  }
+
+  /* Foco visible en todo lo interactivo */
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--fg);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  #detail a:focus-visible, #detail button:focus-visible{outline-color:#16171a}
+
+  /* Saltar al contenido */
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--fg);color:var(--bg);
+    padding:12px 20px;font-size:14px;text-decoration:none}
+  .skip:focus{left:12px;top:12px}
+
+  /* Aparicion al scrollear */
+  .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity var(--lento) var(--curva), transform var(--lento) var(--curva)}
+  .reveal.visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* Entrada del overlay de proyecto */
+  #detail{opacity:0;transform:translateY(14px);
+    transition:opacity var(--medio) var(--curva), transform var(--medio) var(--curva), visibility 0s linear var(--medio)}
+  #detail.open{transition-delay:0s}
+  #detail.open{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){#detail{transition:none;transform:none;opacity:1}}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--fg);font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
@@ -26,7 +95,8 @@
 
   /* Nav lateral fija */
   nav{position:fixed;right:34px;bottom:34px;z-index:30;text-align:right;display:flex;flex-direction:column;gap:7px}
-  nav a{color:var(--fg-dim);text-decoration:none;font-size:13px;padding-bottom:2px;border-bottom:1px solid transparent}
+  nav a{color:var(--fg-dim);text-decoration:none;font-size:13px;padding-bottom:2px;border-bottom:1px solid transparent;
+    transition:color var(--rapido) var(--curva), border-color var(--rapido) var(--curva)}
   nav a:hover,nav a.on{color:var(--fg);border-color:var(--fg)}
   @media(max-width:860px){nav{display:none}}
 
@@ -36,23 +106,25 @@
   .lang{background:none;border:1px solid var(--line);color:var(--fg-dim);font:inherit;font-size:12px;
     letter-spacing:.1em;padding:3px 10px;border-radius:3px;cursor:pointer;transition:color .2s,border-color .2s}
   .lang:hover{color:var(--fg);border-color:var(--fg-dim)}
-  .top a{color:var(--fg-dim);text-decoration:none}
+  .top a{color:var(--fg-dim);text-decoration:none;padding:10px 2px;transition:color var(--rapido) var(--curva)}
   .top a:hover{color:var(--fg)}
-  @media(max-width:700px){.top{position:static;padding:22px;justify-content:flex-end}}
+  @media(max-width:700px){.top{position:static;padding:14px 22px;justify-content:flex-end;flex-wrap:wrap;gap:8px 18px}
+    .top a,.lang{min-height:44px;display:flex;align-items:center;padding:0 8px}
+    .contact a{display:inline-block;padding:8px 0;min-height:44px}}
 
   /* Hero */
   header{padding:190px 0 130px;position:relative}
   @media(max-width:700px){header{padding:70px 0 80px}}
   h1{font-size:clamp(28px,4.4vw,48px);line-height:1.18;font-weight:700;letter-spacing:-.02em;max-width:22ch}
   .rot{color:var(--fg-dim)}
-  .rot > span{transition:opacity .4s ease}
+  .rot > span{transition:opacity var(--lento) var(--curva),transform var(--lento) var(--curva)}
   .rot.out > span{opacity:0}
   @media(prefers-reduced-motion:reduce){.rot > span{transition:none}}
   .hook{margin-top:30px;color:var(--fg-dim);font-size:18px;max-width:54ch}
 
   /* Secciones */
   section{padding:110px 0;border-top:1px solid var(--line)}
-  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-bottom:8px;border-bottom:1px solid var(--line);display:inline-block;margin-bottom:56px}
+  .eyebrow{font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-bottom:8px;border-bottom:1px solid var(--line);display:inline-block;margin-bottom:56px}
 
   /* Grilla de trabajos */
   /* Carrusel horizontal de proyectos */
@@ -60,7 +132,7 @@
   .arrow{position:absolute;top:24%;right:-6px;z-index:5;width:66px;height:66px;border-radius:50%;
     background:rgba(20,20,20,.72);border:1px solid var(--line);color:var(--fg);
     font-size:40px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
-    padding-bottom:5px;backdrop-filter:blur(6px);transition:opacity .25s,transform .2s,background .2s}
+    padding-bottom:5px;backdrop-filter:blur(6px);transition:opacity var(--medio) var(--curva),transform var(--rapido) var(--curva),background var(--rapido) var(--curva)}
   .arrow:hover{background:rgba(20,20,20,.95);transform:scale(1.06)}
   .arrow[hidden]{opacity:0;pointer-events:none;display:flex}
   @media(max-width:700px){.arrow{width:52px;height:52px;font-size:32px;right:2px}}
@@ -70,24 +142,28 @@
   .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
   .grid > .card{flex:0 0 clamp(280px,42vw,520px);scroll-snap-align:start}
   @media(max-width:700px){.grid > .card{flex:0 0 82vw}}
-  .card{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block;width:100%}
-  .card .thumb{aspect-ratio:4/3;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden;transition:opacity .25s}
-  .card:hover .thumb{opacity:.75}
+  .card{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block;width:100%;
+    transition:transform var(--rapido) var(--curva)}
+  .card:active{transform:scale(.99)}
+  .card .thumb{aspect-ratio:4/3;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden}
+  .card .thumb img{transition:transform var(--lento) var(--curva), opacity var(--medio) var(--curva)}
+  .card:hover .thumb img{transform:scale(1.04)}
+  .card:hover .thumb img{opacity:.9}
   .card h3{font-size:21px;font-weight:600;margin-top:20px}
   .card .desc{color:var(--fg-dim);margin-top:5px}
-  .card .cats{display:flex;gap:18px;margin-top:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
+  .card .cats{display:flex;gap:18px;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
 
   .more-wrap{display:flex;justify-content:flex-end;margin-top:70px}
-  .more{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line);padding-bottom:8px;transition:border-color .2s}
+  .more{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line);padding-bottom:8px;transition:border-color var(--rapido) var(--curva)}
   .more:hover{border-color:var(--fg)}
-  .more span{transition:transform .2s;display:inline-block}
+  .more span{transition:transform var(--rapido) var(--curva);display:inline-block}
   .more:hover span{transform:translateX(6px)}
 
   /* Casos de estudio */
   .cases{border-top:1px solid var(--line)}
   .case{display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:baseline;
     width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;
-    border-bottom:1px solid var(--line);padding:34px 0;cursor:pointer;transition:opacity .2s}
+    border-bottom:1px solid var(--line);padding:34px 0;cursor:pointer;transition:opacity var(--rapido) var(--curva)}
   .case:hover{opacity:.6}
   .case .num{color:var(--fg-dim);font-size:13px;letter-spacing:.12em}
   .case h3{font-size:clamp(21px,2.6vw,28px);font-weight:600;letter-spacing:-.01em;line-height:1.2}
@@ -137,8 +213,9 @@
   .form{max-width:620px}
   .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
   .form input,.form textarea,.form select{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
-    font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:13px 15px;border-radius:2px}
-  .form input:focus,.form textarea:focus,.form select:focus{outline:0;border-color:var(--fg-dim)}
+    font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:14px 15px;border-radius:2px;
+    border-color:#4a4a4a;transition:border-color var(--rapido) var(--curva)}
+  .form input:focus,.form textarea:focus,.form select:focus{border-color:var(--fg)}
   .form select{appearance:none;-webkit-appearance:none;cursor:pointer;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='%238a8a86' d='M0 0l5 6 5-6z'/></svg>");
     background-repeat:no-repeat;background-position:right 15px center;background-size:10px;padding-right:40px}
@@ -159,8 +236,8 @@
 
   /* Detalle de caso */
   /* Vista de proyecto — fondo claro */
-  #detail{display:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
-  #detail.open{display:block}
+  #detail{visibility:hidden;pointer-events:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
+  #detail.open{visibility:visible;pointer-events:auto}
   .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dcdcdc;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
   .close:hover{border-color:#16171a}
   .dhead{padding:100px 0 34px}
@@ -193,12 +270,88 @@
   .credits{text-align:center;padding:56px 0 90px;max-width:66ch;margin:0 auto}
   .credits h4{font-size:19px;font-weight:600;color:#16171a}
   .credits .sub{font-size:17px;color:#3a3a3c;margin-top:4px}
-  .credits .roles{font-size:13px;color:#6b6b6b;margin-top:14px}
+  .credits .roles{font-size:13.5px;color:#6b6b6b;margin-top:14px}
   .shot{aspect-ratio:16/10;background:#e3e3e3;border:1px solid #dcdcdc;display:flex;align-items:center;justify-content:center;color:#a8a8a8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://gportfolio-web.vercel.app/#gabriel",
+      "name": "Gabriel Gonz\u00e1lez",
+      "jobTitle": "Dise\u00f1ador estrat\u00e9gico y dise\u00f1ador de informaci\u00f3n",
+      "url": "https://gportfolio-web.vercel.app/",
+      "sameAs": [
+        "https://www.linkedin.com/in/dg-gabriel-gonzalez",
+        "https://www.behance.net/Gabriel_HG"
+      ],
+      "address": { "@type": "PostalAddress", "addressLocality": "Posadas", "addressCountry": "AR" },
+      "knowsLanguage": ["es", "en", "pt"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Misiones" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional del Noroeste de la Provincia de Buenos Aires" }
+      ],
+      "worksFor": { "@id": "https://gportfolio-web.vercel.app/#servicio" },
+      "knowsAbout": [
+        "Dise\u00f1o de informaci\u00f3n",
+        "Information design",
+        "Sistemas de identidad de marca",
+        "Brand systems",
+        "Identidad de producto industrial",
+        "Comunicaci\u00f3n t\u00e9cnica B2B",
+        "Documentaci\u00f3n para licitaciones p\u00fablicas",
+        "Semi\u00f3tica visual",
+        "Arquitectura de marca",
+        "Dise\u00f1o estrat\u00e9gico"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gportfolio-web.vercel.app/#servicio",
+      "name": "Gabriel Gonz\u00e1lez \u00b7 Dise\u00f1o estrat\u00e9gico",
+      "description": "Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera.",
+      "url": "https://gportfolio-web.vercel.app/",
+      "founder": { "@id": "https://gportfolio-web.vercel.app/#gabriel" },
+      "areaServed": [
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "Place", "name": "Latinoam\u00e9rica" },
+        { "@type": "Place", "name": "Remoto / internacional" }
+      ],
+      "serviceType": [
+        "Dise\u00f1o de informaci\u00f3n",
+        "Identidad de productos y servicios",
+        "Branding y sistemas visuales",
+        "Proyectos estrat\u00e9gicos y de innovaci\u00f3n",
+        "Direcci\u00f3n creativa",
+        "Investigaci\u00f3n aplicada"
+      ],
+      "knowsAbout": [
+        "Empresas de complejidad t\u00e9cnica",
+        "Infraestructura hidr\u00e1ulica",
+        "Ingenier\u00eda",
+        "Industria",
+        "Consumo masivo",
+        "Sector p\u00fablico"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gportfolio-web.vercel.app/#sitio",
+      "url": "https://gportfolio-web.vercel.app/",
+      "name": "Gabriel Gonz\u00e1lez \u00b7 Dise\u00f1o estrat\u00e9gico",
+      "inLanguage": ["es", "en"],
+      "about": { "@id": "https://gportfolio-web.vercel.app/#gabriel" },
+      "publisher": { "@id": "https://gportfolio-web.vercel.app/#gabriel" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
+<a class="skip" href="#trabajo">Saltar al contenido</a>
 <main id="site">
   <div class="top">
     <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
@@ -227,7 +380,7 @@
 
   <section id="trabajo">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_proy">Proyectos</div>
+      <h2 class="eyebrow" data-i="s_proy">Proyectos</h2>
       <div class="rail">
         <div class="grid" id="grid"></div>
         <button class="arrow" id="arrow" aria-label="Ver siguiente proyecto">&#8250;</button>
@@ -242,7 +395,7 @@
 
   <section id="casos">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_casos">Casos de estudio</div>
+      <h2 class="eyebrow" data-i="s_casos">Casos de estudio</h2>
       <p class="hook" data-i="casos_int" style="margin:-24px 0 44px">Cuatro proyectos, cuatro problemas distintos.</p>
       <div class="cases" id="cases"></div>
     </div>
@@ -250,7 +403,7 @@
 
   <section id="servicios">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_serv">Servicios</div>
+      <h2 class="eyebrow" data-i="s_serv">Servicios</h2>
       <div class="skills">
         <div data-i="sv1">Proyectos estratégicos y de innovación</div>
         <div data-i="sv2">Identidad de productos y servicios</div>
@@ -267,7 +420,7 @@
 
   <section id="experiencia">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_tray">Trayectoria</div>
+      <h2 class="eyebrow" data-i="s_tray">Trayectoria</h2>
 
       <div class="job">
         <div><h3 data-i="j1t">Diseñador · Dirección creativa &amp; estrategia</h3><div class="org" data-i="j1o">Consultor freelance</div></div>
@@ -318,7 +471,7 @@
 
   <section id="formacion">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_form">Formación</div>
+      <h2 class="eyebrow" data-i="s_form">Formación</h2>
       <div class="edu"><h3 data-i="e1t">Maestría en Diseño, Gestión de la Estrategia y la Innovación</h3><p data-i="e1p">UNNOBA · Cursado completo</p></div>
       <div class="edu"><h3 data-i="e2t">Diseñador Gráfico</h3><p data-i="e2p">Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Medalla de Oro</p></div>
       <div class="edu"><h3 data-i="e3t">Investigación</h3><p data-i="e3p">Publicaciones en revistas científicas y libros de congreso (Diseño Editorial y Semiótica Visual). Expositor en AISV, ELaDDi, DiSUR, SEMA y APOAVA. Becas de CEDIT y CIN.</p></div>
@@ -328,7 +481,7 @@
 
   <section id="sobre" class="about">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_sobre">Sobre mí</div>
+      <h2 class="eyebrow" data-i="s_sobre">Sobre mí</h2>
       <p data-i="ab1">Dirijo proyectos que requieren pensamiento estratégico, investigación en diseño e innovación, asesoro en industria, consumo masivo y sector público.</p>
       <p data-i="ab2">Trabajo en la coherencia entre lo que una empresa hace, cómo lo explica y cómo opera.</p>
     </div>
@@ -336,7 +489,7 @@
 
   <section id="contacto" class="contact">
     <div class="wrap">
-      <div class="eyebrow" data-i="s_cont">Contacto</div>
+      <h2 class="eyebrow" data-i="s_cont">Contacto</h2>
       <p class="hook" style="margin:0 0 34px" data-i="cint">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Mandame un mensaje ahora y lo conversamos.</p>
       <form id="form" class="form">
         <!-- Reemplazá TU_ACCESS_KEY_ACA por la clave de web3forms.com -->
@@ -367,6 +520,214 @@
       </form>
 
       <div class="row" style="margin-top:44px"><span data-i="ctb">También</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
+    </div>
+  </section>
+
+  <section id="contenido" class="solo-sin-js">
+    <div class="wrap">
+      <h2>Proyectos</h2>
+      <article>
+        <h3>Estancco</h3>
+        <p><em>Infraestructura hidráulica · Identidad de producto</em></p>
+        <img src="img/estancco/estancco-00.jpg" alt="Estancco" width="1600" height="1200">
+        <p>Estancco desarrolla su tecnología aplicada en compuertas de alta calidad con el propósito de brindar soluciones confiables y eficientes para el manejo y control del agua. Su equipo diseña, fabrica y comercializa compuertas hidráulicas para la utilización en obras de infraestructura, hídricas y de canalización, de saneamiento de aguas, y de otras industrias como alimentos, minería y energía.</p>
+        <p>El principal producto de la empresa, sus compuertas de alta precisión, presenta una serie de componentes que facilitan una instalación y mantenimiento optimizado, alta calidad en materiales, elaboración y desarrollo para una vida útil extendida.</p>
+        <p>El desafío: traducir el alto valor técnico en reputación de marca y una identidad sólida de producto técnico industrial de complejidad para la comercialización internacional.</p>
+        <p>La estrategia: el valor de un producto pensado para durar, que aplica tecnología de ingeniería a las obras de infraestructura. Una empresa que apuesta por la innovación materializada en un solo producto que hace la diferencia.</p>
+        <p>Se desarrolla una identidad de producto que comunica el conocimiento técnico aplicado en cada componente, desarrollando la fluidez en la comprensión de información de alta complejidad para múltiples actores de la cadena de valor.</p>
+        <img src="img/estancco/estancco-01.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-02.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-03.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-04.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-05.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-06.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <img src="img/estancco/estancco-07.jpg" alt="Estancco" loading="lazy" width="1600" height="1000">
+        <p><strong>Identidad estratégica y de producto</strong><br>Proyecto integral de imagen, comunicación 360 y material técnico<br>Identidad de producto y dirección creativa: Gabriel González / Dirección de proyecto: Federico Gunther</p>
+      </article>
+      <article>
+        <h3>Oda Vinoteca</h3>
+        <p><em>Consumo · Rebranding</em></p>
+        <img src="img/oda/oda-00.jpg" alt="Oda Vinoteca" width="1600" height="1200">
+        <p>Oda Vinoteca es una empresa que tiene más de 20 años de actividad comercializando vinos y espumantes argentinos en la triple frontera.</p>
+        <p>Durante el proceso de rediseño, se desarrolló un sistema de identidad en torno al concepto de «mentores en el mundo del vino», representando los trazos de escrituras poéticas y artísticas de un maestro. Teniendo como detonante de concepto al dios Baco, lo utilizamos como guía y mentor durante la experiencia de degustación, reconociendo cada una de las etapas de la cata.</p>
+        <p>El rediseño invita a un recorrido por las páginas de un cuaderno del maestro con sus diferentes anotaciones y puntos de vista. Y ya con la propuesta global, Oda recuperó su canto original, un canto a la vida dedicado a quienes la visitan.</p>
+        <img src="img/oda/oda-01.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-02.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-03.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-04.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-05.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-06.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-07.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <img src="img/oda/oda-08.jpg" alt="Oda Vinoteca" loading="lazy" width="1600" height="1000">
+        <p><strong>Rebranding &amp; Redesign</strong><br>Sistema de identidad, lettering y piezas de marca<br>Dirección creativa: Gabriel González / Dirección de proyecto: Federico Gunther / Diseño e ilustración: Fernanda Parchomczuk / Lettering: María Eugenia Robledo</p>
+      </article>
+      <article>
+        <h3>Primicia</h3>
+        <p><em>Yerba mate · Ecosistema de marca</em></p>
+        <img src="img/primicia/primicia-00.jpg" alt="Primicia" width="1600" height="1200">
+        <p>De los yerbales más australes de la Argentina nace la yerba mate Primicia, una molienda de campo que te acompaña en tu día a día. El producto acompaña una tradición de conversaciones y contacto con la naturaleza que se presentó como desafío reconocer y relatar en su sentido conocido y en su dedicación.</p>
+        <p>El desafío: ¿cómo conectar una yerba popular, con historia y un sentido de responsabilidad con su entorno, con su comunidad, sin perder la identidad fuertemente arraigada a la tradición?</p>
+        <p>La relación del producto con su cultura de origen y su vinculación con los Esteros del Iberá fueron parte del camino a recorrer en la comunicación: con historias de campo, de encuentros con amigos, recetas hechas por las abuelas y momentos cargados de tradición y juego.</p>
+        <p>Primicia nos llevó a recorrer una biodiversidad llena de color, en vinculación con los esteros y montes nativos que rodean a los yerbales, y nos reconocimos en nuestra responsabilidad con el medio ambiente. En el proceso observamos los paisajes del Iberá llenos de colores, con postales del proceso de elaboración de las variedades Tradicional, Tu instante y Selección, y compartimos encuentros con la comunidad en eventos y ferias.</p>
+        <p>El resultado: un ecosistema de marca que habla con valores y en el código de la cultura local. La historia de una empresa relatada desde diversos ángulos, expresando sus valores en relación con su comunidad, acompañando sus acciones comerciales, de producción y del día a día hasta su molienda seleccionada.</p>
+        <img src="img/primicia/primicia-02.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-03.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-04.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-05.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-06.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-07.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-08.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-09.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-10.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-11.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-12.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-13.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <img src="img/primicia/primicia-14.jpg" alt="Primicia" loading="lazy" width="1600" height="1000">
+        <p><strong>Ecosistema de marca | Identidad de producto</strong><br>Proyecto integral de imagen | Comunicación 360, RSE y Redes Sociales<br>Dirección creativa y diseño: Gabriel González / Gestión de proyecto y estrategia: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano</p>
+      </article>
+      <article>
+        <h3>Hidra</h3>
+        <p><em>Obras hídricas · Identidad institucional</em></p>
+        <img src="img/hidra/hidra-00.jpg" alt="Hidra" width="1600" height="1200">
+        <p>Hidra es una empresa de ingeniería especializada en obras hídricas: bombas, tableros y metalmecánica para plantas potabilizadoras, estaciones de bombeo, acueductos y plantas de tratamiento.</p>
+        <p>Reuniendo años de experticia y conocimiento, se consolida Hidra como un componente estratégico para la construcción de obras de ingeniería hidráulica de la región. La experiencia integrada y avalada por su trayectoria le habilita a elaborar cálculos y procesos de obras de ingeniería de alta complejidad para el tratamiento de aguas, entre otras obras de infraestructura. La empresa realiza también una serie de servicios especializados y comercializa desde su conocimiento técnico.</p>
+        <p>El desafío: constituir una estrategia de posicionamiento y de transferencia de la información técnica para una empresa de ingeniería joven que competía en licitaciones públicas contra estructuras largamente establecidas, haciendo foco en su proceso y su capacidad.</p>
+        <p>El desarrollo: se ordenaron la experiencia técnica, las obras previas y los materiales en una señal de confiabilidad legible. El eje fue mapear la cadena de decisión de una obra pública (institución licitante, proyectista, constructora, inspección, usuarios y mantenimiento) y mostrar en qué punto de esa cadena interviene Hidra. Procesamiento y ordenamiento de la información técnica para que esté disponible tanto para licitaciones como para el cálculo de obra y la comercialización de los productos de la empresa.</p>
+        <p>El sistema incluyó identidad y sistema gráfico, brochure corporativo y carpeta de antecedentes y obras, señalética y cartelería de obra, stand institucional y presencia digital unificada.</p>
+        <img src="img/hidra/hidra-01.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-02.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-03.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-04.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-05.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-06.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-07.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-08.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <img src="img/hidra/hidra-09.jpg" alt="Hidra" loading="lazy" width="1600" height="1000">
+        <p><strong>Ecosistema de marca | Estrategia</strong><br>Diseño de información | Comunicación 360<br>Dirección creativa y diseño: Gabriel González / Dirección de proyecto y diseño de logo: Federico Gunther / Pasante: Luciano Hermida</p>
+      </article>
+      <h2>Casos de estudio</h2>
+      <article>
+        <h3>Vender continuidad, no acero</h3>
+        <p><em>Compuertas hidráulicas para infraestructura crítica de agua · Sistema de información · Marca · Licitaciones B2B / B2G</em></p>
+        <h4>La situación</h4>
+        <p>La empresa fabrica compuertas hidráulicas para plantas de tratamiento de agua e infraestructura crítica. El producto está patentado, ensayado a presión en banco propio y monitoreado por un sistema de control automatizado.</p>
+        <p>En las licitaciones, perdía contra metalúrgicas.</p>
+        <p>Los compradores lo comparaban por peso de acero y costo de soldadura (los únicos términos que la documentación les daba). Todo lo que hacía diferente al producto era real, y nada de eso era legible.</p>
+        <h4>Dónde estaba la dificultad</h4>
+        <p>La ventaja real de la compuerta no era mecánica. Era económica: se puede mantener y repotenciar <strong>sin vaciar la planta</strong>. Para un prestador municipal, eso significa que no hay ciudad sin agua durante días, ni metros cúbicos de agua tratada tirados, ni redosificación de químicos.</p>
+        <p>Esa ventaja era invisible por una razón estructural: una licitación no la decide una sola persona. Firman tres perfiles, y quieren cosas opuestas.</p>
+        <ul>
+          <li><strong>El contratista</strong> necesita disponibilidad local, repuestos regionales, montaje simple.</li>
+          <li><strong>El ingeniero de obra</strong> necesita rigor de cálculo, patentes, estanqueidad verificada (evidencia suficiente para poner su firma).</li>
+          <li><strong>El comitente</strong> necesita cero paradas de planta, previsibilidad de costos, reputación institucional.</li>
+        </ul>
+        <p>Un único documento técnico plano tenía que convencer a los tres. No convencía a ninguno.</p>
+        <h4>Qué decidimos</h4>
+        <p>Dejar de describir el objeto. Diseñar la decisión.</p>
+        <p>Se sacó al producto de la categoría metalúrgica y se lo llevó a gestión de activos: la compuerta no es una pieza de acero, es un seguro sobre la continuidad operativa. Después, cada pieza se construyó para darle a un decisor específico lo que necesitaba para decir que sí:</p>
+        <ul>
+          <li>El comitente recibe el costo evitado (sin multas por parada, sin desperdicio de químicos).</li>
+          <li>El ingeniero recibe respaldo técnico (patentes, datos de banco de ensayo, garantías de estanqueidad).</li>
+          <li>El contratista recibe velocidad operativa (piezas estandarizadas, stock regional garantizado).</li>
+        </ul>
+        <p>El stock regional de repuestos pasó de ser un detalle logístico a un mensaje institucional central. En infraestructura, los proveedores importados o informales dejan obras huérfanas cuando falla una pieza. Nombrar esa garantía de entrada desarmó el miedo principal del comprador, y se convirtió en una barrera de entrada para competidores de afuera.</p>
+        <h4>El sistema</h4>
+        <ul>
+          <li><strong>Documentación de licitación por capas.</strong> Cálculos de presión y simulaciones junto a la traducción financiera del mismo hecho, para que un responsable de finanzas y un ingeniero civil pudieran leer el valor cada uno en su propio lenguaje dentro de un mismo documento.</li>
+          <li><strong>Renders 3D.</strong> Cortes que exponen capas internas, materiales y el sistema de sellado: cálculo estructural hecho visible en lugar de abstracto.</li>
+          <li><strong>Video técnico.</strong> El banco de ensayo bajo presión hidráulica, y el reemplazo de piezas sin vaciar la planta. Para los decisores financieros y políticos, esta era la prueba que importaba.</li>
+          <li><strong>Brochure corporativo de venta.</strong> Una pieza editorial construida para mesas de compra, que argumenta ROI por parada evitada.</li>
+          <li><strong>Fichas técnicas de montaje.</strong> Especificaciones de apertura manual y automatizada, secuencia de montaje, disponibilidad regional de repuestos.</li>
+          <li><strong>Sitio institucional.</strong> Dos ejes: descomprimir la complejidad técnica y transferir el valor del equipo de ingeniería propio de la casa matriz.</li>
+        </ul>
+        <h4>Qué cambió</h4>
+        <p>La empresa dejó de competir por el precio del acero. Una innovación regional, nacida de un problema en obra civil, se convirtió en una marca de ingeniería hidráulica capaz de sostenerse en especificación internacional.</p>
+        <p>El trabajo de diseño no fue decoración. Fue la interfaz que le permitió al mercado computar lo que ya estaba dentro del producto.</p>
+      </article>
+      <article>
+        <h3>Una marca que sostiene otras marcas</h3>
+        <p><em>Importador y distribuidor corporativo de marcas internacionales de lujo · Arquitectura de marca · Sistema de identidad multiactor · Escala nacional</em></p>
+        <h4>La situación</h4>
+        <p>La empresa importa y distribuye marcas internacionales de lujo en todo el país: una operación logística sólida, presencia en las principales ciudades, gestión avanzada de cadena de suministro y acuerdos de representación oficial con casas globales.</p>
+        <p>Su identidad era una etiqueta de ropa.</p>
+        <p>Una marca aislada, sin relato ni estructura: se leía como una marca de indumentaria más, con un estilo particular. La escala de la operación detrás era invisible.</p>
+        <h4>Dónde estaba la dificultad</h4>
+        <p>Era un error de categoría, no un problema de gusto. La empresa estaba siendo leída como <strong>el producto</strong>, cuando en realidad es <strong>la plataforma que administra el producto</strong>.</p>
+        <p>Esa mala lectura tenía un costo comercial. Un negocio cuyo trabajo real es sostener y proteger la reputación de casas globales de lujo no puede parecerse a uno de los artículos que distribuye. Pierde la autoridad para ser su custodio autorizado.</p>
+        <p>Y la identidad tenía que sostener cuatro conjuntos de intereses a la vez, cada uno tirando en una dirección distinta:</p>
+        <ul>
+          <li><strong>La fuerza de ventas</strong> necesitaba herramientas de prospección con respaldo institucional y oficialidad evidente.</li>
+          <li><strong>Los comercios minoristas</strong>, de niveles muy distintos, necesitaban una marca de confianza más pautas de manejo premium.</li>
+          <li><strong>Las casas matrices globales</strong> necesitaban un socio local cuya propia presentación reflejara su estatus.</li>
+          <li><strong>El campo competitivo</strong> (importadores tradicionales con logística gris) tenía que quedar visiblemente por debajo.</li>
+        </ul>
+        <h4>Qué decidimos</h4>
+        <p>Mover la marca del estante de producto a la capa de infraestructura.</p>
+        <p>El sistema se construyó como un marco corporativo que contiene y avala la reputación de otros, en lugar de competir con lo que transporta. Eso exigió una contención deliberada: neutralidad sofisticada, rigor geométrico y tipográfico, y ninguna firma estilística que envejeciera o chocara con alguna marca que pasara por ahí.</p>
+        <p>La prueba que se aplicó en todo el proceso fue la negociación futura. La empresa estaba en indumentaria, con expansión planificada hacia fragancias y accesorios. Cada decisión se verificó contra si seguiría funcionando cuando cambiara la categoría.</p>
+        <h4>El sistema</h4>
+        <ul>
+          <li><strong>Sistema de identidad corporativa</strong> construido sobre neutralidad de alta gama, capaz de sentarse junto a casas globales de lujo sin competir con ellas.</li>
+          <li><strong>Arquitectura de información versátil</strong>, estructurada para absorber nuevas verticales de lujo sin rediseño.</li>
+          <li><strong>Herramientas de prospección para la fuerza de ventas</strong>, que le dan a la negociación de campo el peso de la representación oficial.</li>
+          <li><strong>Manuales de gestión de reputación</strong>, que aseguran que la percepción de representación oficial se sostenga consistente en cada punto de contacto físico y digital, entre minoristas de niveles muy distintos.</li>
+        </ul>
+        <h4>Qué cambió</h4>
+        <p>La identidad dejó de describir un producto y empezó a funcionar como un instrumento de negociación. La dirección pudo sentarse a cerrar contratos presentes de indumentaria y acuerdos futuros de fragancias o accesorios desde la misma posición institucional.</p>
+        <p>La marca ya no compite con lo que transporta. Lo avala.</p>
+      </article>
+      <article>
+        <h3>Tomar un shopping</h3>
+        <p><em>Festival internacional del vino · Diseño espacial · Diseño de información · Ecosistema digital · Audiencia transfronteriza</em></p>
+        <h4>La situación</h4>
+        <p>Un festival anual de degustación de vinos con una larga historia, que convoca a miles de visitantes de dos o tres países vecinos. Para las principales bodegas del país, asistir es una tradición no negociable.</p>
+        <p>Ese año, el evento se mudó a un shopping.</p>
+        <h4>Dónde estaba la dificultad</h4>
+        <p>La sede era el riesgo. Un festival con reputación premium, dejado caer en un centro comercial genérico, se convierte en una fila de stands en un pasillo, indistinguible de una promoción de fin de semana. La mística que hacía que las bodegas asistieran era exactamente lo que el espacio iba a borrar.</p>
+        <p>Al mismo tiempo, los organizadores querían un salto de escala: campañas nacionales, ticketing digital en tandas programadas y una comunidad internacional en vivo, no simplemente una versión más grande de la misma degustación.</p>
+        <p>Dos problemas a la vez. Defender el carácter del evento contra su propia sede, y expandir su alcance más allá del salón.</p>
+        <h4>Qué decidimos</h4>
+        <p>Tomar el control del entorno en lugar de decorar dentro de él.</p>
+        <p>El trabajo se codiseñó con arquitectos y constructores y empezó en el portal de entrada del shopping, para que los visitantes cruzaran un umbral perceptual antes de llegar a un solo stand. Adentro, cada stand se ajustó a un estándar común y se dispusieron divisores por sector para organizar el flujo de una multitud en un espacio cerrado.</p>
+        <p>Segunda decisión: tratar a las redes sociales como el instrumento en vivo de una audiencia relacional, no como publicidad. El público del vino es altamente social. La interacción física en el lugar alimentaba contenido en tiempo real, y ese contenido traía de vuelta a la comunidad internacional hacia el evento: un circuito, no una emisión.</p>
+        <h4>El sistema</h4>
+        <ul>
+          <li><strong>Identidad del festival</strong>, construida para sostenerse independiente de la sede anfitriona.</li>
+          <li><strong>Layout espacial e intervención del shopping</strong>: portal de entrada, diseño unificado de stands, divisores estratégicos por sector para gestionar circulación y confort del visitante.</li>
+          <li><strong>Microsite de ticketing</strong> con liberación automatizada de entradas en tandas programadas.</li>
+          <li><strong>Estrategia social liderada por la comunidad</strong>, construida para interacción en tiempo real más que para anuncio.</li>
+          <li><strong>Material audiovisual y POP</strong> diseñado para ser replicado orgánicamente por asistentes e influencers.</li>
+        </ul>
+        <h4>Qué cambió</h4>
+        <p>El shopping dejó de ser una restricción y se convirtió en el escenario del festival. El diseño funcionó acá como arquitectura del comportamiento: gobernó cómo se movía la gente, qué tan amontonada se sentía y qué tan exclusiva se leía la degustación, reduciendo la fricción de una audiencia masiva en un lugar cerrado mientras elevaba la exclusividad percibida.</p>
+        <p>Lo físico y lo digital dejaron de ser dos canales. El evento pasó a ser un hito cultural regional en lugar de una fecha anual.</p>
+      </article>
+      <article>
+        <h3>Diseñar confianza para quienes están cansados de que les vendan</h3>
+        <p><em>Fintech de préstamos exclusivos a docentes, cobertura nacional · Investigación semiótica · Personaje de marca · Diseño de confianza en interfaz</em></p>
+        <h4>La situación</h4>
+        <p>Una empresa de préstamos que atiende a docentes de primaria y secundaria en todo el país. Su ventaja real es la velocidad operativa: el dinero se mueve en una fracción del tiempo que tardan los sistemas de crédito estatales.</p>
+        <p>Su problema eran las compañías con las que se la asociaba. Las marcas de préstamo rápido tienden a verse estridentes e informales, y esa estética se lee como riesgo. A un docente (un profesional, con estatus que proteger) se le pedía entregar DNI, datos bancarios y recibos de sueldo a algo que parecía un prestamista de esquina.</p>
+        <p>El cliente ya había diagnosticado la trampa: una imagen corporativa genérica disolvería la ventaja de velocidad, pero la estética de préstamo rápido disolvería la confianza.</p>
+        <h4>Dónde estaba la dificultad</h4>
+        <p>La fricción no estaba en el producto. Estaba en el momento de entregar datos sensibles, y había que desarmarla sin convertir a la marca en un banco, porque parecer un banco habría reintroducido exactamente la distancia burocrática que la empresa existía para eliminar.</p>
+        <h4>Qué decidimos</h4>
+        <p>Construir la marca a partir del lenguaje visual de la propia audiencia, no del de la categoría.</p>
+        <p>Hicimos una lectura semiótica del contexto visual y cultural del país: vestimenta, paletas de color contextuales, la presentación física de figuras públicas de alta visibilidad y reputación estable. A partir de eso, se construyó un personaje de marca como híbrido deliberado de dos arquetipos: el <strong>buen vecino</strong> (proximidad, generosidad, constancia, familiaridad) y el <strong>emprendedor</strong> (joven, con proyectos, defensor de administrar bien el dinero).</p>
+        <p>El personaje no fue una elección de ilustración. Fue el destilado de la investigación, y por eso el docente lo lee como un par y no como una empresa hablándole.</p>
+        <h4>El sistema</h4>
+        <ul>
+          <li><strong>Personaje de marca</strong>, codificado antropológicamente, que actúa como garante en cada canal.</li>
+          <li><strong>Gráfica de seguridad</strong> tomada de la iconografía de los billetes oficiales del país, que ubica a la marca dentro del imaginario de la solidez financiera legal.</li>
+          <li><strong>Flujo de solicitud humanizado</strong>: el personaje presenta su propio documento, representado en el lenguaje visual exacto del DNI, normalizando el momento en que el docente debe entregar el suyo.</li>
+          <li><strong>Kit de solicitud omnicanal</strong>: redes interactivas, material de sucursal, merchandising.</li>
+          <li><strong>Estrategia social como educación financiera</strong>, con el personaje enseñándole al nicho sobre inversión y administración del dinero.</li>
+          <li><strong>Tarjetas físicas de seguimiento de pagos</strong>, entregadas a cada tomador para organizar la devolución como método y no como recordatorio.</li>
+        </ul>
+        <h4>Qué cambió</h4>
+        <p>El servicio dejó de ser una transacción y pasó a ser una relación que la audiencia podía justificarse a sí misma. La confianza no se afirmó, se construyó con signos que el docente ya reconocía como legítimos.</p>
+        <p>Al combinar el crédito con herramientas de seguimiento y educación financiera continua, la marca se alineó con la psicología de su propio nicho: los docentes valoran el conocimiento transmitido de manera ordenada. El diseño se convirtió en el puente hacia la legitimidad.</p>
+      </article>
     </div>
   </section>
 
@@ -600,7 +961,7 @@ function render(){
   WORKS.forEach(function(w,i){
     var b = document.createElement("button");
     b.className = "card";
-    var cover = w.cover ? '<img src="'+encodeURI(w.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">' : '';
+    var cover = w.cover ? '<img src="'+encodeURI(w.cover)+'" alt="'+w.title+' \u00b7 '+T(w,"tag")+'" width="1600" height="1200" style="width:100%;height:100%;object-fit:cover">' : '';
     b.innerHTML = '<div class="thumb">'+cover+'</div><h3>'+w.title+'</h3>'+
                   '<div class="desc">'+(T(w,"desc")||'')+'</div>'+
                   '<div class="cats"><span>'+(T(w,"cats")||[]).join('</span><span>')+'</span></div>';
@@ -621,7 +982,7 @@ function openWork(i){
     '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
     '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
   h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+T(w,"tag")+'</span></div>';
-  if (w.cover) h += '<div class="lead"><img src="'+encodeURI(w.cover)+'" alt=""></div>';
+  if (w.cover) h += '<div class="lead"><img src="'+encodeURI(w.cover)+'" alt="'+w.title+' \u00b7 '+T(w,"tag")+'" width="1800" height="1350"></div>';
   var body = T(w,"body");
   if (body) {
     h += '<div class="dbody">';
@@ -634,7 +995,7 @@ function openWork(i){
   for (var j=0;j<n;j++){
     h += typeof w.shots === "number"
       ? '<div class="shot">imagen '+(j+1)+' — 1600×1000</div>'
-      : '<img src="'+encodeURI(w.shots[j])+'" alt="" loading="lazy" style="width:100%;display:block">';
+      : '<img src="'+encodeURI(w.shots[j])+'" alt="'+w.title+' \u00b7 pieza '+(j+1)+'" loading="lazy" decoding="async" width="1800" height="1200" style="width:100%;height:auto;display:block">';
   }
   h += '</div>';
   var cr = T(w,"credits");
@@ -652,7 +1013,7 @@ function openWork(i){
     otros.forEach(function(k){
       var o = WORKS[k];
       h += '<button class="card" data-go="'+k+'">'+
-           '<div class="thumb">'+(o.cover?'<img src="'+encodeURI(o.cover)+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</div>'+
+           '<div class="thumb">'+(o.cover?'<img src="'+encodeURI(o.cover)+'" alt="'+o.title+'" loading="lazy" width="1600" height="1200" style="width:100%;height:100%;object-fit:cover">':'')+'</div>'+
            '<h3>'+o.title+'</h3>'+
            (T(o,"desc")?'<div class="desc">'+T(o,"desc")+'</div>':'')+
            '</button>';
@@ -670,7 +1031,10 @@ function openWork(i){
   detail.scrollTop = 0;
   document.body.style.overflow = "hidden";
 }
-function closeWork(){ detail.classList.remove("open"); document.body.style.overflow = ""; }
+function closeWork(){
+  detail.classList.remove("open");
+  document.body.style.overflow = "";
+}
 document.getElementById("close").onclick = closeWork;
 document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork(); });
 
@@ -1201,6 +1565,21 @@ document.getElementById("lang").onclick = function(){
 };
 
 aplicarIdioma();
+
+
+// --- Aparicion al scrollear ---
+(function(){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  var objetivos = document.querySelectorAll("section .wrap > *:not(.rail):not(#cases), .rail, #cases, .job, .edu");
+  objetivos.forEach(function(el){ el.classList.add("reveal"); });
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  objetivos.forEach(function(el){ io.observe(el); });
+})();
 
 // Nav activa según scroll
 var links = [].slice.call(document.querySelectorAll("nav a"));
