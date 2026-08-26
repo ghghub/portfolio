@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
 <title>Gabriel González · Diseño estratégico</title>
 <meta name="description" content="Ayudo a empresas de complejidad técnica a crecer y escalar con claridad y coherencia." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +15,8 @@
     --bg:#0a0a0a; --bg-alt:#141414; --fg:#f2f2f0; --fg-dim:#8a8a86;
     --line:#252525; --accent:#f2f2f0; --max:1080px;
   }
+  :root{color-scheme:dark}
+  #detail{color-scheme:light}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--fg);font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
@@ -94,12 +97,12 @@
 
   /* Caso abierto (dentro del overlay claro) */
   .cbody{max-width:68ch;margin:0 auto;padding-bottom:100px}
-  .cbody h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6c6a66;
-    margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid #dbd9d5}
-  .cbody p{margin-bottom:16px;color:#3a3b3e;font-size:17px}
+  .cbody h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6b6b6b;
+    margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid #dcdcdc}
+  .cbody p{margin-bottom:16px;color:#3a3a3c;font-size:17px}
   .cbody ul{list-style:none;margin:0 0 16px}
-  .cbody li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3b3e;font-size:17px}
-  .cbody li:before{content:"—";position:absolute;left:0;color:#a9a6a1}
+  .cbody li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3a3c;font-size:17px}
+  .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
   .cbody strong{color:#16171a;font-weight:600}
 
   /* Skills */
@@ -156,42 +159,42 @@
 
   /* Detalle de caso */
   /* Vista de proyecto — fondo claro */
-  #detail{display:none;position:fixed;inset:0;z-index:60;background:#f4f3f1;color:#16171a;overflow-y:auto}
+  #detail{display:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
   #detail.open{display:block}
-  .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dbd9d5;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
+  .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dcdcdc;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
   .close:hover{border-color:#16171a}
   .dhead{padding:100px 0 34px}
   .dhead h2{font-family:"Archivo Black",Archivo,sans-serif;font-size:clamp(30px,6vw,60px);font-weight:400;letter-spacing:-.03em;text-transform:uppercase;line-height:.95}
-  .dhead .tag{color:#6c6a66;font-size:14px;display:block;margin-top:14px}
+  .dhead .tag{color:#6b6b6b;font-size:14px;display:block;margin-top:14px}
   .lead{margin:0 0 56px}
   .lead img{width:100%;display:block}
-  .dbody{max-width:66ch;margin:0 auto 20px;font-size:17px;color:#3a3b3e}
+  .dbody{max-width:66ch;margin:0 auto 20px;font-size:17px;color:#3a3a3c}
   .dbody p{margin-bottom:2px}
   .dhead{text-align:center}
   .step{max-width:62ch;margin-bottom:26px}
-  .step .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6c6a66;margin-bottom:5px}
+  .step .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:5px}
   .shots{padding:60px 0 0;font-size:0}
   .shots img{border:0}
   /* Barra de links dentro del proyecto */
   .dtop{position:absolute;top:34px;left:40px;display:flex;gap:26px;font-size:14px}
-  .dtop a{color:#6c6a66;text-decoration:none}
+  .dtop a{color:#6b6b6b;text-decoration:none}
   .dtop a:hover{color:#16171a}
   @media(max-width:700px){.dtop{position:static;padding:22px 22px 0}}
 
   /* Seguir viendo */
-  .next{border-top:1px solid #dbd9d5;padding:60px 0 110px}
-  .next .eyebrow{color:#6c6a66;border-color:#dbd9d5;margin-bottom:34px}
+  .next{border-top:1px solid #dcdcdc;padding:60px 0 110px}
+  .next .eyebrow{color:#6b6b6b;border-color:#dcdcdc;margin-bottom:34px}
   .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
   @media(max-width:700px){.next-grid{grid-template-columns:1fr}}
   .next .card h3{color:#16171a;font-size:18px;margin-top:14px}
-  .next .card .desc{color:#6c6a66;font-size:15px}
-  .next .card .thumb{border-color:#dbd9d5;background:#e6e4e0}
+  .next .card .desc{color:#6b6b6b;font-size:15px}
+  .next .card .thumb{border-color:#dcdcdc;background:#e3e3e3}
 
   .credits{text-align:center;padding:56px 0 90px;max-width:66ch;margin:0 auto}
   .credits h4{font-size:19px;font-weight:600;color:#16171a}
-  .credits .sub{font-size:17px;color:#3a3b3e;margin-top:4px}
-  .credits .roles{font-size:13px;color:#6c6a66;margin-top:14px}
-  .shot{aspect-ratio:16/10;background:#e6e4e0;border:1px solid #dbd9d5;display:flex;align-items:center;justify-content:center;color:#a9a6a1;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+  .credits .sub{font-size:17px;color:#3a3a3c;margin-top:4px}
+  .credits .roles{font-size:13px;color:#6b6b6b;margin-top:14px}
+  .shot{aspect-ratio:16/10;background:#e3e3e3;border:1px solid #dcdcdc;display:flex;align-items:center;justify-content:center;color:#a8a8a8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
 </style>
 </head>
 <body>
