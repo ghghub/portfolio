@@ -377,7 +377,7 @@
 
   <header>
     <div class="wrap">
-      <h1 data-i="h1">Ayudo a empresas de complejidad técnica <span class="rot" id="rot"><span>a aumentar su impacto con claridad</span></span></h1>
+      <h1 data-i="h1">Ayudo a empresas de complejidad técnica a alinear su percepción con su capacidad</h1>
       <p class="hook" data-i="hook">+ 14 años asesorando en sectores: industrial, consumo masivo y público.</p>
     </div>
   </header>
@@ -927,34 +927,6 @@ var WORKS = [
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// --- Frase rotativa del hero ---
-var FRASES_ES = [
-  "a aumentar su impacto<br>con claridad",
-  "a alinear su percepción<br>con su capacidad",
-  "a escalar con coherencia",
-  "a transmitir su valor real"
-];
-var FRASES = FRASES_ES;
-var rotTimer = null;
-
-function reiniciarRotador(){
-  var rot = document.getElementById("rot");
-  if (!rot) return;
-  var inner = rot.firstElementChild, i = 0;
-  inner.innerHTML = FRASES[0];
-  if (rotTimer) clearInterval(rotTimer);
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  rotTimer = setInterval(function(){
-    rot.classList.add("out");
-    setTimeout(function(){
-      i = (i + 1) % FRASES.length;
-      inner.innerHTML = FRASES[i];
-      rot.classList.remove("out");
-      void inner.offsetHeight;
-    }, 450);
-  }, 6800);
-}
-reiniciarRotador();
 
 // Devuelve el campo en el idioma activo
 function T(w, campo){
@@ -1493,7 +1465,7 @@ function openCase(i){
 // ===================== IDIOMA (ES / EN) =====================
 var EN = {
  navc:"Contact", nav1:"Work", nav2:"Services", nav3:"Experience", nav4:"Education", nav5:"About", nav6:"Contact",
- h1:"I help technically complex companies",
+ h1:"I help technically complex companies to align perception with capability",
  hook:"14+ years advising industrial, consumer goods and public sector organisations.",
  nav_casos:"Case studies",
  s_casos:"Case studies",
@@ -1525,12 +1497,6 @@ var EN = {
  more:"See more work", next:"Keep looking", back:"← Back"
 };
 
-var FRASES_EN = [
- "to increase their impact with clarity",
- "to align perception with capability",
- "to scale with coherence",
- "to convey their real value"
-];
 
 var lang = localStorage.getItem("lang") ||
            ((navigator.language||"es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
@@ -1546,7 +1512,7 @@ function aplicarIdioma(){
       el.dataset.es = (k === "h1") ? el.innerHTML : el.childNodes[0].nodeValue;
     }
     if (lang === "en" && EN[k]) {
-      if (k === "h1") el.innerHTML = EN[k] + ' <span class="rot" id="rot"><span>' + FRASES_EN[0] + '</span></span>';
+      if (k === "h1") el.innerHTML = EN[k];
       else el.childNodes[0].nodeValue = EN[k];
     } else {
       if (k === "h1") el.innerHTML = el.dataset.es;
@@ -1557,8 +1523,6 @@ function aplicarIdioma(){
   var m = document.querySelector(".more");
   if (m) m.childNodes[0].nodeValue = (lang === "en" ? "See more work " : "Seguir viendo trabajos ");
 
-  FRASES = (lang === "en") ? FRASES_EN : FRASES_ES;
-  reiniciarRotador();
   render();
   renderCases();
   if (detail.classList.contains("open") && actual !== null) openWork(actual);
