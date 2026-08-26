@@ -216,6 +216,102 @@ for i, c in enumerate(CASES):
         io.open(ruta, 'w', encoding='utf-8').write(html)
         generadas.append('casos/%s.html' % sl)
 
+
+# ---------------------------------------------------------------- articulos
+
+ART = u'''<!DOCTYPE html>
+<html lang="%(lang)s">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
+<title>%(title)s · Gabriel González</title>
+<link rel="canonical" href="%(url)sarticulos/%(slug)s.html" />
+<meta name="description" content="%(desc)s" />
+<meta name="author" content="Gabriel González" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="%(title)s" />
+<meta property="og:description" content="%(desc)s" />
+<meta property="og:url" content="%(url)sarticulos/%(slug)s.html" />
+<meta property="og:image" content="%(url)simg/estancco/estancco-00.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%%3Csvg xmlns=%%27http://www.w3.org/2000/svg%%27 viewBox=%%270 0 100 100%%27%%3E%%3Crect width=%%27100%%27 height=%%27100%%27 fill=%%27%%230a0a0a%%27/%%3E%%3Ctext x=%%2750%%27 y=%%2772%%27 font-family=%%27Helvetica,Arial,sans-serif%%27 font-size=%%2764%%27 font-weight=%%27700%%27 fill=%%27%%23f2f2f0%%27 text-anchor=%%27middle%%27%%3EG%%3C/text%%3E%%3C/svg%%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>%(estilos)s
+  body{background:#ececec;color:#16171a}
+  .art{max-width:64ch;margin:0 auto;padding:0 24px}
+  .art-top{padding:34px 0;font-size:14px}
+  .art-top a{color:#6b6b6b;text-decoration:none;margin-right:24px}
+  .art-top a:hover{color:#16171a}
+  .kicker{color:#6b6b6b;font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin:44px 0 14px}
+  .art h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.02em;
+    line-height:1.12;max-width:none;margin-bottom:36px}
+  .art p{margin-bottom:22px;color:#3a3a3c;font-size:18px;line-height:1.62}
+  .art p:first-of-type{font-size:20px;color:#16171a}
+  .cierre{margin-top:52px;padding-top:28px;border-top:1px solid #dcdcdc;
+    font-size:20px;color:#16171a;max-width:46ch}
+  .evidencia{margin:44px 0 90px;padding:26px 0;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc}
+  .evidencia span{display:block;color:#6b6b6b;font-size:13px;letter-spacing:.12em;
+    text-transform:uppercase;margin-bottom:8px}
+  .evidencia a{color:#16171a;text-decoration:none;font-size:22px;font-weight:600}
+  .evidencia a:hover{color:#6b6b6b}
+</style>
+<script type="application/ld+json">%(jsonld)s</script>
+</head>
+<body>
+<article class="art">
+  <div class="art-top">
+    <a href="../index.html">&larr; Volver al portfolio</a>
+    <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p class="kicker">%(kicker)s</p>
+  <h1>%(title)s</h1>
+%(cuerpo)s
+  <p class="cierre">%(cierre)s <a href="../index.html#contacto" style="color:#16171a">Hablemos</a>.</p>
+  <div class="evidencia">
+    <span>%(ev_etq)s</span>
+    <a href="%(ev_url)s">%(ev_tit)s</a>
+  </div>
+</article>
+</body>
+</html>
+'''
+
+ruta_art = os.path.join(BASE, 'articulos.json')
+if os.path.exists(ruta_art):
+    ARTS = json.loads(io.open(ruta_art, encoding='utf-8').read())
+    os.makedirs(os.path.join(BASE, 'articulos'), exist_ok=True)
+    for a in ARTS:
+        cuerpo = '\n'.join('  <p>%s</p>' % x for x in a['body'])
+        primero = sin_html(a['body'][0])
+        desc = (primero[:180] + '\u2026') if len(primero) > 180 else primero
+        desc = desc.replace('"', '&quot;')
+        jsonld = json.dumps({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": a['title'],
+            "description": desc,
+            "inLanguage": a['lang'],
+            "url": URL + 'articulos/' + a['slug'] + '.html',
+            "author": {"@type": "Person", "name": "Gabriel Gonz\u00e1lez",
+                       "url": URL, "@id": URL + "#gabriel"},
+            "publisher": {"@type": "Person", "name": "Gabriel Gonz\u00e1lez", "@id": URL + "#gabriel"},
+            "isPartOf": {"@type": "WebSite", "@id": URL + "#sitio"}
+        }, ensure_ascii=False, indent=1)
+        html = ART % {
+            'lang': a['lang'], 'slug': a['slug'], 'url': URL, 'estilos': estilos,
+            'title': a['title'], 'kicker': a['kicker'], 'desc': desc,
+            'cuerpo': cuerpo, 'cierre': a['cierre'], 'jsonld': jsonld,
+            'ev_etq': a['caso']['etiqueta'], 'ev_url': a['caso']['url'],
+            'ev_tit': a['caso']['titulo'],
+        }
+        io.open(os.path.join(BASE, 'articulos', a['slug'] + '.html'), 'w', encoding='utf-8').write(html)
+        generadas.append('articulos/%s.html' % a['slug'])
+    print('articulos generados: %d' % len(ARTS))
+
 # ---------------------------------------------------------------- sitemap
 
 filas = ['  <url>\n    <loc>%s</loc>\n    <changefreq>monthly</changefreq>\n    <priority>1.0</priority>\n  </url>' % URL]
