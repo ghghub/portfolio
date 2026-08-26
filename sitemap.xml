@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gportfolio-web.vercel.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg</image:loc>
-      <image:title>Estancco · Identidad de producto para compuertas hidráulicas</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://gportfolio-web.vercel.app/img/hidra/hidra-00.jpg</image:loc>
-      <image:title>Hidra · Identidad institucional para obras hídricas</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://gportfolio-web.vercel.app/img/primicia/primicia-00.jpg</image:loc>
-      <image:title>Primicia · Ecosistema de marca para yerba mate</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://gportfolio-web.vercel.app/img/oda/oda-00.jpg</image:loc>
-      <image:title>Oda Vinoteca · Rebranding</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/vender-continuidad-no-acero.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/vender-continuidad-no-acero-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/una-marca-que-sostiene-otras.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/una-marca-que-sostiene-otras-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/tomar-un-shopping.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/tomar-un-shopping-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/disenar-confianza-para-quienes-estan.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gportfolio-web.vercel.app/casos/disenar-confianza-para-quienes-estan-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -165,7 +165,7 @@
 
   /* Casos de estudio */
   .cases{border-top:1px solid var(--line)}
-  .case{display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:baseline;
+  .case{text-decoration:none;display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:baseline;
     width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;
     border-bottom:1px solid var(--line);padding:34px 0;cursor:pointer;transition:opacity var(--rapido) var(--curva)}
   .case:hover{opacity:.6}
@@ -611,7 +611,7 @@
       </article>
       <h2>Casos de estudio</h2>
       <article>
-        <h3>Vender continuidad, no acero</h3>
+        <h3><a href="casos/vender-continuidad-no-acero.html" style="color:inherit">Vender continuidad, no acero</a></h3>
         <p><em>Compuertas hidráulicas para infraestructura crítica de agua · Sistema de información · Marca · Licitaciones B2B / B2G</em></p>
         <h4>La situación</h4>
         <p>La empresa fabrica compuertas hidráulicas para plantas de tratamiento de agua e infraestructura crítica. El producto está patentado, ensayado a presión en banco propio y monitoreado por un sistema de control automatizado.</p>
@@ -649,7 +649,7 @@
         <p>El trabajo de diseño no fue decoración. Fue la interfaz que le permitió al mercado computar lo que ya estaba dentro del producto.</p>
       </article>
       <article>
-        <h3>Una marca que sostiene otras marcas</h3>
+        <h3><a href="casos/una-marca-que-sostiene-otras.html" style="color:inherit">Una marca que sostiene otras marcas</a></h3>
         <p><em>Importador y distribuidor corporativo de marcas internacionales de lujo · Arquitectura de marca · Sistema de identidad multiactor · Escala nacional</em></p>
         <h4>La situación</h4>
         <p>La empresa importa y distribuye marcas internacionales de lujo en todo el país: una operación logística sólida, presencia en las principales ciudades, gestión avanzada de cadena de suministro y acuerdos de representación oficial con casas globales.</p>
@@ -681,7 +681,7 @@
         <p>La marca ya no compite con lo que transporta. Lo avala.</p>
       </article>
       <article>
-        <h3>Tomar un shopping</h3>
+        <h3><a href="casos/tomar-un-shopping.html" style="color:inherit">Tomar un shopping</a></h3>
         <p><em>Festival internacional del vino · Diseño espacial · Diseño de información · Ecosistema digital · Audiencia internacional</em></p>
         <h4>La situación</h4>
         <p>Un festival anual de degustación de vinos con una larga historia, que convoca a miles de visitantes de dos o tres países vecinos. Para las principales bodegas del país, asistir es una tradición no negociable.</p>
@@ -707,7 +707,7 @@
         <p>Lo físico y lo digital dejaron de ser dos canales. El evento pasó a ser un hito cultural regional en lugar de una fecha anual.</p>
       </article>
       <article>
-        <h3>Diseñar confianza para quienes están cansados de que les vendan</h3>
+        <h3><a href="casos/disenar-confianza-para-quienes-estan.html" style="color:inherit">Diseñar confianza para quienes están cansados de que les vendan</a></h3>
         <p><em>Fintech de préstamos exclusivos a docentes, cobertura nacional · Investigación semiótica · Personaje de marca · Diseño de confianza en interfaz</em></p>
         <h4>La situación</h4>
         <p>Una empresa de préstamos que atiende a docentes de primaria y secundaria en todo el país. Su ventaja real es la velocidad operativa: el dinero se mueve en una fracción del tiempo que tardan los sistemas de crédito estatales.</p>
@@ -1324,18 +1324,21 @@ var CASES = [
 
 var casesBox = document.getElementById("cases");
 
+// Slugs de las paginas generadas por build.py
+var SLUGS = ["vender-continuidad-no-acero","una-marca-que-sostiene-otras","tomar-un-shopping","disenar-confianza-para-quienes-estan"];
+
 function renderCases(){
   var L = (lang === "en") ? "en" : "es";
   casesBox.innerHTML = "";
   CASES.forEach(function(c, i){
     var d = c[L];
-    var b = document.createElement("button");
-    b.className = "case";
-    b.innerHTML = '<span class="num">' + (i < 9 ? "0" : "") + (i+1) + '</span>' +
+    var a = document.createElement("a");
+    a.className = "case";
+    a.href = "casos/" + SLUGS[i] + (L === "en" ? "-en" : "") + ".html";
+    a.innerHTML = '<span class="num">' + (i < 9 ? "0" : "") + (i+1) + '</span>' +
                   '<span><h3>' + d.title + '</h3><span class="sub">' + d.client + '</span></span>' +
                   '<span class="go">&#8250;</span>';
-    b.onclick = function(){ openCase(i); };
-    casesBox.appendChild(b);
+    casesBox.appendChild(a);
   });
 }
 
