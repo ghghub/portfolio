@@ -67,6 +67,13 @@ def sin_html(t):
 
 src = io.open(IDX, encoding='utf-8').read()
 CASES = a_json(leer_bloque(src, 'CASES'))
+DIM = json.loads(re.search(r'var DIM = (\{.*?\});', src, re.S).group(1))
+
+
+def dim_attr(ruta):
+    d = DIM.get(ruta)
+    return ' width="%d" height="%d"' % (d[0], d[1]) if d else ''
+
 estilos = re.search(r'<style>(.*?)</style>', src, re.S).group(1)
 
 SLUGS = [slug(c['es']['title']) for c in CASES]
@@ -121,6 +128,10 @@ PAG = u'''<!DOCTYPE html>
   .otros a:hover{color:#6b6b6b}
   .cierre{margin-top:56px;padding-top:28px;border-top:1px solid #dcdcdc;
     font-size:19px;color:#16171a;max-width:46ch}
+  .caso figure{margin:34px 0}
+  .caso figure img{width:100%%;height:auto;display:block;background:#dcdcdc}
+  .caso .piezas{margin:48px 0 0;display:flex;flex-direction:column;gap:14px}
+  .caso .piezas img{width:100%%;height:auto;display:block;background:#dcdcdc}
 </style>
 <script type="application/ld+json">%(jsonld)s</script>
 </head>
@@ -134,7 +145,9 @@ PAG = u'''<!DOCTYPE html>
   <h1>%(title)s</h1>
   <p class="meta">%(client)s</p>
   <p class="meta">%(meta)s</p>
+%(portada)s
 %(cuerpo)s
+%(piezas)s
   <p class="cierre">%(cierre)s</p>
   <nav class="otros">
     <h2>%(otros_titulo)s</h2>
@@ -179,6 +192,24 @@ for i, c in enumerate(CASES):
                 for par in bl[3]:
                     cuerpo.append('  <p>%s</p>' % par)
 
+        portada = ''
+        if c.get('cover'):
+            portada = (u'  <figure><img src="../%s" alt="%s"%s '
+                       u'decoding="async" /></figure>'
+                       % (c['cover'], d['title'].replace('"', '&quot;'),
+                          dim_attr(c['cover'])))
+
+        piezas = ''
+        if c.get('shots'):
+            filas = [u'  <div class="piezas">']
+            for k, src in enumerate(c['shots']):
+                filas.append(u'    <img src="../%s" alt="%s \u00b7 %d"%s '
+                             u'loading="lazy" decoding="async" />'
+                             % (src, d['title'].replace('"', '&quot;'), k + 1,
+                                dim_attr(src)))
+            filas.append(u'  </div>')
+            piezas = '\n'.join(filas)
+
         primer_parrafo = sin_html(d['blocks'][0][1][0])
         desc = (primer_parrafo[:180] + '…') if len(primer_parrafo) > 180 else primer_parrafo
         desc = desc.replace('"', '&quot;')
@@ -208,6 +239,7 @@ for i, c in enumerate(CASES):
             'lang': lang, 'slug': sl, 'url': URL, 'estilos': estilos,
             'title': d['title'], 'client': d['client'], 'meta': d['meta'],
             'desc': desc, 'cuerpo': '\n'.join(cuerpo), 'jsonld': jsonld,
+            'portada': portada, 'piezas': piezas,
             'otros': '\n'.join(otros), 'otros_titulo': OTROS[lang],
             'volver': VOLVER[lang], 'cierre': CIERRE[lang],
             'slug_es': SLUGS[i], 'slug_en': SLUGS[i] + '-en',
