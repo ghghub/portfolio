@@ -283,6 +283,9 @@ ART = u'''<!DOCTYPE html>
     line-height:1.12;max-width:none;margin-bottom:36px}
   .art p{margin-bottom:22px;color:#3a3a3c;font-size:18px;line-height:1.62}
   .art p:first-of-type{font-size:20px;color:#16171a}
+  .art .destacado{font-size:clamp(22px,3vw,30px);line-height:1.25;font-weight:600;
+    color:#16171a;margin:38px 0;padding-left:22px;border-left:3px solid #34d3c0}
+  .art .kicker:empty{display:none}
   .cierre{margin-top:52px;padding-top:28px;border-top:1px solid #dcdcdc;
     font-size:20px;color:#16171a;max-width:46ch}
   .evidencia{margin:44px 0 90px;padding:26px 0;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc}
@@ -317,7 +320,13 @@ if os.path.exists(ruta_art):
     ARTS = json.loads(io.open(ruta_art, encoding='utf-8').read())
     os.makedirs(os.path.join(BASE, 'articulos'), exist_ok=True)
     for a in ARTS:
-        cuerpo = '\n'.join('  <p>%s</p>' % x for x in a['body'])
+        partes = []
+        for x in a['body']:
+            if x.startswith('> '):
+                partes.append('  <p class="destacado">%s</p>' % x[2:])
+            else:
+                partes.append('  <p>%s</p>' % x)
+        cuerpo = '\n'.join(partes)
         primero = sin_html(a['body'][0])
         desc = (primero[:180] + '\u2026') if len(primero) > 180 else primero
         desc = desc.replace('"', '&quot;')
@@ -346,6 +355,7 @@ if os.path.exists(ruta_art):
 
 # ---------------------------------------------------------------- sitemap
 
+generadas += ['contacto.html','contact-en.html']
 filas = ['  <url>\n    <loc>%s</loc>\n    <changefreq>monthly</changefreq>\n    <priority>1.0</priority>\n  </url>' % URL]
 for g in generadas:
     filas.append('  <url>\n    <loc>%s%s</loc>\n    <changefreq>yearly</changefreq>\n    <priority>0.8</priority>\n  </url>' % (URL, g))

@@ -196,10 +196,6 @@
     font-weight:600}
   .lectura{grid-template-columns:auto 1fr auto;gap:20px}
   .lectura .tit{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-  .lectura .nuevo{flex:0 0 auto;
-    font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
-    color:var(--turquesa);border:1px solid var(--turquesa);
-    padding:3px 9px;border-radius:20px;white-space:nowrap}
   .lectura .go{color:var(--turquesa)}
   @media(max-width:700px){.lectura{padding-left:16px;padding-right:16px}}
 
@@ -231,6 +227,11 @@
   .contact .row span{display:block;color:var(--fg-dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
   .contact a{color:var(--fg);text-decoration:none;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:2px}
   .contact a:hover{border-color:var(--fg)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--fg);color:var(--bg);
+    text-decoration:none;font-weight:600;font-size:17px;padding:15px 28px;border-radius:3px;
+    transition:opacity var(--rapido) var(--curva)}
+  .cta:hover{opacity:.85}
+
   /* Formulario */
   .form{max-width:620px}
   .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
@@ -424,7 +425,7 @@
       <a class="case lectura" href="articulos/tu-producto-necesita-ser-comprendido.html">
         <span class="etq" data-i="art_etq">Artículo</span>
         <span>
-          <span class="tit"><h3>Tu producto necesita ser comprendido</h3><span class="nuevo" data-i="art_new">Nuevo</span></span>
+          <span class="tit"><h3 data-i="art_tit">Tu producto necesita ser comprendido</h3></span>
           <span class="sub" data-i="art_sub">Lo que pasa cuando el mercado por fin puede leer lo que hacés</span>
         </span>
         <span class="go">&#8250;</span>
@@ -522,34 +523,8 @@
     <div class="wrap">
       <h2 class="eyebrow" data-i="s_cont">Contacto</h2>
       <p class="hook" style="margin:0 0 34px" data-i="cint">¿Tenés un proyecto donde la complejidad técnica se volvió difícil de explicar? Mandame un mensaje ahora y lo conversamos.</p>
-      <form id="form" class="form">
-        <!-- Reemplazá TU_ACCESS_KEY_ACA por la clave de web3forms.com -->
-        <input type="hidden" name="access_key" value="6dbc8b5a-0a14-4847-9605-6aacae7230ad">
-        <input type="hidden" name="subject" value="Nuevo mensaje desde el portfolio">
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-        <div class="f2">
-          <label data-i="f1">Nombre y apellido<input type="text" name="nombre" required></label>
-          <label data-i="f2">Email<input type="email" name="email" required></label>
-        </div>
-        <div class="f2">
-          <label data-i="f3">Empresa<input type="text" name="empresa" required></label>
-          <label data-i="f4">Tu cargo o relación con la empresa<input type="text" name="cargo" required></label>
-        </div>
-        <label data-i="f5">Cantidad de empleados
-          <select name="empleados" required>
-            <option value="" data-i="f5o">Elegí una opción</option>
-            <option>1 a 10</option>
-            <option>11 a 50</option>
-            <option>51 a 200</option>
-            <option>201 a 500</option>
-            <option data-i="f5x">Más de 500</option>
-          </select>
-        </label>
-        <label data-i="f6">Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
-        <button type="submit" data-i="fbtn">Enviar mensaje</button>
-        <p id="form-msg" class="form-msg"></p>
-      </form>
 
+      <a class="cta" href="contacto.html" data-i="cbtn">Escribime &rarr;</a>
       <div class="row" style="margin-top:44px"><span data-i="ctb">También</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
     </div>
   </section>
@@ -1545,8 +1520,9 @@ var EN = {
  h1:"I help technically complex companies to align perception with capability",
  hook:"14+ years advising industrial, consumer goods and public sector organisations.",
  nav_casos:"Case studies",
+ cbtn:"Write to me \u2192",
  art_etq:"Article",
- art_new:"New",
+ art_tit:"Your product needs to be understood",
  art_sub:"What happens when the market can finally read what you do. (In Spanish)",
  art_mas:"Read \u2192",
  s_casos:"Case studies",
@@ -1606,6 +1582,10 @@ function aplicarIdioma(){
 
   render();
   renderCases();
+  var lec = document.querySelector(".lectura");
+  if (lec) lec.href = "articulos/tu-producto-necesita-ser-comprendido" + (lang === "en" ? "-en" : "") + ".html";
+  var cta = document.querySelector(".cta");
+  if (cta) cta.href = (lang === "en") ? "contact-en.html" : "contacto.html";
   if (detail.classList.contains("open") && actual !== null) openWork(actual);
   else if (detail.classList.contains("open") && casoActual !== null) openCase(casoActual);
 }
