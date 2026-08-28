@@ -38,6 +38,7 @@
   :root{
     --bg:#0a0a0a; --bg-alt:#141414; --fg:#f2f2f0; --fg-dim:#8a8a86;
     --line:#252525; --accent:#f2f2f0; --max:1080px;
+    --negro:#1d1d1d; --turquesa:#34d3c0;
   }
   :root{color-scheme:dark}
   #detail{color-scheme:light}
@@ -185,12 +186,20 @@
   .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
   .cbody strong{color:#16171a;font-weight:600}
 
-  /* Articulo dentro de Casos: misma fila, fondo distinto */
-  .lectura{background:var(--bg-alt);padding-left:20px;padding-right:20px;
-    border-radius:3px;border-bottom-color:transparent;margin-top:14px}
-  .lectura:hover{opacity:1;background:#1b1b1b}
+  /* Articulo dentro de Casos: misma fila, fondo y acento propios */
+  .lectura{background:var(--negro);padding-left:20px;padding-right:20px;
+    border-radius:4px;border-bottom-color:transparent;margin-top:34px;
+    border-top:1px solid var(--line)}
+  .lectura:hover{opacity:1;background:#242424}
   .lectura .etq{align-self:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--bg);background:var(--fg-dim);padding:4px 9px;border-radius:20px;white-space:nowrap}
+    color:var(--negro);background:var(--turquesa);padding:5px 11px;border-radius:20px;white-space:nowrap;
+    font-weight:600}
+  .lectura h3{display:inline}
+  .lectura .nuevo{display:inline-block;vertical-align:middle;margin-left:12px;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    color:var(--turquesa);border:1px solid var(--turquesa);
+    padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .lectura .go{color:var(--turquesa)}
   @media(max-width:700px){.lectura{padding-left:16px;padding-right:16px}}
 
   /* Skills */
@@ -414,7 +423,7 @@
       <a class="case lectura" href="articulos/tu-producto-necesita-ser-comprendido.html">
         <span class="etq" data-i="art_etq">Artículo</span>
         <span>
-          <h3>Tu producto necesita ser comprendido</h3>
+          <h3>Tu producto necesita ser comprendido</h3><span class="nuevo" data-i="art_new">Nuevo</span>
           <span class="sub" data-i="art_sub">Lo que pasa cuando el mercado por fin puede leer lo que hacés</span>
         </span>
         <span class="go">&#8250;</span>
@@ -1536,6 +1545,7 @@ var EN = {
  hook:"14+ years advising industrial, consumer goods and public sector organisations.",
  nav_casos:"Case studies",
  art_etq:"Article",
+ art_new:"New",
  art_sub:"What happens when the market can finally read what you do. (In Spanish)",
  art_mas:"Read \u2192",
  s_casos:"Case studies",
