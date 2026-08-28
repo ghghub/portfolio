@@ -185,6 +185,14 @@
   .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
   .cbody strong{color:#16171a;font-weight:600}
 
+  /* Articulo dentro de Casos: misma fila, fondo distinto */
+  .lectura{background:var(--bg-alt);padding-left:20px;padding-right:20px;
+    border-radius:3px;border-bottom-color:transparent;margin-top:14px}
+  .lectura:hover{opacity:1;background:#1b1b1b}
+  .lectura .etq{align-self:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--bg);background:var(--fg-dim);padding:4px 9px;border-radius:20px;white-space:nowrap}
+  @media(max-width:700px){.lectura{padding-left:16px;padding-right:16px}}
+
   /* Skills */
   .skills{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
   @media(max-width:700px){.skills{grid-template-columns:1fr}}
@@ -402,6 +410,15 @@
       <h2 class="eyebrow" data-i="s_casos">Casos de estudio</h2>
       <p class="hook" data-i="casos_int" style="margin:-24px 0 44px">Cuatro proyectos, cuatro problemas distintos.</p>
       <div class="cases" id="cases"></div>
+
+      <a class="case lectura" href="articulos/tu-producto-necesita-ser-comprendido.html">
+        <span class="etq" data-i="art_etq">Artículo</span>
+        <span>
+          <h3>Tu producto necesita ser comprendido</h3>
+          <span class="sub" data-i="art_sub">Lo que pasa cuando el mercado por fin puede leer lo que hacés</span>
+        </span>
+        <span class="go">&#8250;</span>
+      </a>
     </div>
   </section>
 
@@ -1518,6 +1535,9 @@ var EN = {
  h1:"I help technically complex companies to align perception with capability",
  hook:"14+ years advising industrial, consumer goods and public sector organisations.",
  nav_casos:"Case studies",
+ art_etq:"Article",
+ art_sub:"What happens when the market can finally read what you do. (In Spanish)",
+ art_mas:"Read \u2192",
  s_casos:"Case studies",
  casos_int:"Four projects, four different problems.",
  s_proy:"Projects", s_serv:"Services", s_tray:"Experience", s_form:"Education", s_sobre:"About", s_cont:"Contact",
