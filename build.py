@@ -121,7 +121,7 @@ PAG = u'''<!DOCTYPE html>
   .caso li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3a3c;font-size:17px}
   .caso li:before{content:"·";position:absolute;left:0;color:#a8a8a8}
   .caso strong{color:#16171a;font-weight:600}
-  .otros{border-top:1px solid #dcdcdc;margin-top:70px;padding:40px 0 90px}
+  .otros{border-top:1px solid #dcdcdc;margin-top:150px;padding:40px 0 160px}
   .otros h2{border:0;padding:0;margin-bottom:20px}
   .otros a{display:block;color:#16171a;text-decoration:none;padding:16px 0;
     border-bottom:1px solid #dcdcdc;font-size:19px;font-weight:600}
