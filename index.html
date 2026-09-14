@@ -400,7 +400,7 @@
     <div class="wrap">
       <h1 data-i="h1">Ayudo a empresas de complejidad técnica a alinear su percepción con su capacidad</h1>
       <p class="hook" data-i="hook">+ 14 años y más de 15 proyectos documentados en industria, infraestructura, consumo masivo y sector público.</p>
-      <p class="disp" data-i="disp">Consultor · Disponible desde septiembre · Remoto</p>
+      <p class="disp" data-i="disp">Consultor · Disponible ahora · Remoto</p>
     </div>
   </header>
 
@@ -1764,6 +1764,7 @@ var lang = localStorage.getItem("lang") ||
 
 function aplicarIdioma(){
   document.documentElement.lang = lang;
+  document.title = (lang === "en" ? "Gabriel González · Strategic Design" : "Gabriel González · Diseño estratégico");
   document.getElementById("lang").textContent = (lang === "es" ? "EN" : "ES");
 
   [].forEach.call(document.querySelectorAll("[data-i]"), function(el){
