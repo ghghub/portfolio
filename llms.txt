@@ -80,6 +80,8 @@ Fintech · Retail premium · Educación superior
 ## Contacto
 
 - Sitio: https://gportfolio-web.vercel.app/
+- CV (español): https://gportfolio-web.vercel.app/cv-gabriel-gonzalez-es.pdf
+- CV (inglés): https://gportfolio-web.vercel.app/cv-gabriel-gonzalez-en.pdf
 - LinkedIn: https://www.linkedin.com/in/dg-gabriel-gonzalez
 - Behance: https://www.behance.net/Gabriel_HG
 - Formulario de contacto en el sitio

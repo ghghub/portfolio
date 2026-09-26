@@ -382,7 +382,7 @@
     <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
     <a href="#contacto" data-i="navc">Contacto</a>
-    <a href="cv-gabriel-gonzalez-en.pdf" target="_blank" rel="noopener">CV</a>
+    <a id="cvlink" href="cv-gabriel-gonzalez-es.pdf" target="_blank" rel="noopener">CV</a>
     <button id="lang" class="lang" type="button">EN</button>
   </div>
 
@@ -1785,6 +1785,7 @@ function aplicarIdioma(){
   document.documentElement.lang = lang;
   document.title = (lang === "en" ? "Gabriel González · Strategic Design" : "Gabriel González · Diseño estratégico");
   document.getElementById("lang").textContent = (lang === "es" ? "EN" : "ES");
+  document.getElementById("cvlink").href = (lang === "en" ? "cv-gabriel-gonzalez-en.pdf" : "cv-gabriel-gonzalez-es.pdf");
 
   [].forEach.call(document.querySelectorAll("[data-i]"), function(el){
     var k = el.getAttribute("data-i");
