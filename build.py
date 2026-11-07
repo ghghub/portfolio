@@ -383,6 +383,11 @@ def generar_en():
     EN['sv2'] = SV2_EN
     s, nd = re.subn(r'sv2:"[^"]*"', lambda m: 'sv2:' + json.dumps(SV2_EN), s, count=1)
     assert nd == 1, 'sv2 en EN'
+    E4P_EN = EN['e4p'].replace(u'English advanced · Cambridge FCE', u'English advanced (C1)')
+    assert E4P_EN != EN['e4p'], 'e4p en EN'
+    EN['e4p'] = E4P_EN
+    s, nd = re.subn(r'e4p:"[^"]*"', lambda m: 'e4p:' + json.dumps(E4P_EN), s, count=1)
+    assert nd == 1, 'e4p en EN'
 
     # texto en ingles ya en el HTML, para lectores sin JS
     def rep(m):
@@ -401,7 +406,7 @@ def generar_en():
     s = s.replace('href="cv-gabriel-gonzalez-es.pdf"', 'href="cv-gabriel-gonzalez-en.pdf"', 1)
     s = s.replace('href="contacto.html"', 'href="contact-en.html"')
     s = re.sub(r'<title>.*?</title>', u'<title>Gabriel Gonz\u00e1lez \u00b7 Strategic Design</title>', s, count=1)
-    desc = (u'Strategic and information designer with 14 years of experience in engineering, energy, '
+    desc = (u'Strategic product and information designer with 14 years of experience in engineering, energy, '
             u'infrastructure, industry, health and the public sector. Open to remote roles.')
     s = re.sub(r'<meta name="description" content="[^"]*"', '<meta name="description" content="%s"' % desc, s, count=1)
     s = re.sub(r'<meta property="og:description" content="[^"]*"', '<meta property="og:description" content="%s"' % desc, s, count=1)
