@@ -285,6 +285,8 @@ ART = u'''<!DOCTYPE html>
   .art p:first-of-type{font-size:20px;color:#16171a}
   .art .destacado{font-size:clamp(22px,3vw,30px);line-height:1.25;font-weight:600;
     color:#16171a;margin:38px 0;padding-left:22px;border-left:3px solid #34d3c0}
+  .art h2{font-size:clamp(21px,2.6vw,26px);font-weight:700;letter-spacing:-.01em;
+    line-height:1.25;color:#16171a;margin:52px 0 18px}
   .art .kicker:empty{display:none}
   .cierre{margin-top:52px;padding-top:28px;border-top:1px solid #dcdcdc;
     font-size:20px;color:#16171a;max-width:46ch}
@@ -324,6 +326,8 @@ if os.path.exists(ruta_art):
         for x in a['body']:
             if x.startswith('> '):
                 partes.append('  <p class="destacado">%s</p>' % x[2:])
+            elif x.startswith('## '):
+                partes.append('  <h2>%s</h2>' % x[3:])
             else:
                 partes.append('  <p>%s</p>' % x)
         cuerpo = '\n'.join(partes)

@@ -1,50 +1,144 @@
 [
-  {
-    "slug": "tu-producto-necesita-ser-comprendido",
-    "lang": "es",
-    "title": "Tu producto necesita ser comprendido",
-    "kicker": "",
-    "caso": {
-      "titulo": "Vender continuidad, no acero",
-      "url": "../casos/vender-continuidad-no-acero.html",
-      "etiqueta": "Un caso donde pasó exactamente esto"
-    },
-    "cierre": "Ayudo a empresas técnicas a crecer con claridad y coherencia.",
-    "body": [
-      "Cuando encontrás en el mercado a tu competencia vendiendo con la mitad de la calidad que ofrecés pero no sabés cómo hacer para transmitir lo que vale tu producto, normalmente te intentás explicar con más detalle para ver de hacerte entender, pero tu necesidad es en realidad que tu cliente tenga una comprensión real y profunda de tu información técnica, traducida a su capacidad de comprensión. Lo cierto es que no vas a poder estar en cada parte del circuito explicando todo, eso desgasta a cualquiera y sabés que tu conocimiento y liderazgo se necesitan en otras áreas de tu empresa. ¿Cómo podés hacer para recuperar el mando y empezar a tomar decisiones importantes para tu negocio?",
-      "> Lo que pasa cuando el mercado por fin puede leer lo que hacés.",
-      "En muchos casos, los diferentes puntos por los que tiene que pasar tu producto hasta llegar a su consumidor final se encuentran con personas que no tienen la claridad que tiene tu equipo de producción, incluso a veces también pasa que tu equipo se pierde entre las diferentes propuestas y eso genera normalmente problemas a la hora de entregar lo que mejor saben hacer.",
-      "Uno de los desafíos que más duele en una empresa técnica es cuando el producto (o servicio) recibe una comparación que no es equilibrada: tiene concentrada una gran cantidad de conocimiento técnico que se acumuló con la experiencia y trayectoria que todavía no influye en la decisión de compra de quien toma las decisiones. Hay un valor en las sucesivas implementaciones y ajustes en cuanto a calidad, materiales, tecnología incorporada, pero todo eso no se logra ver en la oferta y genera que el personal calificado le destine mucho tiempo a explicarlo.",
-      "En este punto de inflexión es momento de consolidar el esfuerzo: es de esperar que el tiempo y la exposición al mercado hayan dotado a tu empresa de un conocimiento especializado que hace la diferencia, lo que falta es integrarlo y darle escala al impacto que genera.",
-      "Llegado a este momento muchas empresas perciben que sus productos proveen diferentes soluciones, tienen tecnología incorporada, tienen procesos regulados, los cuales resultan invisibles en una licitación o en un evento de divulgación. En algunos casos la empresa creció y está incorporando mercados, pero todavía no tiene ahí la reputación que sí tiene entre sus clientes de siempre.",
-      "Si este es tu caso, es un momento clave para fortalecer tu oferta, brindando lo mejor que tiene tu empresa de forma clara y comprensible, para alcanzar el tipo de proyecto que podés abordar. Alineando percepción y capacidad.",
-      "Cuando tu negocio se alinea y se explica solo, dejás de competir por precio.",
-      "Tu equipo técnico recupera tiempo para lo importante.",
-      "Y te llegan los proyectos que podés abordar."
-    ]
+ {
+  "slug": "tu-producto-necesita-ser-comprendido",
+  "lang": "es",
+  "title": "Tu producto necesita ser comprendido",
+  "kicker": "",
+  "caso": {
+   "titulo": "Vender continuidad, no acero",
+   "url": "../casos/vender-continuidad-no-acero.html",
+   "etiqueta": "Un caso donde pasó exactamente esto"
   },
-  {
-    "slug": "tu-producto-necesita-ser-comprendido-en",
-    "lang": "en",
-    "title": "Your product needs to be understood",
-    "kicker": "",
-    "caso": {
-      "titulo": "Selling continuity, not steel",
-      "url": "../casos/vender-continuidad-no-acero-en.html",
-      "etiqueta": "A case where exactly this happened"
-    },
-    "cierre": "I help technical companies grow with clarity and coherence.",
-    "body": [
-      "When you find your competition out in the market selling at half the quality you offer, but you do not know how to get across what your product is worth, you usually try to explain yourself in more detail to make yourself understood. What you actually need is for your client to have a real, deep understanding of your technical information, translated into terms they can grasp. The truth is you will not be able to stand at every point of the circuit explaining everything. That wears anyone down, and you know your knowledge and leadership are needed in other areas of your company. How do you take back control and start making the decisions that matter for your business?",
-      "> What happens when the market can finally read what you do.",
-      "In many cases, the different points your product has to pass through before reaching its end consumer are staffed by people who do not have the clarity your production team has. Sometimes your own team also gets lost among the different proposals, and that usually creates problems when it comes to delivering what they do best.",
-      "One of the challenges that hurts most in a technical company is when the product (or service) is compared on uneven terms: it holds a large amount of technical knowledge built up through experience and track record, and that knowledge still does not weigh on the buying decision of whoever decides. There is value in the successive implementations and adjustments in quality, materials and embedded technology, but none of it shows up in the offer, and it means your qualified staff spend a lot of time explaining it.",
-      "At this turning point it is time to consolidate the effort: time and market exposure should have given your company specialised knowledge that makes the difference. What is missing is integrating it and scaling the impact it generates.",
-      "By this stage many companies realise their products deliver several solutions, carry embedded technology and follow regulated processes, and that all of it stays invisible in a tender or at an industry event. In some cases the company has grown and is entering new markets, but does not yet have there the reputation it does have among its long-standing clients.",
-      "If this is your case, it is a key moment to strengthen your offer, presenting the best of your company clearly and understandably, so you can reach the kind of project you are able to take on. Aligning perception and capability.",
-      "When your business is aligned and explains itself, you stop competing on price.",
-      "Your technical team gets time back for what matters.",
-      "And the projects that reach you are the ones you can take on."
-    ]
-  }
+  "cierre": "Ayudo a empresas técnicas a crecer con claridad y coherencia.",
+  "body": [
+   "Cuando encontrás en el mercado a tu competencia vendiendo con la mitad de la calidad que ofrecés pero no sabés cómo hacer para transmitir lo que vale tu producto, normalmente te intentás explicar con más detalle para ver de hacerte entender, pero tu necesidad es en realidad que tu cliente tenga una comprensión real y profunda de tu información técnica, traducida a su capacidad de comprensión. Lo cierto es que no vas a poder estar en cada parte del circuito explicando todo, eso desgasta a cualquiera y sabés que tu conocimiento y liderazgo se necesitan en otras áreas de tu empresa. ¿Cómo podés hacer para recuperar el mando y empezar a tomar decisiones importantes para tu negocio?",
+   "> Lo que pasa cuando el mercado por fin puede leer lo que hacés.",
+   "En muchos casos, los diferentes puntos por los que tiene que pasar tu producto hasta llegar a su consumidor final se encuentran con personas que no tienen la claridad que tiene tu equipo de producción, incluso a veces también pasa que tu equipo se pierde entre las diferentes propuestas y eso genera normalmente problemas a la hora de entregar lo que mejor saben hacer.",
+   "Uno de los desafíos que más duele en una empresa técnica es cuando el producto (o servicio) recibe una comparación que no es equilibrada: tiene concentrada una gran cantidad de conocimiento técnico que se acumuló con la experiencia y trayectoria que todavía no influye en la decisión de compra de quien toma las decisiones. Hay un valor en las sucesivas implementaciones y ajustes en cuanto a calidad, materiales, tecnología incorporada, pero todo eso no se logra ver en la oferta y genera que el personal calificado le destine mucho tiempo a explicarlo.",
+   "En este punto de inflexión es momento de consolidar el esfuerzo: es de esperar que el tiempo y la exposición al mercado hayan dotado a tu empresa de un conocimiento especializado que hace la diferencia, lo que falta es integrarlo y darle escala al impacto que genera.",
+   "Llegado a este momento muchas empresas perciben que sus productos proveen diferentes soluciones, tienen tecnología incorporada, tienen procesos regulados, los cuales resultan invisibles en una licitación o en un evento de divulgación. En algunos casos la empresa creció y está incorporando mercados, pero todavía no tiene ahí la reputación que sí tiene entre sus clientes de siempre.",
+   "Si este es tu caso, es un momento clave para fortalecer tu oferta, brindando lo mejor que tiene tu empresa de forma clara y comprensible, para alcanzar el tipo de proyecto que podés abordar. Alineando percepción y capacidad.",
+   "Cuando tu negocio se alinea y se explica solo, dejás de competir por precio.",
+   "Tu equipo técnico recupera tiempo para lo importante.",
+   "Y te llegan los proyectos que podés abordar."
+  ]
+ },
+ {
+  "slug": "tu-producto-necesita-ser-comprendido-en",
+  "lang": "en",
+  "title": "Your product needs to be understood",
+  "kicker": "",
+  "caso": {
+   "titulo": "Selling continuity, not steel",
+   "url": "../casos/vender-continuidad-no-acero-en.html",
+   "etiqueta": "A case where exactly this happened"
+  },
+  "cierre": "I help technical companies grow with clarity and coherence.",
+  "body": [
+   "When you find your competition out in the market selling at half the quality you offer, but you do not know how to get across what your product is worth, you usually try to explain yourself in more detail to make yourself understood. What you actually need is for your client to have a real, deep understanding of your technical information, translated into terms they can grasp. The truth is you will not be able to stand at every point of the circuit explaining everything. That wears anyone down, and you know your knowledge and leadership are needed in other areas of your company. How do you take back control and start making the decisions that matter for your business?",
+   "> What happens when the market can finally read what you do.",
+   "In many cases, the different points your product has to pass through before reaching its end consumer are staffed by people who do not have the clarity your production team has. Sometimes your own team also gets lost among the different proposals, and that usually creates problems when it comes to delivering what they do best.",
+   "One of the challenges that hurts most in a technical company is when the product (or service) is compared on uneven terms: it holds a large amount of technical knowledge built up through experience and track record, and that knowledge still does not weigh on the buying decision of whoever decides. There is value in the successive implementations and adjustments in quality, materials and embedded technology, but none of it shows up in the offer, and it means your qualified staff spend a lot of time explaining it.",
+   "At this turning point it is time to consolidate the effort: time and market exposure should have given your company specialised knowledge that makes the difference. What is missing is integrating it and scaling the impact it generates.",
+   "By this stage many companies realise their products deliver several solutions, carry embedded technology and follow regulated processes, and that all of it stays invisible in a tender or at an industry event. In some cases the company has grown and is entering new markets, but does not yet have there the reputation it does have among its long-standing clients.",
+   "If this is your case, it is a key moment to strengthen your offer, presenting the best of your company clearly and understandably, so you can reach the kind of project you are able to take on. Aligning perception and capability.",
+   "When your business is aligned and explains itself, you stop competing on price.",
+   "Your technical team gets time back for what matters.",
+   "And the projects that reach you are the ones you can take on."
+  ]
+ },
+ {
+  "slug": "los-datos-no-deciden-solos",
+  "lang": "es",
+  "title": "Los datos no deciden solos",
+  "kicker": "",
+  "caso": {
+   "titulo": "Vender continuidad, no acero",
+   "url": "../casos/vender-continuidad-no-acero.html",
+   "etiqueta": "Un caso donde pasó exactamente esto"
+  },
+  "cierre": "Ayudo a empresas técnicas a crecer con claridad y coherencia.",
+  "body": [
+   "Tenés los datos. Hiciste el gráfico. Lo llevaste a la reunión. Y la reunión terminó igual que la anterior, sin que nadie decidiera nada.",
+   "Es más común de lo que parece, y casi nunca es un problema de datos faltantes. Es un problema de qué se le pidió al gráfico que hiciera.",
+   "> Un gráfico no comunica datos. Comunica una lectura de los datos.",
+   "Cuando una organización empieza a medir, aparece la tentación de mostrar todo: cada variable, cada corte, cada serie. El resultado es un tablero que nadie mira dos veces, o un informe que se cita pero no se usa. La información está, pero no está dispuesta para que alguien haga algo con ella.",
+   "La pregunta que cambia el trabajo no es «qué datos tengo». Es <strong>quién tiene que decidir qué, y contra qué lo va a comparar</strong>.",
+   "## El mismo dato, cuatro lecturas",
+   "Esa pregunta tiene consecuencias inmediatas, porque casi nunca hay un solo lector.",
+   "En documentación técnica para licitaciones de infraestructura crítica trabajé con cuatro actores que leen el mismo documento con criterios opuestos. El contratista mira plazos y montaje. El ingeniero de obra necesita datos de cálculo, ensayos y patentes, porque pone su firma. El comitente mira costo evitado y previsibilidad. Y el cuarto, quien después hace el mantenimiento, ni siquiera participa de la compra, pero es el que determina si el producto cumple lo que prometió.",
+   "Un solo gráfico no le sirve a los cuatro. Lo que se diseña ahí no es una pieza sino una arquitectura: qué ve cada uno, en qué orden, y en qué momento aparece el dato, idealmente justo cuando la pregunta se le forma en la cabeza.",
+   "El criterio que lo ordena es simple de enunciar y difícil de sostener: cada dato tiene que ganarse el lugar contra una decisión concreta. Si no habilita ninguna, sobra, por interesante que sea.",
+   "## Cuando los materiales no se parecen entre sí",
+   "Hay un problema distinto, y más incómodo, cuando lo que hay que integrar no son series comparables.",
+   "En un informe sobre discursos de odio que diseñé para una fundación de derechos humanos convivían cuatro materiales que no se parecen en nada: testimonios de personas, marco legal, cifras de presupuesto público y cobertura de prensa. Cada uno pide un tratamiento visual propio, y ninguno puede quedar subordinado al otro sin cambiar el sentido del informe. Si el dato de presupuesto domina, el testimonio se vuelve anécdota. Si el testimonio domina, la cifra se vuelve decorado.",
+   "Lo que ordena ahí no es el estilo del gráfico. Es la decisión editorial de qué tiene que entenderse primero, y qué lectura tiene que quedar disponible para quien vuelva al documento seis meses después buscando una cifra puntual.",
+   "Un informe así tiene dos públicos a la vez: quien lo lee entero una vez, y quien lo consulta muchas veces sin leerlo. Son necesidades opuestas y hay que resolver las dos.",
+   "## Antes del gráfico está la categoría",
+   "A veces el problema ni siquiera llegó a ser de visualización. Es anterior.",
+   "En una plataforma de servicios para el hogar, el catálogo venía ordenado por oficio: plomería, electricidad, gas, jardinería, treinta y pico de rubros sin relación entre sí. Esa es la lógica de quien presta el servicio, no la de quien lo busca. Nadie se levanta pensando «necesito un rubro».",
+   "Reordené el catálogo por experiencia humana: refugio, cuidado, descanso, pertenencia, movilidad, celebración, comunidad. Treinta rubros inconexos pasaron a ser un puñado de campos que una persona ya entiende sin que se los expliquen.",
+   "El sistema además tenía que diseñarse contra una base de datos viva que seguía creciendo, así que no podía representar solo los prestadores que existían ese día: tenía que sostener cualquiera que se sumara después. Esa restricción define la jerarquía de campos más que cualquier pantalla individual.",
+   "Una taxonomía no es una lista ordenada. Es una hipótesis sobre cómo alguien entiende un dominio, y se puede verificar.",
+   "## Las cifras que sostienen una posición",
+   "Hay un último caso, más silencioso: cuando el dato no se usa para decidir sino para sostener una afirmación.",
+   "En el rebranding de una consultora de recursos humanos, la estrategia se apoyó en cifras duras del mercado laboral: la proporción de empleadores que no consigue cubrir puestos, la posición del país en escasez de talento, el comportamiento de los candidatos menores de 25 frente al salario. Esos números no van en un tablero. Van en el cuerpo del argumento, y su trabajo es hacer que una afirmación deje de parecer una opinión.",
+   "Ahí la visualización es austera por diseño: pocas cifras, bien elegidas, con la fuente visible. Una cifra sin fuente es una decoración.",
+   "## El orden correcto",
+   "Hay una trampa frecuente en el camino: la herramienta llega antes que el criterio. Se elige el tipo de gráfico, la paleta y la librería, y recién después se pregunta para qué servía.",
+   "El orden inverso es menos glamoroso y funciona mejor. Primero la decisión que hay que habilitar. Después la comparación que la sostiene. Al final, la forma.",
+   "Lo enseño hace años en taller, y el ejercicio que más resultados da no es técnico. Es pedirle al estudiante que escriba, antes de abrir cualquier programa, la frase exacta que alguien debería poder decir después de ver el gráfico. Si esa frase no existe, el gráfico tampoco tiene por qué existir. Si la frase existe pero es obvia, el gráfico sobra. Y si la frase existe y cambia algo, ya está hecha la mitad del trabajo.",
+   "## Qué cambia cuando está bien hecho",
+   "Las reuniones se acortan.",
+   "Las discusiones dejan de ser sobre los números y pasan a ser sobre qué hacer.",
+   "Y el informe se usa, en lugar de archivarse."
+  ]
+ },
+ {
+  "slug": "los-datos-no-deciden-solos-en",
+  "lang": "en",
+  "title": "Data does not decide on its own",
+  "kicker": "",
+  "caso": {
+   "titulo": "Selling continuity, not steel",
+   "url": "../casos/vender-continuidad-no-acero-en.html",
+   "etiqueta": "A case where exactly this happened"
+  },
+  "cierre": "I help technical companies grow with clarity and coherence.",
+  "body": [
+   "You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything.",
+   "This is more common than it looks, and it is almost never a problem of missing data. It is a problem of what the chart was asked to do.",
+   "> A chart does not communicate data. It communicates a reading of the data.",
+   "When an organisation starts measuring, the temptation is to show everything: every variable, every cut, every series. The result is a dashboard nobody looks at twice, or a report that gets cited but never used. The information is there, but it is not arranged so that anyone can act on it.",
+   "The question that changes the work is not «what data do I have». It is <strong>who has to decide what, and against what will they compare it</strong>.",
+   "## The same data, four readings",
+   "That question has immediate consequences, because there is almost never a single reader.",
+   "In technical documentation for critical infrastructure tenders I worked with four actors reading the same document with opposing criteria. The contractor looks at schedule and assembly. The site engineer needs calculation data, testing and patents, because their signature goes on it. The client looks at avoided cost and predictability. And the fourth, the person who later maintains the equipment, takes no part in the purchase at all, yet determines whether the product delivers what it promised.",
+   "One chart cannot serve all four. What gets designed there is not a piece but an architecture: what each person sees, in what order, and at which moment a given figure appears, ideally just as the question forms in their head.",
+   "The ordering principle is easy to state and hard to hold: every data point has to earn its place against a concrete decision. If it enables none, it is noise, however interesting it may be.",
+   "## When the materials have nothing in common",
+   "There is a different, more uncomfortable problem when what you have to integrate is not a set of comparable series.",
+   "In a report on hate speech I designed for a human rights foundation, four materials had to coexist that resemble each other in no way: personal testimony, legal framework, public budget figures and press coverage. Each demands its own visual treatment, and none can be subordinated to another without changing what the report means. If the budget figure dominates, the testimony becomes an anecdote. If the testimony dominates, the figure becomes decoration.",
+   "What orders that is not chart styling. It is the editorial decision about what has to be understood first, and what reading has to stay available to someone who returns to the document six months later looking for a single figure.",
+   "A report like that has two audiences at once: the person who reads it through once, and the person who consults it many times without ever reading it. Those needs pull in opposite directions and both have to be met.",
+   "## Before the chart comes the category",
+   "Sometimes the problem never even reached the visualisation stage. It sits earlier.",
+   "In a home services platform, the catalogue was organised by trade: plumbing, electrical, gas, gardening, thirty-odd unrelated categories. That is the provider's logic, not the logic of the person searching. Nobody wakes up thinking «I need a trade category».",
+   "I reorganised the catalogue by human experience: shelter, care, rest, belonging, mobility, celebration, community. Thirty disconnected trades became a handful of fields a person already understands without explanation.",
+   "The system also had to be designed against a live database that kept growing, so it could not represent only the providers who existed that day: it had to hold any provider who might join later. That constraint defines the field hierarchy more than any individual screen does.",
+   "A taxonomy is not an ordered list. It is a hypothesis about how someone understands a domain, and it can be tested.",
+   "## Figures that hold up an argument",
+   "There is one last case, quieter: when the figure is not there to support a decision but to support a claim.",
+   "In the rebranding of a human resources consultancy, the strategy rested on hard labour market figures: the share of employers who cannot fill positions, the country's standing in talent shortage rankings, how candidates under 25 weigh salary against other factors. Those numbers do not belong in a dashboard. They belong in the body of the argument, and their job is to stop a claim from reading as an opinion.",
+   "There the visualisation is austere by design: few figures, well chosen, with the source visible. A figure without a source is decoration.",
+   "## The right order",
+   "There is a common trap along the way: the tool arrives before the criterion. The chart type, the palette and the library get chosen first, and only afterwards does anyone ask what it was for.",
+   "The reverse order is less glamorous and works better. First the decision that has to be enabled. Then the comparison that supports it. Form last.",
+   "I have taught this for years in studio, and the exercise that produces the most is not technical. It is asking the student to write down, before opening any software, the exact sentence someone should be able to say after looking at the chart. If that sentence does not exist, the chart has no reason to exist either. If the sentence exists but is obvious, the chart is redundant. And if the sentence exists and changes something, half the work is already done.",
+   "## What changes when it is done well",
+   "Meetings get shorter.",
+   "Arguments stop being about the numbers and start being about what to do.",
+   "And the report gets used instead of filed."
+  ]
+ }
 ]

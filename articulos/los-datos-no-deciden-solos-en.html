@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
+<title>Data does not decide on its own · Gabriel González</title>
+<link rel="canonical" href="https://gportfolio-web.vercel.app/articulos/los-datos-no-deciden-solos-en.html" />
+<meta name="description" content="You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything." />
+<meta name="author" content="Gabriel González" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Data does not decide on its own" />
+<meta property="og:description" content="You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything." />
+<meta property="og:url" content="https://gportfolio-web.vercel.app/articulos/los-datos-no-deciden-solos-en.html" />
+<meta property="og:image" content="https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%230a0a0a%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2764%27 font-weight=%27700%27 fill=%27%23f2f2f0%27 text-anchor=%27middle%27%3EG%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --bg-alt:#141414; --fg:#f2f2f0; --fg-dim:#8a8a86;
+    --line:#252525; --accent:#f2f2f0; --max:1080px;
+    --negro:#1d1d1d; --turquesa:#34d3c0;
+  }
+  :root{color-scheme:dark}
+  #detail{color-scheme:light}
+  html.js .solo-sin-js{display:none}
+  .solo-sin-js{padding:110px 0;border-top:1px solid var(--line)}
+  .solo-sin-js h2{font-size:28px;margin:40px 0 20px}
+  .solo-sin-js h3{font-size:22px;margin:34px 0 8px}
+  .solo-sin-js h4{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--fg-dim);margin:22px 0 8px}
+  .solo-sin-js p{margin-bottom:12px;color:var(--fg-dim);max-width:68ch}
+  .solo-sin-js li{color:var(--fg-dim);max-width:68ch;margin-bottom:8px}
+  .solo-sin-js img{width:100%;height:auto;max-width:820px;display:block;margin:16px 0}
+
+  /* Curvas y tiempos */
+  :root{
+    --curva:cubic-bezier(.32,.72,0,1);
+    --rapido:150ms;
+    --medio:280ms;
+    --lento:420ms;
+  }
+
+  /* Foco visible en todo lo interactivo */
+  a:focus-visible, button:focus-visible, select:focus-visible{
+    outline:1px solid rgba(242,242,240,.42);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  .form input:focus-visible, .form textarea:focus-visible, .form select:focus-visible{
+    outline:none;
+    border-color:rgba(242,242,240,.42);
+    box-shadow:0 0 0 3px rgba(242,242,240,.06);
+  }
+  #detail a:focus-visible, #detail button:focus-visible{outline-color:rgba(22,23,26,.45)}
+
+  /* Saltar al contenido */
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--fg);color:var(--bg);
+    padding:12px 20px;font-size:14px;text-decoration:none}
+  .skip:focus{left:12px;top:12px}
+
+  /* Aparicion al scrollear */
+  .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity var(--lento) var(--curva), transform var(--lento) var(--curva)}
+  .reveal.visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* Entrada del overlay de proyecto */
+  #detail{opacity:0;transform:translateY(14px);
+    transition:opacity var(--medio) var(--curva), transform var(--medio) var(--curva), visibility 0s linear var(--medio)}
+  #detail.open{transition-delay:0s}
+  #detail.open{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){#detail{transition:none;transform:none;opacity:1}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+  @media(max-width:700px){.wrap{padding:0 22px}}
+
+
+  /* Nav lateral fija */
+  nav{position:fixed;right:34px;bottom:34px;z-index:30;text-align:right;display:flex;flex-direction:column;gap:7px}
+  nav a{color:var(--fg-dim);text-decoration:none;font-size:13px;padding-bottom:2px;border-bottom:1px solid transparent;
+    transition:color var(--rapido) var(--curva), border-color var(--rapido) var(--curva)}
+  nav a:hover,nav a.on{color:var(--fg);border-color:var(--fg)}
+  @media(max-width:860px){nav{display:none}}
+
+  /* Top links */
+  #site{position:relative}
+  .top{position:absolute;top:34px;right:40px;z-index:20;display:flex;gap:26px;font-size:14px}
+  .lang{background:none;border:1px solid var(--line);color:var(--fg-dim);font:inherit;font-size:12px;
+    letter-spacing:.1em;padding:3px 10px;border-radius:3px;cursor:pointer;transition:color .2s,border-color .2s}
+  .lang:hover{color:var(--fg);border-color:var(--fg-dim)}
+  .top a{color:var(--fg-dim);text-decoration:none;padding:10px 2px;transition:color var(--rapido) var(--curva)}
+  .top a:hover{color:var(--fg)}
+  @media(max-width:700px){.top{position:static;padding:14px 22px;justify-content:flex-end;flex-wrap:wrap;gap:8px 18px}
+    .top a,.lang{min-height:44px;display:flex;align-items:center;padding:0 8px}
+    .contact a{display:inline-block;padding:8px 0;min-height:44px}}
+
+  /* Hero */
+  header{padding:190px 0 130px;position:relative}
+  @media(max-width:700px){header{padding:70px 0 80px}}
+  h1{font-size:clamp(28px,4.4vw,48px);line-height:1.18;font-weight:700;letter-spacing:-.02em;max-width:22ch}
+  .rot{color:var(--fg-dim)}
+  .rot > span{transition:opacity var(--lento) var(--curva),transform var(--lento) var(--curva)}
+  .rot.out > span{opacity:0}
+  @media(prefers-reduced-motion:reduce){.rot > span{transition:none}}
+  .hook{margin-top:30px;color:var(--fg-dim);font-size:18px;max-width:54ch}
+  .disp{margin-top:16px;color:var(--fg-dim);font-size:13px;letter-spacing:.06em;
+    text-transform:uppercase;max-width:54ch;opacity:.85}
+
+  /* Secciones */
+  section{padding:110px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-bottom:8px;border-bottom:1px solid var(--line);display:inline-block;margin-bottom:56px}
+
+  /* Grilla de trabajos */
+  /* Carrusel horizontal de proyectos */
+  .rail{position:relative}
+  .arrow{position:absolute;top:24%;right:-6px;z-index:5;width:66px;height:66px;border-radius:50%;
+    background:rgba(20,20,20,.72);border:1px solid var(--line);color:var(--fg);
+    font-size:40px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    padding-bottom:5px;backdrop-filter:blur(6px);transition:opacity var(--medio) var(--curva),transform var(--rapido) var(--curva),background var(--rapido) var(--curva)}
+  .arrow:hover{background:rgba(20,20,20,.95);transform:scale(1.06)}
+  .arrow[hidden]{opacity:0;pointer-events:none;display:flex}
+  @media(max-width:700px){.arrow{width:52px;height:52px;font-size:32px;right:2px}}
+
+  .grid{display:flex;gap:26px;overflow-x:auto;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
+  .grid::-webkit-scrollbar{height:6px}
+  .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
+  .grid > .card{flex:0 0 clamp(280px,42vw,520px);scroll-snap-align:start}
+  @media(max-width:700px){.grid > .card{flex:0 0 82vw}}
+  .card{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block;width:100%;
+    transition:transform var(--rapido) var(--curva)}
+  .card:active{transform:scale(.99)}
+  .card .thumb{aspect-ratio:4/3;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden}
+  .card .thumb img{transition:transform var(--lento) var(--curva), opacity var(--medio) var(--curva)}
+  .card:hover .thumb img{transform:scale(1.04)}
+  .card:hover .thumb img{opacity:.9}
+  .card h3{font-size:21px;font-weight:600;margin-top:20px}
+  .card .desc{color:var(--fg-dim);margin-top:5px}
+  .card .cats{display:flex;gap:18px;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
+
+  .more-wrap{display:flex;justify-content:flex-end;margin-top:70px}
+  .more{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line);padding-bottom:8px;transition:border-color var(--rapido) var(--curva)}
+  .more:hover{border-color:var(--fg)}
+  .more span{transition:transform var(--rapido) var(--curva);display:inline-block}
+  .more:hover span{transform:translateX(6px)}
+
+  /* Casos de estudio */
+  .cases{border-top:1px solid var(--line)}
+  .case{text-decoration:none;display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:baseline;
+    width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;
+    border-bottom:1px solid var(--line);padding:34px 0;cursor:pointer;transition:opacity var(--rapido) var(--curva)}
+  .case:hover{opacity:.6}
+  .case .num{color:var(--fg-dim);font-size:13px;letter-spacing:.12em}
+  .case h3{font-size:clamp(21px,2.6vw,28px);font-weight:600;letter-spacing:-.01em;line-height:1.2}
+  .case .sub{color:var(--fg-dim);margin-top:8px;font-size:16px}
+  .case .go{color:var(--fg-dim);font-size:26px;line-height:1}
+  @media(max-width:700px){.case{grid-template-columns:40px 1fr;gap:14px}.case .go{display:none}}
+
+  /* Caso abierto (dentro del overlay claro) */
+  .cbody{max-width:68ch;margin:0 auto;padding-bottom:100px}
+  .cbody h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6b6b6b;
+    margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid #dcdcdc}
+  .cbody p{margin-bottom:16px;color:#3a3a3c;font-size:17px}
+  .cbody ul{list-style:none;margin:0 0 16px}
+  .cbody li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3a3c;font-size:17px}
+  .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
+  .cbody strong{color:#16171a;font-weight:600}
+
+  /* Articulo dentro de Casos: misma fila, fondo y acento propios */
+  .lectura{background:var(--negro);padding-left:20px;padding-right:20px;
+    border-radius:4px;border-bottom-color:transparent;margin-top:34px;
+    border-top:1px solid var(--line)}
+  .lectura:hover{opacity:1;background:#242424}
+  .lectura .etq{align-self:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--negro);background:var(--turquesa);padding:5px 11px;border-radius:20px;white-space:nowrap;
+    font-weight:600}
+  .lectura{grid-template-columns:auto 1fr auto;gap:20px}
+  .lectura .tit{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .lectura .go{color:var(--turquesa)}
+  @media(max-width:700px){.lectura{padding-left:16px;padding-right:16px}}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  @media(max-width:700px){.skills{grid-template-columns:1fr}}
+  .skills div{padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
+
+  /* Experiencia */
+  .job{display:grid;grid-template-columns:1fr .5fr 1.3fr;gap:34px;padding:38px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:860px){.job{grid-template-columns:1fr;gap:12px}}
+  .job h3{font-size:22px;font-weight:500;line-height:1.25}
+  .job .org{color:var(--fg);margin-top:6px}
+  .job .loc{color:var(--fg-dim);font-size:14px;margin-top:2px}
+  .job .when{color:var(--fg-dim);font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-top:6px}
+  .job p{color:var(--fg-dim)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tags span{font-size:12px;color:var(--fg-dim);border:1px solid var(--line);border-radius:20px;padding:4px 12px}
+
+  /* Educación */
+  .edu{padding:26px 0;border-bottom:1px solid var(--line)}
+  .edu h3{font-size:20px;font-weight:500}
+  .edu p{color:var(--fg-dim);font-size:15px;margin-top:4px}
+
+  .about p{color:var(--fg-dim);font-size:19px;max-width:60ch}
+  .about p+p{margin-top:18px}
+
+  .contact .row{margin-bottom:20px}
+  .contact .row span{display:block;color:var(--fg-dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .contact a{color:var(--fg);text-decoration:none;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:2px}
+  .contact a:hover{border-color:var(--fg)}
+  .contact a.cta{display:inline-flex;align-items:center;gap:10px;background:var(--fg);
+    color:var(--bg);text-decoration:none;font-weight:600;font-size:17px;padding:15px 28px;
+    border-radius:3px;border-bottom:0;transition:opacity var(--rapido) var(--curva)}
+  .contact a.cta:hover{opacity:.85;border-bottom:0}
+
+  /* Formulario */
+  .form{max-width:620px}
+  .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+  .form input,.form textarea,.form select{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
+    font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:14px 15px;border-radius:2px;
+    border-color:#3f3f3f;transition:border-color var(--rapido) var(--curva),box-shadow var(--rapido) var(--curva)}
+  .form input:focus,.form textarea:focus,.form select:focus{border-color:rgba(242,242,240,.42);box-shadow:0 0 0 3px rgba(242,242,240,.06)}
+  .form select{appearance:none;-webkit-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='%238a8a86' d='M0 0l5 6 5-6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 15px center;background-size:10px;padding-right:40px}
+  .form select option{background:var(--bg-alt);color:var(--fg)}
+  .form textarea{resize:vertical}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+  @media(max-width:600px){.f2{grid-template-columns:1fr}}
+  .form button{background:var(--fg);color:var(--bg);border:0;font:inherit;font-weight:600;font-size:16px;
+    padding:14px 30px;border-radius:2px;cursor:pointer;transition:opacity .2s}
+  .form button:hover{opacity:.85}
+  .form button[disabled]{opacity:.5;cursor:default}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px}
+  .form-msg{margin-top:16px;font-size:15px;color:var(--fg-dim);min-height:22px}
+  .form-msg.ok{color:#7fd6a2}
+  .form-msg.err{color:#e08585}
+
+  footer{padding:50px 0 80px;color:var(--fg-dim);font-size:13px}
+
+  /* Detalle de caso */
+  /* Vista de proyecto — fondo claro */
+  #detail{visibility:hidden;pointer-events:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
+  #detail.open{visibility:visible;pointer-events:auto}
+  .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dcdcdc;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
+  .close:hover{border-color:#16171a}
+  .dhead{padding:100px 0 34px}
+  .dhead h2{font-family:"Archivo Black",Archivo,sans-serif;font-size:clamp(30px,6vw,60px);font-weight:400;letter-spacing:-.03em;text-transform:uppercase;line-height:.95}
+  .dhead .tag{color:#6b6b6b;font-size:14px;display:block;margin-top:14px}
+  .lead{margin:0 0 56px}
+  .lead img{width:100%;height:auto;display:block}
+  .dbody{max-width:66ch;margin:0 auto 20px;font-size:17px;color:#3a3a3c}
+  .dbody p{margin-bottom:2px}
+  .dhead{text-align:center}
+  .step{max-width:62ch;margin-bottom:26px}
+  .step .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:5px}
+  .shots{padding:60px 0 0;font-size:0}
+  .shots img{border:0}
+  /* Barra de links dentro del proyecto */
+  .dtop{position:absolute;top:34px;left:40px;display:flex;gap:26px;font-size:14px}
+  .dtop a{color:#6b6b6b;text-decoration:none}
+  .dtop a:hover{color:#16171a}
+  @media(max-width:700px){.dtop{position:static;padding:22px 22px 0}}
+
+  /* Seguir viendo */
+  .next{border-top:1px solid #dcdcdc;padding:60px 0 110px}
+  .next .eyebrow{color:#6b6b6b;border-color:#dcdcdc;margin-bottom:34px}
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:700px){.next-grid{grid-template-columns:1fr}}
+  .next .card h3{color:#16171a;font-size:18px;margin-top:14px}
+  .next .card .desc{color:#6b6b6b;font-size:15px}
+  .next .card .thumb{border-color:#dcdcdc;background:#e3e3e3}
+
+  .credits{text-align:center;padding:56px 0 90px;max-width:66ch;margin:0 auto}
+  .credits h4{font-size:19px;font-weight:600;color:#16171a}
+  .credits .sub{font-size:17px;color:#3a3a3c;margin-top:4px}
+  .credits .roles{font-size:13.5px;color:#6b6b6b;margin-top:14px}
+  .shot{aspect-ratio:16/10;background:#e3e3e3;border:1px solid #dcdcdc;display:flex;align-items:center;justify-content:center;color:#a8a8a8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+
+  body{background:#ececec;color:#16171a}
+  .art{max-width:64ch;margin:0 auto;padding:0 24px}
+  .art-top{padding:34px 0;font-size:14px}
+  .art-top a{color:#6b6b6b;text-decoration:none;margin-right:24px}
+  .art-top a:hover{color:#16171a}
+  .kicker{color:#6b6b6b;font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin:44px 0 14px}
+  .art h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.02em;
+    line-height:1.12;max-width:none;margin-bottom:36px}
+  .art p{margin-bottom:22px;color:#3a3a3c;font-size:18px;line-height:1.62}
+  .art p:first-of-type{font-size:20px;color:#16171a}
+  .art .destacado{font-size:clamp(22px,3vw,30px);line-height:1.25;font-weight:600;
+    color:#16171a;margin:38px 0;padding-left:22px;border-left:3px solid #34d3c0}
+  .art h2{font-size:clamp(21px,2.6vw,26px);font-weight:700;letter-spacing:-.01em;
+    line-height:1.25;color:#16171a;margin:52px 0 18px}
+  .art .kicker:empty{display:none}
+  .cierre{margin-top:52px;padding-top:28px;border-top:1px solid #dcdcdc;
+    font-size:20px;color:#16171a;max-width:46ch}
+  .evidencia{margin:44px 0 90px;padding:26px 0;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc}
+  .evidencia span{display:block;color:#6b6b6b;font-size:13px;letter-spacing:.12em;
+    text-transform:uppercase;margin-bottom:8px}
+  .evidencia a{color:#16171a;text-decoration:none;font-size:22px;font-weight:600}
+  .evidencia a:hover{color:#6b6b6b}
+</style>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Data does not decide on its own",
+ "description": "You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything.",
+ "inLanguage": "en",
+ "url": "https://gportfolio-web.vercel.app/articulos/los-datos-no-deciden-solos-en.html",
+ "author": {
+  "@type": "Person",
+  "name": "Gabriel González",
+  "url": "https://gportfolio-web.vercel.app/",
+  "@id": "https://gportfolio-web.vercel.app/#gabriel"
+ },
+ "publisher": {
+  "@type": "Person",
+  "name": "Gabriel González",
+  "@id": "https://gportfolio-web.vercel.app/#gabriel"
+ },
+ "isPartOf": {
+  "@type": "WebSite",
+  "@id": "https://gportfolio-web.vercel.app/#sitio"
+ }
+}</script>
+</head>
+<body>
+<article class="art">
+  <div class="art-top">
+    <a href="../index.html">&larr; Volver al portfolio</a>
+    <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p class="kicker"></p>
+  <h1>Data does not decide on its own</h1>
+  <p>You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything.</p>
+  <p>This is more common than it looks, and it is almost never a problem of missing data. It is a problem of what the chart was asked to do.</p>
+  <p class="destacado">A chart does not communicate data. It communicates a reading of the data.</p>
+  <p>When an organisation starts measuring, the temptation is to show everything: every variable, every cut, every series. The result is a dashboard nobody looks at twice, or a report that gets cited but never used. The information is there, but it is not arranged so that anyone can act on it.</p>
+  <p>The question that changes the work is not «what data do I have». It is <strong>who has to decide what, and against what will they compare it</strong>.</p>
+  <h2>The same data, four readings</h2>
+  <p>That question has immediate consequences, because there is almost never a single reader.</p>
+  <p>In technical documentation for critical infrastructure tenders I worked with four actors reading the same document with opposing criteria. The contractor looks at schedule and assembly. The site engineer needs calculation data, testing and patents, because their signature goes on it. The client looks at avoided cost and predictability. And the fourth, the person who later maintains the equipment, takes no part in the purchase at all, yet determines whether the product delivers what it promised.</p>
+  <p>One chart cannot serve all four. What gets designed there is not a piece but an architecture: what each person sees, in what order, and at which moment a given figure appears, ideally just as the question forms in their head.</p>
+  <p>The ordering principle is easy to state and hard to hold: every data point has to earn its place against a concrete decision. If it enables none, it is noise, however interesting it may be.</p>
+  <h2>When the materials have nothing in common</h2>
+  <p>There is a different, more uncomfortable problem when what you have to integrate is not a set of comparable series.</p>
+  <p>In a report on hate speech I designed for a human rights foundation, four materials had to coexist that resemble each other in no way: personal testimony, legal framework, public budget figures and press coverage. Each demands its own visual treatment, and none can be subordinated to another without changing what the report means. If the budget figure dominates, the testimony becomes an anecdote. If the testimony dominates, the figure becomes decoration.</p>
+  <p>What orders that is not chart styling. It is the editorial decision about what has to be understood first, and what reading has to stay available to someone who returns to the document six months later looking for a single figure.</p>
+  <p>A report like that has two audiences at once: the person who reads it through once, and the person who consults it many times without ever reading it. Those needs pull in opposite directions and both have to be met.</p>
+  <h2>Before the chart comes the category</h2>
+  <p>Sometimes the problem never even reached the visualisation stage. It sits earlier.</p>
+  <p>In a home services platform, the catalogue was organised by trade: plumbing, electrical, gas, gardening, thirty-odd unrelated categories. That is the provider's logic, not the logic of the person searching. Nobody wakes up thinking «I need a trade category».</p>
+  <p>I reorganised the catalogue by human experience: shelter, care, rest, belonging, mobility, celebration, community. Thirty disconnected trades became a handful of fields a person already understands without explanation.</p>
+  <p>The system also had to be designed against a live database that kept growing, so it could not represent only the providers who existed that day: it had to hold any provider who might join later. That constraint defines the field hierarchy more than any individual screen does.</p>
+  <p>A taxonomy is not an ordered list. It is a hypothesis about how someone understands a domain, and it can be tested.</p>
+  <h2>Figures that hold up an argument</h2>
+  <p>There is one last case, quieter: when the figure is not there to support a decision but to support a claim.</p>
+  <p>In the rebranding of a human resources consultancy, the strategy rested on hard labour market figures: the share of employers who cannot fill positions, the country's standing in talent shortage rankings, how candidates under 25 weigh salary against other factors. Those numbers do not belong in a dashboard. They belong in the body of the argument, and their job is to stop a claim from reading as an opinion.</p>
+  <p>There the visualisation is austere by design: few figures, well chosen, with the source visible. A figure without a source is decoration.</p>
+  <h2>The right order</h2>
+  <p>There is a common trap along the way: the tool arrives before the criterion. The chart type, the palette and the library get chosen first, and only afterwards does anyone ask what it was for.</p>
+  <p>The reverse order is less glamorous and works better. First the decision that has to be enabled. Then the comparison that supports it. Form last.</p>
+  <p>I have taught this for years in studio, and the exercise that produces the most is not technical. It is asking the student to write down, before opening any software, the exact sentence someone should be able to say after looking at the chart. If that sentence does not exist, the chart has no reason to exist either. If the sentence exists but is obvious, the chart is redundant. And if the sentence exists and changes something, half the work is already done.</p>
+  <h2>What changes when it is done well</h2>
+  <p>Meetings get shorter.</p>
+  <p>Arguments stop being about the numbers and start being about what to do.</p>
+  <p>And the report gets used instead of filed.</p>
+  <p class="cierre">I help technical companies grow with clarity and coherence. <a href="../index.html#contacto" style="color:#16171a">Hablemos</a>.</p>
+  <div class="evidencia">
+    <span>A case where exactly this happened</span>
+    <a href="../casos/vender-continuidad-no-acero-en.html">Selling continuity, not steel</a>
+  </div>
+</article>
+</body>
+</html>

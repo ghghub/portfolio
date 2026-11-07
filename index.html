@@ -425,11 +425,20 @@
       <p class="hook" data-i="casos_int" style="margin:-24px 0 44px">Cuatro proyectos, cuatro problemas distintos.</p>
       <div class="cases" id="cases"></div>
 
-      <a class="case lectura" href="articulos/tu-producto-necesita-ser-comprendido.html">
+      <a class="case lectura" data-art="tu-producto-necesita-ser-comprendido" href="articulos/tu-producto-necesita-ser-comprendido.html">
         <span class="etq" data-i="art_etq">Artículo</span>
         <span>
           <span class="tit"><h3 data-i="art_tit">Tu producto necesita ser comprendido</h3></span>
           <span class="sub" data-i="art_sub">Lo que pasa cuando el mercado por fin puede leer lo que hacés</span>
+        </span>
+        <span class="go">&#8250;</span>
+      </a>
+
+      <a class="case lectura" data-art="los-datos-no-deciden-solos" href="articulos/los-datos-no-deciden-solos.html">
+        <span class="etq" data-i="art2_etq">Artículo</span>
+        <span>
+          <span class="tit"><h3 data-i="art2_tit">Los datos no deciden solos</h3></span>
+          <span class="sub" data-i="art2_sub">Visualización de datos para que alguien decida algo</span>
         </span>
         <span class="go">&#8250;</span>
       </a>
@@ -1746,6 +1755,9 @@ var EN = {
  art_etq:"Article",
  art_tit:"Your product needs to be understood",
  art_sub:"What happens when the market can finally read what you do. (In Spanish)",
+ art2_etq:"Article",
+ art2_tit:"Data does not decide on its own",
+ art2_sub:"Data visualisation built so that someone can decide something",
  art_mas:"Read \u2192",
  s_casos:"Case studies",
  casos_int:"Four projects, four different problems.",
@@ -1807,8 +1819,10 @@ function aplicarIdioma(){
 
   render();
   renderCases();
-  var lec = document.querySelector(".lectura");
-  if (lec) lec.href = "articulos/tu-producto-necesita-ser-comprendido" + (lang === "en" ? "-en" : "") + ".html";
+  [].forEach.call(document.querySelectorAll(".lectura"), function(lec){
+    var s = lec.getAttribute("data-art");
+    if (s) lec.href = "articulos/" + s + (lang === "en" ? "-en" : "") + ".html";
+  });
   var cta = document.querySelector(".cta");
   if (cta) cta.href = (lang === "en") ? "contact-en.html" : "contacto.html";
   if (detail.classList.contains("open") && actual !== null) openWork(actual);
