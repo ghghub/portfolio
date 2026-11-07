@@ -1,0 +1,4 @@
+{
+  "rewrites": [{ "source": "/en", "destination": "/en.html" }],
+  "redirects": [{ "source": "/en/", "destination": "/en", "permanent": false }]
+}

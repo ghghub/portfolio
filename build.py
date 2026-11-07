@@ -357,6 +357,82 @@ if os.path.exists(ruta_art):
         generadas.append('articulos/%s.html' % a['slug'])
     print('articulos generados: %d' % len(ARTS))
 
+# ---------------------------------------------------------------- version /en (postulaciones)
+# en.html: copia del index, solo en ingles, sin "Consultor", fuera de Google.
+# Vercel la sirve en /en (ver vercel.json). No va al sitemap.
+
+DISP_EN = u'Open to remote roles \u00b7 available now'
+
+def generar_en():
+    import html as _h
+    s = io.open(IDX, encoding='utf-8').read()
+    i = s.index('var EN = {'); i = s.index('{', i)
+    prof = 0
+    for j in range(i, len(s)):
+        if s[j] == '{': prof += 1
+        elif s[j] == '}':
+            prof -= 1
+            if prof == 0: break
+    EN = a_json(s[i:j + 1])
+    EN['disp'] = DISP_EN
+    s, nd = re.subn(r'disp:"[^"]*"', lambda m: 'disp:' + json.dumps(DISP_EN), s, count=1)
+    assert nd == 1, 'disp en EN'
+
+    # texto en ingles ya en el HTML, para lectores sin JS
+    def rep(m):
+        k = m.group(2)
+        if k not in EN or k == 'h1': return m.group(0)
+        return m.group(1) + _h.escape(EN[k], quote=False)
+    s = re.sub(r'(<[^>]*\bdata-i="([^"]+)"[^>]*>)([^<]*)', rep, s)
+    s = re.sub(r'(<h1 data-i="h1">).*?(</h1>)', lambda m: m.group(1) + EN['h1'] + m.group(2), s, count=1, flags=re.S)
+
+    # idioma fijo en ingles, sin boton
+    s = re.sub(r'var lang = localStorage\.getItem\("lang"\) \|\|\s*\([^;]*;', 'var lang = "en";', s, count=1)
+    s = s.replace('localStorage.setItem("lang", lang);', '', 1)
+    s = s.replace('<html lang="es">', '<html lang="en">', 1)
+    s = s.replace('</head>', '<style>#lang{display:none}</style>\n</head>', 1)
+    s = s.replace('href="cv-gabriel-gonzalez-es.pdf"', 'href="cv-gabriel-gonzalez-en.pdf"', 1)
+    s = s.replace('href="contacto.html"', 'href="contact-en.html"')
+    s = re.sub(r'<title>.*?</title>', u'<title>Gabriel Gonz\u00e1lez \u00b7 Strategic Design</title>', s, count=1)
+    desc = (u'Strategic and information designer with 14 years of experience in engineering, energy, '
+            u'infrastructure, industry, health and the public sector. Open to remote roles.')
+    s = re.sub(r'<meta name="description" content="[^"]*"', '<meta name="description" content="%s"' % desc, s, count=1)
+    s = re.sub(r'<meta property="og:description" content="[^"]*"', '<meta property="og:description" content="%s"' % desc, s, count=1)
+    s = re.sub(r'<meta property="og:title" content="[^"]*"', u'<meta property="og:title" content="Gabriel Gonz\u00e1lez \u00b7 Strategic Design"', s, count=1)
+    s = s.replace('<meta property="og:locale" content="es_AR" />', '<meta property="og:locale" content="en_US" />', 1)
+    s = s.replace('<link rel="canonical" href="%s" />' % URL,
+                  '<link rel="canonical" href="%sen" />\n<meta name="robots" content="noindex" />' % URL, 1)
+
+    # bloque para lectores sin JS: en ingles, con casos y articulos
+    a = s.index('<section id="contenido" class="solo-sin-js">')
+    b = s.index('</section>', a) + len('</section>')
+    partes = ['<section id="contenido" class="solo-sin-js">\n    <div class="wrap">\n      <h2>Case studies</h2>']
+    for c, sl in zip(CASES, SLUGS):
+        e = c['en']
+        partes.append('      <article>\n        <h3><a href="casos/%s-en.html">%s</a></h3>\n        <p><em>%s \u00b7 %s</em></p>' % (sl, e['title'], e.get('client', ''), e.get('meta', '')))
+        for bl in e.get('blocks', []):
+            partes.append('        <h4>%s</h4>' % bl[0])
+            for grupo in bl[1:]:
+                for par in grupo:
+                    partes.append('        <p>%s</p>' % par)
+        partes.append('      </article>')
+    if os.path.exists(os.path.join(BASE, 'articulos.json')):
+        partes.append('      <h2>Articles</h2>')
+        for ar in json.load(io.open(os.path.join(BASE, 'articulos.json'), encoding='utf-8')):
+            if ar['lang'] != 'en': continue
+            partes.append('      <article>\n        <h3><a href="articulos/%s.html">%s</a></h3>\n        <p>%s</p>' % (ar['slug'], ar['title'], ar.get('kicker', '')))
+            for x in ar['body']:
+                if x.startswith('## '): partes.append('        <h4>%s</h4>' % x[3:])
+                elif x.startswith('> '): partes.append('        <blockquote>%s</blockquote>' % x[2:])
+                else: partes.append('        <p>%s</p>' % x)
+            partes.append('      </article>')
+    partes.append('    </div>\n  </section>')
+    s = s[:a] + '\n'.join(partes) + s[b:]
+    io.open(os.path.join(BASE, 'en.html'), 'w', encoding='utf-8', newline='').write(s)
+    print('en.html generada (version para postulaciones)')
+
+generar_en()
+
 # ---------------------------------------------------------------- sitemap
 
 generadas += ['contacto.html','contact-en.html']

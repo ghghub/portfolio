@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
+<title>Gabriel González · Strategic Design</title>
+<link rel="canonical" href="https://gportfolio-web.vercel.app/en" />
+<meta name="robots" content="noindex" />
+<meta name="description" content="Strategic and information designer with 14 years of experience in engineering, energy, infrastructure, industry, health and the public sector. Open to remote roles." />
+<meta name="author" content="Gabriel González" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Gabriel González" />
+<meta property="og:title" content="Gabriel González · Strategic Design" />
+<meta property="og:description" content="Strategic and information designer with 14 years of experience in engineering, energy, infrastructure, industry, health and the public sector. Open to remote roles." />
+<meta property="og:url" content="https://gportfolio-web.vercel.app/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg" />
+<meta property="og:image:width" content="1800" />
+<meta property="og:image:height" content="1350" />
+<meta property="og:image:alt" content="Sistema de identidad para Estancco, compuertas hidráulicas" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gabriel González · Diseño estratégico e información" />
+<meta name="twitter:description" content="Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera." />
+<meta name="twitter:image" content="https://gportfolio-web.vercel.app/img/estancco/estancco-00.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%230a0a0a%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2764%27 font-weight=%27700%27 fill=%27%23f2f2f0%27 text-anchor=%27middle%27%3EG%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<script>document.documentElement.className="js";</script>
+<style>
+  :root{
+    --bg:#0a0a0a; --bg-alt:#141414; --fg:#f2f2f0; --fg-dim:#8a8a86;
+    --line:#252525; --accent:#f2f2f0; --max:1080px;
+    --negro:#1d1d1d; --turquesa:#34d3c0;
+  }
+  :root{color-scheme:dark}
+  #detail{color-scheme:light}
+  html.js .solo-sin-js{display:none}
+  .solo-sin-js{padding:110px 0;border-top:1px solid var(--line)}
+  .solo-sin-js h2{font-size:28px;margin:40px 0 20px}
+  .solo-sin-js h3{font-size:22px;margin:34px 0 8px}
+  .solo-sin-js h4{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--fg-dim);margin:22px 0 8px}
+  .solo-sin-js p{margin-bottom:12px;color:var(--fg-dim);max-width:68ch}
+  .solo-sin-js li{color:var(--fg-dim);max-width:68ch;margin-bottom:8px}
+  .solo-sin-js img{width:100%;height:auto;max-width:820px;display:block;margin:16px 0}
+
+  /* Curvas y tiempos */
+  :root{
+    --curva:cubic-bezier(.32,.72,0,1);
+    --rapido:150ms;
+    --medio:280ms;
+    --lento:420ms;
+  }
+
+  /* Foco visible en todo lo interactivo */
+  a:focus-visible, button:focus-visible, select:focus-visible{
+    outline:1px solid rgba(242,242,240,.42);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  .form input:focus-visible, .form textarea:focus-visible, .form select:focus-visible{
+    outline:none;
+    border-color:rgba(242,242,240,.42);
+    box-shadow:0 0 0 3px rgba(242,242,240,.06);
+  }
+  #detail a:focus-visible, #detail button:focus-visible{outline-color:rgba(22,23,26,.45)}
+
+  /* Saltar al contenido */
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--fg);color:var(--bg);
+    padding:12px 20px;font-size:14px;text-decoration:none}
+  .skip:focus{left:12px;top:12px}
+
+  /* Aparicion al scrollear */
+  .reveal{opacity:0;transform:translateY(18px);
+    transition:opacity var(--lento) var(--curva), transform var(--lento) var(--curva)}
+  .reveal.visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* Entrada del overlay de proyecto */
+  #detail{opacity:0;transform:translateY(14px);
+    transition:opacity var(--medio) var(--curva), transform var(--medio) var(--curva), visibility 0s linear var(--medio)}
+  #detail.open{transition-delay:0s}
+  #detail.open{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){#detail{transition:none;transform:none;opacity:1}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+  @media(max-width:700px){.wrap{padding:0 22px}}
+
+
+  /* Nav lateral fija */
+  nav{position:fixed;right:34px;bottom:34px;z-index:30;text-align:right;display:flex;flex-direction:column;gap:7px}
+  nav a{color:var(--fg-dim);text-decoration:none;font-size:13px;padding-bottom:2px;border-bottom:1px solid transparent;
+    transition:color var(--rapido) var(--curva), border-color var(--rapido) var(--curva)}
+  nav a:hover,nav a.on{color:var(--fg);border-color:var(--fg)}
+  @media(max-width:860px){nav{display:none}}
+
+  /* Top links */
+  #site{position:relative}
+  .top{position:absolute;top:34px;right:40px;z-index:20;display:flex;gap:26px;font-size:14px}
+  .lang{background:none;border:1px solid var(--line);color:var(--fg-dim);font:inherit;font-size:12px;
+    letter-spacing:.1em;padding:3px 10px;border-radius:3px;cursor:pointer;transition:color .2s,border-color .2s}
+  .lang:hover{color:var(--fg);border-color:var(--fg-dim)}
+  .top a{color:var(--fg-dim);text-decoration:none;padding:10px 2px;transition:color var(--rapido) var(--curva)}
+  .top a:hover{color:var(--fg)}
+  @media(max-width:700px){.top{position:static;padding:14px 22px;justify-content:flex-end;flex-wrap:wrap;gap:8px 18px}
+    .top a,.lang{min-height:44px;display:flex;align-items:center;padding:0 8px}
+    .contact a{display:inline-block;padding:8px 0;min-height:44px}}
+
+  /* Hero */
+  header{padding:190px 0 130px;position:relative}
+  @media(max-width:700px){header{padding:70px 0 80px}}
+  h1{font-size:clamp(28px,4.4vw,48px);line-height:1.18;font-weight:700;letter-spacing:-.02em;max-width:22ch}
+  .rot{color:var(--fg-dim)}
+  .rot > span{transition:opacity var(--lento) var(--curva),transform var(--lento) var(--curva)}
+  .rot.out > span{opacity:0}
+  @media(prefers-reduced-motion:reduce){.rot > span{transition:none}}
+  .hook{margin-top:30px;color:var(--fg-dim);font-size:18px;max-width:54ch}
+  .disp{margin-top:16px;color:var(--fg-dim);font-size:13px;letter-spacing:.06em;
+    text-transform:uppercase;max-width:54ch;opacity:.85}
+
+  /* Secciones */
+  section{padding:110px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-bottom:8px;border-bottom:1px solid var(--line);display:inline-block;margin-bottom:56px}
+
+  /* Grilla de trabajos */
+  /* Carrusel horizontal de proyectos */
+  .rail{position:relative}
+  .arrow{position:absolute;top:24%;right:-6px;z-index:5;width:66px;height:66px;border-radius:50%;
+    background:rgba(20,20,20,.72);border:1px solid var(--line);color:var(--fg);
+    font-size:40px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    padding-bottom:5px;backdrop-filter:blur(6px);transition:opacity var(--medio) var(--curva),transform var(--rapido) var(--curva),background var(--rapido) var(--curva)}
+  .arrow:hover{background:rgba(20,20,20,.95);transform:scale(1.06)}
+  .arrow[hidden]{opacity:0;pointer-events:none;display:flex}
+  @media(max-width:700px){.arrow{width:52px;height:52px;font-size:32px;right:2px}}
+
+  .grid{display:flex;gap:26px;overflow-x:auto;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:#2e2e2e transparent}
+  .grid::-webkit-scrollbar{height:6px}
+  .grid::-webkit-scrollbar-thumb{background:#2e2e2e;border-radius:3px}
+  .grid > .card{flex:0 0 clamp(280px,42vw,520px);scroll-snap-align:start}
+  @media(max-width:700px){.grid > .card{flex:0 0 82vw}}
+  .card{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;display:block;width:100%;
+    transition:transform var(--rapido) var(--curva)}
+  .card:active{transform:scale(.99)}
+  .card .thumb{aspect-ratio:4/3;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:12px;letter-spacing:.1em;text-transform:uppercase;overflow:hidden}
+  .card .thumb img{transition:transform var(--lento) var(--curva), opacity var(--medio) var(--curva)}
+  .card:hover .thumb img{transform:scale(1.04)}
+  .card:hover .thumb img{opacity:.9}
+  .card h3{font-size:21px;font-weight:600;margin-top:20px}
+  .card .desc{color:var(--fg-dim);margin-top:5px}
+  .card .cats{display:flex;gap:18px;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
+
+  .more-wrap{display:flex;justify-content:flex-end;margin-top:70px}
+  .more{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line);padding-bottom:8px;transition:border-color var(--rapido) var(--curva)}
+  .more:hover{border-color:var(--fg)}
+  .more span{transition:transform var(--rapido) var(--curva);display:inline-block}
+  .more:hover span{transform:translateX(6px)}
+
+  /* Casos de estudio */
+  .cases{border-top:1px solid var(--line)}
+  .case{text-decoration:none;display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:baseline;
+    width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;
+    border-bottom:1px solid var(--line);padding:34px 0;cursor:pointer;transition:opacity var(--rapido) var(--curva)}
+  .case:hover{opacity:.6}
+  .case .num{color:var(--fg-dim);font-size:13px;letter-spacing:.12em}
+  .case h3{font-size:clamp(21px,2.6vw,28px);font-weight:600;letter-spacing:-.01em;line-height:1.2}
+  .case .sub{color:var(--fg-dim);margin-top:8px;font-size:16px}
+  .case .go{color:var(--fg-dim);font-size:26px;line-height:1}
+  @media(max-width:700px){.case{grid-template-columns:40px 1fr;gap:14px}.case .go{display:none}}
+
+  /* Caso abierto (dentro del overlay claro) */
+  .cbody{max-width:68ch;margin:0 auto;padding-bottom:100px}
+  .cbody h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6b6b6b;
+    margin:48px 0 14px;padding-bottom:8px;border-bottom:1px solid #dcdcdc}
+  .cbody p{margin-bottom:16px;color:#3a3a3c;font-size:17px}
+  .cbody ul{list-style:none;margin:0 0 16px}
+  .cbody li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3a3c;font-size:17px}
+  .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
+  .cbody strong{color:#16171a;font-weight:600}
+
+  /* Articulo dentro de Casos: misma fila, fondo y acento propios */
+  .lectura{background:var(--negro);padding-left:20px;padding-right:20px;
+    border-radius:4px;border-bottom-color:transparent;margin-top:34px;
+    border-top:1px solid var(--line)}
+  .lectura:hover{opacity:1;background:#242424}
+  .lectura .etq{align-self:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--negro);background:var(--turquesa);padding:5px 11px;border-radius:20px;white-space:nowrap;
+    font-weight:600}
+  .lectura{grid-template-columns:auto 1fr auto;gap:20px}
+  .lectura .tit{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .lectura .go{color:var(--turquesa)}
+  @media(max-width:700px){.lectura{padding-left:16px;padding-right:16px}}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  @media(max-width:700px){.skills{grid-template-columns:1fr}}
+  .skills div{padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
+
+  /* Experiencia */
+  .job{display:grid;grid-template-columns:1fr .5fr 1.3fr;gap:34px;padding:38px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:860px){.job{grid-template-columns:1fr;gap:12px}}
+  .job h3{font-size:22px;font-weight:500;line-height:1.25}
+  .job .org{color:var(--fg);margin-top:6px}
+  .job .loc{color:var(--fg-dim);font-size:14px;margin-top:2px}
+  .job .when{color:var(--fg-dim);font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-top:6px}
+  .job p{color:var(--fg-dim)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tags span{font-size:12px;color:var(--fg-dim);border:1px solid var(--line);border-radius:20px;padding:4px 12px}
+
+  /* Educación */
+  .edu{padding:26px 0;border-bottom:1px solid var(--line)}
+  .edu h3{font-size:20px;font-weight:500}
+  .edu p{color:var(--fg-dim);font-size:15px;margin-top:4px}
+
+  .about p{color:var(--fg-dim);font-size:19px;max-width:60ch}
+  .about p+p{margin-top:18px}
+
+  .contact .row{margin-bottom:20px}
+  .contact .row span{display:block;color:var(--fg-dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+  .contact a{color:var(--fg);text-decoration:none;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:2px}
+  .contact a:hover{border-color:var(--fg)}
+  .contact a.cta{display:inline-flex;align-items:center;gap:10px;background:var(--fg);
+    color:var(--bg);text-decoration:none;font-weight:600;font-size:17px;padding:15px 28px;
+    border-radius:3px;border-bottom:0;transition:opacity var(--rapido) var(--curva)}
+  .contact a.cta:hover{opacity:.85;border-bottom:0}
+
+  /* Formulario */
+  .form{max-width:620px}
+  .form label{display:block;margin-bottom:20px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+  .form input,.form textarea,.form select{display:block;width:100%;margin-top:8px;background:var(--bg-alt);border:1px solid var(--line);color:var(--fg);
+    font:inherit;font-size:16px;letter-spacing:normal;text-transform:none;padding:14px 15px;border-radius:2px;
+    border-color:#3f3f3f;transition:border-color var(--rapido) var(--curva),box-shadow var(--rapido) var(--curva)}
+  .form input:focus,.form textarea:focus,.form select:focus{border-color:rgba(242,242,240,.42);box-shadow:0 0 0 3px rgba(242,242,240,.06)}
+  .form select{appearance:none;-webkit-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='%238a8a86' d='M0 0l5 6 5-6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 15px center;background-size:10px;padding-right:40px}
+  .form select option{background:var(--bg-alt);color:var(--fg)}
+  .form textarea{resize:vertical}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+  @media(max-width:600px){.f2{grid-template-columns:1fr}}
+  .form button{background:var(--fg);color:var(--bg);border:0;font:inherit;font-weight:600;font-size:16px;
+    padding:14px 30px;border-radius:2px;cursor:pointer;transition:opacity .2s}
+  .form button:hover{opacity:.85}
+  .form button[disabled]{opacity:.5;cursor:default}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px}
+  .form-msg{margin-top:16px;font-size:15px;color:var(--fg-dim);min-height:22px}
+  .form-msg.ok{color:#7fd6a2}
+  .form-msg.err{color:#e08585}
+
+  footer{padding:50px 0 80px;color:var(--fg-dim);font-size:13px}
+
+  /* Detalle de caso */
+  /* Vista de proyecto — fondo claro */
+  #detail{visibility:hidden;pointer-events:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
+  #detail.open{visibility:visible;pointer-events:auto}
+  .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dcdcdc;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
+  .close:hover{border-color:#16171a}
+  .dhead{padding:100px 0 34px}
+  .dhead h2{font-family:"Archivo Black",Archivo,sans-serif;font-size:clamp(30px,6vw,60px);font-weight:400;letter-spacing:-.03em;text-transform:uppercase;line-height:.95}
+  .dhead .tag{color:#6b6b6b;font-size:14px;display:block;margin-top:14px}
+  .lead{margin:0 0 56px}
+  .lead img{width:100%;height:auto;display:block}
+  .dbody{max-width:66ch;margin:0 auto 20px;font-size:17px;color:#3a3a3c}
+  .dbody p{margin-bottom:2px}
+  .dhead{text-align:center}
+  .step{max-width:62ch;margin-bottom:26px}
+  .step .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:5px}
+  .shots{padding:60px 0 0;font-size:0}
+  .shots img{border:0}
+  /* Barra de links dentro del proyecto */
+  .dtop{position:absolute;top:34px;left:40px;display:flex;gap:26px;font-size:14px}
+  .dtop a{color:#6b6b6b;text-decoration:none}
+  .dtop a:hover{color:#16171a}
+  @media(max-width:700px){.dtop{position:static;padding:22px 22px 0}}
+
+  /* Seguir viendo */
+  .next{border-top:1px solid #dcdcdc;padding:60px 0 110px}
+  .next .eyebrow{color:#6b6b6b;border-color:#dcdcdc;margin-bottom:34px}
+  .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:700px){.next-grid{grid-template-columns:1fr}}
+  .next .card h3{color:#16171a;font-size:18px;margin-top:14px}
+  .next .card .desc{color:#6b6b6b;font-size:15px}
+  .next .card .thumb{border-color:#dcdcdc;background:#e3e3e3}
+
+  .credits{text-align:center;padding:56px 0 90px;max-width:66ch;margin:0 auto}
+  .credits h4{font-size:19px;font-weight:600;color:#16171a}
+  .credits .sub{font-size:17px;color:#3a3a3c;margin-top:4px}
+  .credits .roles{font-size:13.5px;color:#6b6b6b;margin-top:14px}
+  .shot{aspect-ratio:16/10;background:#e3e3e3;border:1px solid #dcdcdc;display:flex;align-items:center;justify-content:center;color:#a8a8a8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://gportfolio-web.vercel.app/#gabriel",
+      "name": "Gabriel Gonz\u00e1lez",
+      "jobTitle": "Dise\u00f1ador estrat\u00e9gico y dise\u00f1ador de informaci\u00f3n",
+      "url": "https://gportfolio-web.vercel.app/",
+      "sameAs": [
+        "https://www.linkedin.com/in/dg-gabriel-gonzalez",
+        "https://www.behance.net/Gabriel_HG"
+      ],
+      "address": { "@type": "PostalAddress", "addressLocality": "Posadas", "addressCountry": "AR" },
+      "knowsLanguage": ["es", "en", "pt"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Misiones" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional del Noroeste de la Provincia de Buenos Aires" }
+      ],
+      "worksFor": { "@id": "https://gportfolio-web.vercel.app/#servicio" },
+      "knowsAbout": [
+        "Dise\u00f1o de informaci\u00f3n",
+        "Information design",
+        "Sistemas de identidad de marca",
+        "Brand systems",
+        "Identidad de producto industrial",
+        "Comunicaci\u00f3n t\u00e9cnica B2B",
+        "Documentaci\u00f3n para licitaciones p\u00fablicas",
+        "Semi\u00f3tica visual",
+        "Arquitectura de marca",
+        "Dise\u00f1o estrat\u00e9gico"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gportfolio-web.vercel.app/#servicio",
+      "name": "Gabriel Gonz\u00e1lez \u00b7 Dise\u00f1o estrat\u00e9gico",
+      "description": "Diseño de información y sistemas de marca para empresas de complejidad técnica: infraestructura, ingeniería, industria y sector público. 14 años ordenando la relacion entre lo que una empresa hace, cómo lo explica y cómo opera.",
+      "url": "https://gportfolio-web.vercel.app/",
+      "founder": { "@id": "https://gportfolio-web.vercel.app/#gabriel" },
+      "areaServed": [
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "Place", "name": "Latinoam\u00e9rica" },
+        { "@type": "Place", "name": "Remoto / internacional" }
+      ],
+      "serviceType": [
+        "Dise\u00f1o de informaci\u00f3n",
+        "Identidad de productos y servicios",
+        "Branding y sistemas visuales",
+        "Proyectos estrat\u00e9gicos y de innovaci\u00f3n",
+        "Direcci\u00f3n creativa",
+        "Investigaci\u00f3n aplicada"
+      ],
+      "knowsAbout": [
+        "Empresas de complejidad t\u00e9cnica",
+        "Infraestructura hidr\u00e1ulica",
+        "Ingenier\u00eda",
+        "Industria",
+        "Consumo masivo",
+        "Sector p\u00fablico"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gportfolio-web.vercel.app/#sitio",
+      "url": "https://gportfolio-web.vercel.app/",
+      "name": "Gabriel Gonz\u00e1lez \u00b7 Dise\u00f1o estrat\u00e9gico",
+      "inLanguage": ["es", "en"],
+      "about": { "@id": "https://gportfolio-web.vercel.app/#gabriel" },
+      "publisher": { "@id": "https://gportfolio-web.vercel.app/#gabriel" }
+    }
+  ]
+}
+</script>
+<style>#lang{display:none}</style>
+</head>
+<body>
+
+<a class="skip" href="#trabajo">Saltar al contenido</a>
+<main id="site">
+  <div class="top">
+    <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a>
+    <a href="#contacto" data-i="navc">Contact</a>
+    <a id="cvlink" href="cv-gabriel-gonzalez-en.pdf" target="_blank" rel="noopener">CV</a>
+    <button id="lang" class="lang" type="button">EN</button>
+  </div>
+
+  <nav>
+    <a href="#trabajo" data-i="nav1">Work</a>
+    <a href="#casos" data-i="nav_casos">Case studies</a>
+    <a href="#servicios" data-i="nav2">Services</a>
+    <a href="#experiencia" data-i="nav3">Experience</a>
+    <a href="#formacion" data-i="nav4">Education</a>
+    <a href="#sobre" data-i="nav5">About</a>
+    <a href="#contacto" data-i="nav6">Contact</a>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <h1 data-i="h1">I help technically complex companies to align perception with capability</h1>
+      <p class="hook" data-i="hook">14+ years and more than 15 documented projects across industry, infrastructure, consumer goods and the public sector.</p>
+      <p class="disp" data-i="disp">Open to remote roles · available now</p>
+    </div>
+  </header>
+
+  <section id="trabajo">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_proy">Projects</h2>
+      <div class="rail">
+        <div class="grid" id="grid"></div>
+        <button class="arrow" id="arrow" aria-label="Ver siguiente proyecto">&#8250;</button>
+      </div>
+      <div class="more-wrap">
+        <a class="more" href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">
+          Seguir viendo trabajos <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="casos">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_casos">Case studies</h2>
+      <p class="hook" data-i="casos_int" style="margin:-24px 0 44px">Four projects, four different problems.</p>
+      <div class="cases" id="cases"></div>
+
+      <a class="case lectura" data-art="tu-producto-necesita-ser-comprendido" href="articulos/tu-producto-necesita-ser-comprendido.html">
+        <span class="etq" data-i="art_etq">Article</span>
+        <span>
+          <span class="tit"><h3 data-i="art_tit">Your product needs to be understood</h3></span>
+          <span class="sub" data-i="art_sub">What happens when the market can finally read what you do.</span>
+        </span>
+        <span class="go">&#8250;</span>
+      </a>
+
+      <a class="case lectura" data-art="los-datos-no-deciden-solos" href="articulos/los-datos-no-deciden-solos.html">
+        <span class="etq" data-i="art2_etq">Article</span>
+        <span>
+          <span class="tit"><h3 data-i="art2_tit">Data does not decide on its own</h3></span>
+          <span class="sub" data-i="art2_sub">Data visualisation for multiple readings</span>
+        </span>
+        <span class="go">&#8250;</span>
+      </a>
+
+      <a class="case lectura" data-art="plataformas-con-vision-de-negocio" href="articulos/plataformas-con-vision-de-negocio.html">
+        <span class="etq" data-i="art3_etq">Article</span>
+        <span>
+          <span class="tit"><h3 data-i="art3_tit">Platforms built with business vision</h3></span>
+          <span class="sub" data-i="art3_sub">Websites and applications designed from strategy</span>
+        </span>
+        <span class="go">&#8250;</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_serv">Services</h2>
+      <div class="skills">
+        <div data-i="sv1">Strategic and innovation projects</div>
+        <div data-i="sv2">Product and service identity</div>
+        <div data-i="sv3">Information design</div>
+        <div data-i="sv4">Branding and visual systems</div>
+        <div data-i="sv5">Creative direction</div>
+        <div data-i="sv6">Applied research</div>
+      </div>
+      <div class="more-wrap">
+        <a class="more" href="#contacto" data-i="srv_cta">Let's talk <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_tray">Experience</h2>
+
+      <div class="job">
+        <div><h3 data-i="j1t">Design direction and strategy</h3><div class="org" data-i="j1o">Independent consultant</div></div>
+        <div class="when" data-i="j1w">Since 2012</div>
+        <div>
+          <p data-i="j1p">Direction of branding, product identity and information design systems, from strategy to implementation, for industry, the public sector and NGOs. I work with executive leadership to align operations, communication and decision-making. Among others, the full redesign of point of sale and communication for a network of more than 35 branches, and 360 communication systems.</p>
+          <div class="tags"><span data-i="tg1a">Design Direction</span><span data-i="tg1b">Information Design</span><span data-i="tg1c">Strategy</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><h3 data-i="j2t">Co-Director · Creative direction &amp; strategy</h3><div class="org">Satélite Agencia</div></div>
+        <div class="when">2018–2024</div>
+        <div>
+          <p data-i="j2p">Creative and strategic direction of branding projects across industry, healthcare, food and customer service. I built workflows and design systems to align teams with business objectives.</p>
+          <div class="tags"><span data-i="tg2a">Creative Direction</span><span data-i="tg2b">Design Systems</span><span data-i="tg2c">Process Design</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><h3 data-i="j3t">Corporate visual direction</h3><div class="org">Personal Partner · Electro Misiones</div></div>
+        <div class="when">2014–2016</div>
+        <div>
+          <p data-i="j3p">Corporate identity and brand consistency for a regional company, in partnership with Personal. Oversight of corporate and commercial communication, point of sale and online marketing.</p>
+          <div class="tags"><span data-i="tg3a">Corporate Identity</span><span data-i="tg3b">Point of Sale</span><span data-i="tg3c">Brand Communication</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><h3 data-i="j4t">Co-Founder · Art direction</h3><div class="org">Somos Gráficos</div></div>
+        <div class="when">2013–2015</div>
+        <div>
+          <p data-i="j4p">Boutique studio focused on identity design and visual problem-solving for small and medium businesses.</p>
+          <div class="tags"><span data-i="tg4a">Identity</span><span data-i="tg4b">Art Direction</span></div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><h3 data-i="j5t">Associate Professor</h3><div class="org">Universidad de la Cuenca del Plata</div><div class="loc">Posadas, Argentina</div></div>
+        <div class="when" data-i="j5w">Since 2015</div>
+        <div>
+          <p data-i="j5p">Semiotics, Graphic Design Workshops I and III, and Final Degree Project Workshop. I supervise graduation projects with a focus on real-world application, resource planning and feasibility.</p>
+          <div class="tags"><span data-i="tg5a">Semiotics</span><span data-i="tg5b">Teaching</span><span data-i="tg5c">Applied Research</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_form">Education</h2>
+      <div class="edu"><h3 data-i="e1t">MA in Design, Strategy and Innovation Management</h3><p data-i="e1p">UNNOBA · Coursework completed, thesis in progress</p></div>
+      <div class="edu"><h3 data-i="e2t">Graphic Designer</h3><p data-i="e2p">Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Gold Medal</p></div>
+      <div class="edu"><h3 data-i="e3t">Research</h3><p data-i="e3p">Published in scientific journals and conference proceedings (Editorial Design and Visual Semiotics). Speaker at AISV, ELaDDi, DiSUR, SEMA and APOAVA. Research grants from CEDIT and CIN.</p></div>
+      <div class="edu"><h3 data-i="e4t">Languages</h3><p data-i="e4p">Spanish native · English advanced · Cambridge FCE · 9 years of formal study (Saint George Institute · Proyecto Idiomas, UNaM) · Portuguese intermediate</p></div>
+      <div class="edu"><h3 data-i="e5t">Tools</h3><p data-i="e5p">Figma · Illustrator and InDesign (advanced) · WordPress (basic) · Claude Code (advanced: I built this site and its page generator with AI)</p></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_sobre">About</h2>
+      <p data-i="ab1">I lead projects that call for strategic thinking, design research and innovation, working with companies across industry, consumer goods and the public sector.</p>
+      <p data-i="ab2">There is a gap between what a company does, how it explains it and how it operates. My job is there.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <h2 class="eyebrow" data-i="s_cont">Contact</h2>
+      <p class="hook" style="margin:0 0 34px" data-i="cint">Do you have a project where technical complexity became hard to explain? Send me a message and let's talk.</p>
+
+      <a class="cta" href="contact-en.html" data-i="cbtn">Write to me →</a>
+      <div class="row" style="margin-top:44px"><span data-i="ctb">Also</span><a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>
+    </div>
+  </section>
+
+  <section id="contenido" class="solo-sin-js">
+    <div class="wrap">
+      <h2>Case studies</h2>
+      <article>
+        <h3><a href="casos/vender-continuidad-no-acero-en.html">Selling continuity, not steel</a></h3>
+        <p><em>Applied engineering for critical infrastructure and production · Information design · Brand · B2B / B2G public tenders</em></p>
+        <h4>The situation</h4>
+        <p>The company develops applied engineering products for water treatment plants, the chemical and food industries, energy, and critical infrastructure works. The product is patented, tested on the company's own benches and monitored by an automated control system. It also carries proprietary technology that solves spare-part availability, and an ease of maintenance and replacement with no equivalent in the region.</p>
+        <p>None of that reached the buyer. Neither the attributes of the product, nor the years of site experience behind its development.</p>
+        <p>In tenders it was compared by weight of steel and cost of welding, the only terms the documentation put on the table. It was losing to metal workshops.</p>
+        <h4>Where the difficulty was</h4>
+        <p>The main advantage was not mechanical but economic: the product can be serviced and replaced <strong>without stopping the process</strong>. In a small town that depends on that infrastructure for its supply, it means the service is not cut. In a plant, it means the line does not have to stop for a part change.</p>
+        <p>Everything else follows from that: less treated water wasted, less re-dosing of chemicals, less improvising on site.</p>
+        <p>The problem was conveying it. A public works project is not decided by one person, and each of the people who sign arrives with a different question.</p>
+        <p><strong>The contractor</strong> works against deadlines. They want simple assembly, parts nearby and no surprises during installation.</p>
+        <p><strong>The site engineer</strong> signs off on it. They need calculation data, patents and test results to size the piece against what the project requires.</p>
+        <p><strong>The owner</strong> —sometimes the plant owner, sometimes whoever authorises the works from a regulatory body— looks at plant stoppages, cost predictability and institutional reputation.</p>
+        <p><strong>Whoever maintains it</strong> comes later, when there is no one left to ask, and needs to be able to use and repair the product with whatever is at hand.</p>
+        <p>A single asset had to speak to all four, unify the basis for choosing and carry the value of the product. The flat technical documentation that existed spoke to none of them.</p>
+        <h4>What we decided</h4>
+        <p>Stop describing the object and start designing the decision.</p>
+        <p>We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision —purchase, use, maintenance— and to give each party what they needed.</p>
+        <p>The owner gets the cost avoided: no stoppage penalties, no chemical waste.</p>
+        <p>The engineer gets backing and autonomy. With the material at hand they run their calculations and planning without depending on a consultation.</p>
+        <p>The contractor gets speed, and an assembly sequence that minimises the installation errors that later compromise durability.</p>
+        <p>Whoever maintains it gets specifications that can be read on site, with no intermediary.</p>
+        <p>On the company's side that took load off its engineering team: one-to-one technical advice, which used to consume hours per enquiry, was delegated to the material.</p>
+        <p>Regional spare-part stock stopped being a logistics detail and became an institutional message. In infrastructure, an imported or informal supplier leaves a project orphaned when a part fails. Saying so up front disarmed the buyer's main fear, and ended up working as a barrier to entry for outside competitors.</p>
+        <h4>The system</h4>
+        <p><strong>Layered tender documentation.</strong> Pressure calculations and simulations sitting alongside the financial translation of the same fact, so a finance officer and a civil engineer could each read the value in their own language inside one document.</p>
+        <p><strong>3D renders.</strong> Cutaways exposing internal layers, materials and the sealing system: structural calculation made visible instead of abstract.</p>
+        <p><strong>Technical video.</strong> The test bench under hydraulic pressure, and part replacement performed without draining the plant. For financial and political decision-makers, this was the proof that mattered.</p>
+        <p><strong>Corporate sales brochure.</strong> An editorial piece built for procurement tables, arguing the return on downtime avoided.</p>
+        <p><strong>Assembly datasheets.</strong> Manual and automated opening specs, assembly sequence, regional parts availability.</p>
+        <p><strong>Institutional website.</strong> Two axes: decompressing the technical complexity, and transferring the value of the parent company's in-house engineering team.</p>
+        <h4>What changed</h4>
+        <p>At procurement tables, the unit price of materials stopped being the central argument and the overall value of the solution started to weigh. That made room for something previously invisible: the technical knowledge accumulated in the product, and what the development adds as industry in the region.</p>
+        <p>The brand stopped explaining a gate. It came to be recognised as a company that brings innovation to the projects it takes part in, because the firms that install the product can then build their own improvements on top of it.</p>
+      </article>
+      <article>
+        <h3><a href="casos/una-marca-que-sostiene-otras-en.html">A brand that carries other brands</a></h3>
+        <p><em>Corporate importer and distributor of international luxury labels · Brand architecture · Multi-stakeholder identity system · National scale</em></p>
+        <h4>The situation</h4>
+        <p>The company imports and distributes international luxury labels across the country: a solid logistics operation, presence in every major city, advanced supply-chain management, and official representation agreements with global houses.</p>
+        <p>Behind that operation sits something no inventory records: ten years of relationships with global houses and with retailers across the country. The value of the connection was its main asset, and the hardest one to show.</p>
+        <p>Its identity did not carry that strength. An isolated mark, no narrative, no structure, in a style that confused it with the products it imported. The whole scale of the operation stayed invisible, both to buyers and to the houses it represented.</p>
+        <h4>Where the difficulty was</h4>
+        <p>What had to be conveyed, to buyers and to represented houses alike, was the full standing the company brought in operations and in advice. Working with luxury labels means understanding the market and the product, knowing how it sells, and recommending how to present it so the value arrives intact.</p>
+        <p>It was a category error, not a matter of taste. The company was being read as <strong>the product</strong>, when it is in fact <strong>the platform that manages the product</strong>.</p>
+        <p>With ten years of track record, that misreading carried a commercial cost. A business whose real work is to hold and protect the reputation of global luxury houses cannot look like one of the articles it distributes: it loses the authority to be their authorised custodian.</p>
+        <p>And the identity had to hold four sets of interests at once, each pulling in a different direction:</p>
+        <p><strong>The sales force</strong> needed prospecting tools with institutional backing and evident officialdom.</p>
+        <p><strong>Retailers</strong>, operating at very different levels, needed a brand they could trust, premium handling guidelines and advice.</p>
+        <p><strong>The global head offices</strong> needed a local partner whose own representation reflected their status and safeguarded the category.</p>
+        <p><strong>The competitive field</strong> —traditional importers with grey logistics— had to be visibly set apart.</p>
+        <h4>What we decided</h4>
+        <p>Move the brand off the product shelf and onto the infrastructure layer.</p>
+        <p>The system was built as a corporate frame that holds and endorses the reputation of others, rather than competing with what it carries. That called for deliberate restraint: sophisticated neutrality, geometric and typographic rigour, and no stylistic signature that would age or clash with any label passing through.</p>
+        <p>The test applied throughout was future growth. The company was in a planned expansion into other product lines, and every decision was checked against whether the brand would still work once they came in.</p>
+        <h4>The system</h4>
+        <p><strong>Corporate identity system</strong> built on high-end neutrality, able to sit alongside global luxury houses without competing with them while securing proper representation.</p>
+        <p><strong>Versatile information architecture</strong>, structured to absorb new luxury verticals without redesign.</p>
+        <p><strong>Prospecting tools for the sales force</strong>, giving field negotiation the weight of official representation.</p>
+        <p><strong>Reputation management manuals</strong>, ensuring the perception of official representation holds consistently at every physical and digital touchpoint, across retailers operating at very different levels.</p>
+        <h4>What changed</h4>
+        <p>The identity stopped describing a product and started working as an instrument of negotiation. Leadership could sit down and close present contracts and future agreements from the same institutional position.</p>
+        <p>The brand no longer competes with what it carries. It endorses it.</p>
+      </article>
+      <article>
+        <h3><a href="casos/tomar-un-shopping-en.html">Taking over a shopping mall</a></h3>
+        <p><em>International wine festival · Spatial design · Information design · Digital ecosystem · International audience</em></p>
+        <h4>The situation</h4>
+        <p>An annual wine tasting festival with a long history, drawing thousands of visitors from three neighbouring countries to meet and celebrate wine, a few kilometres from the Iguazú Falls.</p>
+        <p>For the country's leading wineries, attending is a non-negotiable tradition.</p>
+        <h4>Where the difficulty was</h4>
+        <p>The venue was the risk. A festival with a premium reputation held inside a shopping centre that had to be trading again the next day.</p>
+        <p>That set the rules before anything began: the centre stayed operational, so there was no room for structural work. Everything had to be temporary. And it had to be ecological: whatever was printed for the event was offset afterwards through planting, with the carbon calculated.</p>
+        <p>Within those conditions, an installation capable of producing a memorable evening had to go up in record time.</p>
+        <p>At the same time the organisers wanted a jump in scale: national campaigns, digital ticketing, an international wine community. Not a larger version of the same tasting.</p>
+        <p>Two problems at once: defending the character of the event against its own venue, and extending its reach beyond the hall.</p>
+        <h4>What we decided</h4>
+        <p>Take control of the environment instead of decorating inside it.</p>
+        <p>The strategy started from treating wine as an art. Renaissance works in which wine appears were taken and reworked: the Mona Lisa winking over a glass from Mendoza, next to a Bacchus DJ opening the night in loud colour.</p>
+        <p>The work was co-designed with architects and builders, and began at the shopping centre's entrance portal, so that visitors crossed a perceptual threshold before reaching a single stand. Inside, every stand was brought to a common standard and sector dividers were placed to order the flow of a crowd in an enclosed space.</p>
+        <p>The second decision was to treat social media as a live instrument of a relational audience, not as advertising. Wine audiences are highly social: physical interaction on site fed content in real time, and that content brought the international community back towards the event. A circuit, not a broadcast.</p>
+        <h4>The system</h4>
+        <p><strong>Festival identity</strong>, built to stand on its own regardless of the host venue, with a flower wall drawn from the rose bushes planted in vineyards.</p>
+        <p><strong>Spatial layout and intervention of the shopping centre</strong>: entrance portal, unified stand design, and strategic sector dividers to manage circulation and visitor comfort.</p>
+        <p><strong>Characters on site</strong>: Bacchus and the Mona Lisa, played by actors inside the hall.</p>
+        <p><strong>Microsite and digital ticketing.</strong></p>
+        <p><strong>Community-led social strategy</strong>, built for real-time interaction rather than for the announcement.</p>
+        <p><strong>POP material</strong> designed to be replicated organically by attendees and influencers.</p>
+        <p><strong>Wayfinding signage across the city</strong> and event merchandising.</p>
+        <h4>What changed</h4>
+        <p>The shopping centre stopped being a constraint and became the stage of the festival.</p>
+        <p>Design worked here as behavioural architecture: it lowered the friction of a mass audience in an enclosed space while raising perceived exclusivity. Physical and digital stopped being two channels.</p>
+        <p>The event became a regional cultural landmark rather than an annual date: something people mark in next year's calendar before it is announced.</p>
+      </article>
+      <article>
+        <h3><a href="casos/disenar-confianza-para-quienes-saben-en.html">Designing trust for people who can spot the fake</a></h3>
+        <p><em>Fintech lending to a specific professional niche, national coverage · Semiotic research · Brand character · Interface trust design</em></p>
+        <h4>The situation</h4>
+        <p>A lending company serving a specific professional niche across the country. Its real advantage is operational speed: money moves in a fraction of the time state credit systems take.</p>
+        <p>Its problem was the company it kept. Fast-lending brands tend to look loud and informal, and that aesthetic reads as risk.</p>
+        <p>For someone to hand over their details and enter into a relationship with the company, the image has to convey understanding and trust. The audience had already diagnosed the trap: a generic image was not going to be enough.</p>
+        <h4>Where the difficulty was</h4>
+        <p>The problem was not in the product, it was in the relationship. And it had to be designed without turning the brand into something distant, slow or bureaucratic, which is exactly what the company existed to avoid.</p>
+        <h4>What we decided</h4>
+        <p>Build the brand from the visual language of the audience, not from that of the category.</p>
+        <p>We ran a semiotic reading of the country's visual and cultural context: dress, contextual palettes, the physical presentation of public figures with high visibility and stable reputation. Also signs tied to money and to the value of what was being requested.</p>
+        <p>Out of that came a brand character: a deliberate hybrid of two archetypes, the good neighbour and the entrepreneur. Someone able to help you grow.</p>
+        <p>The character was not an illustration choice. It was built through a process of research and design so that it would be read as part of the community rather than as a company.</p>
+        <h4>The system</h4>
+        <p><strong>Culturally coded brand character</strong>, acting as a guarantor across every channel.</p>
+        <p><strong>Security graphics</strong> drawn from the iconography of the country's official banknotes, placing the brand inside the imagery of legal financial solidity.</p>
+        <p><strong>Humanised application flow</strong>: the character presents their own documentation, carrying confidence and security through the process.</p>
+        <p><strong>Omnichannel application kit</strong>: interactive social, branch material and merchandising.</p>
+        <p><strong>Social strategy as financial education</strong>, making the company's responsibility tangible by teaching about investment and money management.</p>
+        <p><strong>Physical payment tracking card</strong>, handed to every borrower, to organise repayment as a method rather than as a reminder.</p>
+        <h4>What changed</h4>
+        <p>The service stopped being a transaction and became a relationship between people and the company. Trust was not asserted: it was built with signs the audience already recognised as legitimate.</p>
+        <p>By pairing credit with tracking tools and ongoing financial education, the brand aligned with the needs and characteristics of its own niche.</p>
+        <p>By valuing the knowledge that enables growth, the system became a bridge to legitimacy.</p>
+      </article>
+      <h2>Articles</h2>
+      <article>
+        <h3><a href="articulos/tu-producto-necesita-ser-comprendido-en.html">Your product needs to be understood</a></h3>
+        <p></p>
+        <p>When you find your competition out in the market selling at half the quality you offer, but you do not know how to get across what your product is worth, you usually try to explain yourself in more detail to make yourself understood. What you actually need is for your client to have a real, deep understanding of your technical information, translated into terms they can grasp. The truth is you will not be able to stand at every point of the circuit explaining everything. That wears anyone down, and you know your knowledge and leadership are needed in other areas of your company. How do you take back control and start making the decisions that matter for your business?</p>
+        <blockquote>What happens when the market can finally read what you do.</blockquote>
+        <p>In many cases, the different points your product has to pass through before reaching its end consumer are staffed by people who do not have the clarity your production team has. Sometimes your own team also gets lost among the different proposals, and that usually creates problems when it comes to delivering what they do best.</p>
+        <p>One of the challenges that hurts most in a technical company is when the product (or service) is compared on uneven terms: it holds a large amount of technical knowledge built up through experience and track record, and that knowledge still does not weigh on the buying decision of whoever decides. There is value in the successive implementations and adjustments in quality, materials and embedded technology, but none of it shows up in the offer, and it means your qualified staff spend a lot of time explaining it.</p>
+        <p>At this turning point it is time to consolidate the effort: time and market exposure should have given your company specialised knowledge that makes the difference. What is missing is integrating it and scaling the impact it generates.</p>
+        <p>By this stage many companies realise their products deliver several solutions, carry embedded technology and follow regulated processes, and that all of it stays invisible in a tender or at an industry event. In some cases the company has grown and is entering new markets, but does not yet have there the reputation it does have among its long-standing clients.</p>
+        <p>If this is your case, it is a key moment to strengthen your offer, presenting the best of your company clearly and understandably, so you can reach the kind of project you are able to take on. Aligning perception and capability.</p>
+        <p>When your business is aligned and explains itself, you stop competing on price.</p>
+        <p>Your technical team gets time back for what matters.</p>
+        <p>And the projects that reach you are the ones you can take on.</p>
+      </article>
+      <article>
+        <h3><a href="articulos/los-datos-no-deciden-solos-en.html">Data does not decide on its own</a></h3>
+        <p></p>
+        <p>You have the data. You made the chart. You took it to the meeting. And the meeting ended like the one before it, with nobody deciding anything.</p>
+        <p>This is more common than it looks, and it is almost never a problem of missing data. It is a problem of what the chart was asked to do.</p>
+        <blockquote>A chart does not communicate data. It communicates a reading of the data.</blockquote>
+        <p>When an organisation starts measuring, the temptation is to show everything: every variable, every cut, every series. The result is a dashboard nobody looks at twice, or a report that gets cited but never used. The information is there, but it is not arranged so that anyone can act on it.</p>
+        <p>The question that changes the work is not «what data do I have». It is <strong>who has to decide what, and against what will they compare it</strong>.</p>
+        <h4>The same data, four readings</h4>
+        <p>That question has immediate consequences, because there is almost never a single reader.</p>
+        <p>In technical documentation for critical infrastructure tenders I worked with four actors reading the same document with opposing criteria. The contractor looks at schedule and assembly. The site engineer needs calculation data, testing and patents, because their signature goes on it. The client looks at avoided cost and predictability. And the fourth, the person who later maintains the equipment, takes no part in the purchase at all, yet determines whether the product delivers what it promised.</p>
+        <p>One chart cannot serve all four. What gets designed there is not a piece but an architecture: what each person sees, in what order, and at which moment a given figure appears, ideally just as the question forms in their head.</p>
+        <p>The ordering principle is easy to state and hard to hold: every data point has to earn its place against a concrete decision. If it enables none, it is noise, however interesting it may be.</p>
+        <h4>When the materials have nothing in common</h4>
+        <p>There is a different, more uncomfortable problem when what you have to integrate is not a set of comparable series.</p>
+        <p>In a report on hate speech I designed for a human rights foundation, four materials had to coexist that resemble each other in no way: personal testimony, legal framework, public budget figures and press coverage. Each demands its own visual treatment, and none can be subordinated to another without changing what the report means. If the budget figure dominates, the testimony becomes an anecdote. If the testimony dominates, the figure becomes decoration.</p>
+        <p>What orders that is not chart styling. It is the editorial decision about what has to be understood first, and what reading has to stay available to someone who returns to the document six months later looking for a single figure.</p>
+        <p>A report like that has two audiences at once: the person who reads it through once, and the person who consults it many times without ever reading it. Those needs pull in opposite directions and both have to be met.</p>
+        <h4>Before the chart comes the category</h4>
+        <p>Sometimes the problem never even reached the visualisation stage. It sits earlier.</p>
+        <p>In a home services platform, the catalogue was organised by trade: plumbing, electrical, gas, gardening, thirty-odd unrelated categories. That is the provider's logic, not the logic of the person searching. Nobody wakes up thinking «I need a trade category».</p>
+        <p>I reorganised the catalogue by human experience: shelter, care, rest, belonging, mobility, celebration, community. Thirty disconnected trades became a handful of fields a person already understands without explanation.</p>
+        <p>The system also had to be designed against a live database that kept growing, so it could not represent only the providers who existed that day: it had to hold any provider who might join later. That constraint defines the field hierarchy more than any individual screen does.</p>
+        <p>A taxonomy is not an ordered list. It is a hypothesis about how someone understands a domain, and it can be tested.</p>
+        <h4>Figures that hold up an argument</h4>
+        <p>There is one last case, quieter: when the figure is not there to support a decision but to support a claim.</p>
+        <p>In the rebranding of a human resources consultancy, the strategy rested on hard labour market figures: the share of employers who cannot fill positions, the country's standing in talent shortage rankings, how candidates under 25 weigh salary against other factors. Those numbers do not belong in a dashboard. They belong in the body of the argument, and their job is to stop a claim from reading as an opinion.</p>
+        <p>There the visualisation is austere by design: few figures, well chosen, with the source visible. A figure without a source is decoration.</p>
+        <h4>The right order</h4>
+        <p>There is a common trap along the way: the tool arrives before the criterion. The chart type, the palette and the library get chosen first, and only afterwards does anyone ask what it was for.</p>
+        <p>The reverse order is less glamorous and works better. First the decision that has to be enabled. Then the comparison that supports it. Form last.</p>
+        <p>I have taught this for years in studio, and the exercise that produces the most is not technical. It is asking the student to write down, before opening any software, the exact sentence someone should be able to say after looking at the chart. If that sentence does not exist, the chart has no reason to exist either. If the sentence exists but is obvious, the chart is redundant. And if the sentence exists and changes something, half the work is already done.</p>
+        <h4>What changes when it is done well</h4>
+        <p>Meetings get shorter.</p>
+        <p>Arguments stop being about the numbers and start being about what to do.</p>
+        <p>And the report gets used instead of filed.</p>
+      </article>
+      <article>
+        <h3><a href="articulos/plataformas-con-vision-de-negocio-en.html">Platforms built with business vision</a></h3>
+        <p>Websites and applications designed from strategy.</p>
+        <p><strong>Role and scope.</strong> Design lead on all three: problem framing, information architecture, visual system, high-fidelity design and handoff to development.</p>
+        <h4>A home services marketplace: two sides that have to judge each other</h4>
+        <p>Two founders asked for a directory of repair workers. The requirements document kept moving: the list of services grew, and providers were added and removed.</p>
+        <p>The real problem was underneath. In a market shaped by informal labour, a stranger has to let another stranger into their home, and both sides need to judge each other before anything happens. The founders were looking for a way to communicate their project, but framing it as a place to contact technical staff capped the business and made the offer illegible: thirty-plus unrelated trades, with no order anyone could hold in their head.</p>
+        <p>I started from the sector, not from the interface. I analysed competitors and reports, and studied ways to organise and visualise the information. The key was understanding how people searched for these services, and how to deliver an experience that felt close and was also usable. That led to the core decision: a new taxonomy, with services grouped by the human experience they belong to: shelter, care, rest, belonging, mobility, celebration and community.</p>
+        <p>As part of the app strategy, we set out to position a culture of work, with providers as ambassadors. The provider profile became the centre of the product, reduced to what a client needs in order to decide. It had to be designed against a database the developer was still building, so it could not represent only the providers who existed that day. The whole project was designed for what it could grow into, with imagery able to carry a complex, comprehensive offer.</p>
+        <p>I delivered the taxonomy, information architecture, brand, visual system, high-fidelity screens and implementation documentation. That documentation covered the visual rules, production assets and the behaviour of every interaction: what happens on click and how the interface responds. I worked alongside the team's developer through the build. Strategy and part of the user flow were developed with Luisina Portillo.</p>
+        <p><strong>Status:</strong> Designed end to end and handed off to development. The project was paused before launch for reasons outside the design scope.</p>
+        <h4>A recruitment consultancy: two audiences with opposite questions</h4>
+        <p>A regional B2B recruitment and temporary staffing firm, with more than twenty years in the market, asked us to redefine its identity and digital presence. The site had to serve two audiences with clearly different questions: companies evaluating whether to outsource hiring, and candidates looking for work.</p>
+        <p>The strategy was to create a space where each audience could find its own way through the consultancy. As a result, the site architecture splits early and keeps those parts apart. Employers get a route organised by service (outsourcing, recruitment and selection, temporary staffing, events). Candidates get another, organised by sector and live openings, which hands off to the external applicant platform the client already used.</p>
+        <p>The positioning took shape through concrete labour market figures, which helped convey the firm's experience and reputation as an authoritative voice in its sector. Those figures explain what is happening in the market and, at the same time, guide each audience through the site. The website presents the range and depth of services clearly, while still meeting the consultancy's needs for managing its candidate database and job calls. It also gives the companies that hire its services clear arguments to justify their decision.</p>
+        <p><strong>Status:</strong> Launched in 2024 and still live on my design, with later updates made by the client.</p>
+        <h4>A store to buy straight from the mill</h4>
+        <p>A yerba mate producer with a long history that was not yet coming through in its packaging or its digital presence. The strategy began with a solid product identity, but the website had to say much more. The interface problem was specific: how to convey the company's value without building just another shopping cart.</p>
+        <p>So the site opens on origin. The home page places the producer in its territory: the protected wetlands a few kilometres from the yerba fields, and a commitment to biodiversity. Navigation is built on that same ground: the yerba fields, a native plant nursery, the mill and the company's philosophy. The catalogue is one step away, with formats and prices that are easy to compare once the buyer already has a reason to care. On that foundation, the WooCommerce store handles the full e-commerce experience: catalogue, cart, customer accounts and newsletter.</p>
+        <p>The store was not a one-off delivery. A first site came first, followed by a redesign, with positioning built for the brand, new product launches and merchandise. Much of the work was about telling the story behind the product and keeping the site dynamic and drawing traffic. Positioning ran as a continuous system: social media, Google Ads, web banners, promotional actions and downloadable content, all built on the same origin story the site opens with. The website was a cross-disciplinary team effort.</p>
+        <p><strong>Status:</strong> First launched in 2021 and redesigned in 2023 for new product lines and merchandise. Still live on my design.</p>
+        <h4>What the three have in common</h4>
+        <p>Each one conveys the company's value in its own particular way, and each one directs a strategic use of digital resources, information and site sections. All three position the project through its usefulness and its meaning.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer><div class="wrap">© <span id="year"></span> Gabriel González</div></footer>
+</main>
+
+<div id="detail">
+  <button class="close" id="close" aria-label="Cerrar">&times;</button>
+  <div class="wrap" id="detail-body"></div>
+</div>
+
+<script>
+// ============================================================
+// TRABAJOS — editá acá. shots: número = placeholders;
+// lista de rutas = imágenes reales, ej ["img/est-01.jpg", ...]
+// ============================================================
+
+
+var DIM = {"img/envasando/envasando-00.jpg": [1800, 1576], "img/envasando/envasando-01.jpg": [1800, 1012], "img/envasando/envasando-02.jpg": [1800, 1012], "img/envasando/envasando-03.jpg": [1800, 1012], "img/envasando/envasando-04.jpg": [1800, 1012], "img/envasando/envasando-05.jpg": [1800, 1012], "img/envasando/envasando-06.jpg": [1800, 1012], "img/envasando/envasando-07.jpg": [1800, 1012], "img/envasando/envasando-08.jpg": [1800, 1207], "img/envasando/envasando-09.jpg": [1800, 1012], "img/envasando/envasando-10.jpg": [1800, 1012], "img/ddo/ddo-00.jpg": [1800, 1576], "img/ddo/ddo-01.jpg": [1800, 1012], "img/ddo/ddo-02.jpg": [1800, 1012], "img/ddo/ddo-03.jpg": [1800, 1012], "img/ddo/ddo-04.jpg": [1800, 1012], "img/ddo/ddo-05.jpg": [1800, 1012], "img/ddo/ddo-06.jpg": [1800, 1012], "img/ddo/ddo-07.jpg": [1800, 1012], "img/estancco/estancco-00.jpg": [1800, 1350], "img/estancco/estancco-01.jpg": [1800, 861], "img/estancco/estancco-02.jpg": [1800, 1982], "img/estancco/estancco-03.jpg": [1800, 1140], "img/estancco/estancco-04.jpg": [1800, 1278], "img/estancco/estancco-05.jpg": [1800, 1312], "img/estancco/estancco-06.jpg": [1800, 876], "img/estancco/estancco-07.jpg": [1800, 1200], "img/hidra/hidra-00.jpg": [1800, 1576], "img/hidra/hidra-01.jpg": [1800, 1012], "img/hidra/hidra-02.jpg": [1800, 1012], "img/hidra/hidra-03.jpg": [1800, 1012], "img/hidra/hidra-04.jpg": [1800, 1012], "img/hidra/hidra-05.jpg": [1800, 603], "img/hidra/hidra-06.jpg": [1800, 1119], "img/hidra/hidra-07.jpg": [1800, 610], "img/hidra/hidra-08.jpg": [1800, 878], "img/hidra/hidra-09.jpg": [1800, 878], "img/luxus/luxus-00.jpg": [1800, 1127], "img/luxus/luxus-01.jpg": [1800, 598], "img/luxus/luxus-02.jpg": [1427, 998], "img/luxus/luxus-03.jpg": [1800, 1425], "img/luxus/luxus-04.jpg": [1800, 1012], "img/luxus/luxus-ficha.jpg": [1800, 1012], "img/luxus/luxus-05.jpg": [1800, 1012], "img/luxus/luxus-portada.jpg": [1800, 1350], "img/oda/oda-00.jpg": [1800, 1576], "img/oda/oda-01.jpg": [1800, 502], "img/oda/oda-02.jpg": [1800, 3748], "img/oda/oda-03.jpg": [1800, 899], "img/oda/oda-04.jpg": [1800, 2815], "img/oda/oda-05.jpg": [1800, 3257], "img/oda/oda-06.jpg": [1800, 2708], "img/oda/oda-07.jpg": [1800, 2015], "img/oda/oda-08.jpg": [1800, 1581], "img/primicia/primicia-00.jpg": [1800, 1576], "img/primicia/primicia-01.jpg": [1800, 1576], "img/primicia/primicia-02.jpg": [1800, 860], "img/primicia/primicia-03.jpg": [1779, 1175], "img/primicia/primicia-04.jpg": [1800, 855], "img/primicia/primicia-05.jpg": [1800, 857], "img/primicia/primicia-06.jpg": [1800, 900], "img/primicia/primicia-07.jpg": [1559, 667], "img/primicia/primicia-08.jpg": [1600, 1646], "img/primicia/primicia-09.jpg": [1600, 957], "img/primicia/primicia-10.jpg": [1600, 957], "img/primicia/primicia-11.jpg": [1600, 957], "img/primicia/primicia-12.jpg": [1800, 3040], "img/primicia/primicia-13.jpg": [1600, 957], "img/primicia/primicia-14.jpg": [1605, 1133]};
+function dimAttr(src){ var d = DIM[src]; return d ? ' width="'+d[0]+'" height="'+d[1]+'"' : ''; }
+
+var WORKS = [
+  {
+    title:"Envasando",
+    en:{
+      desc:"From machinery to service.",
+      cats:["Corporate identity","Information design"],
+      tag:"Packaging industry · Brand ecosystem",
+      body:[
+        "With a track record that places it first in the packaging industry, Envasando needed to present its quality, positioning and development. So that regular and prospective clients could recognise the range of services without staying at surface level or being overloaded with technical detail, the work required an in-depth survey of the offering, production capacity, and the brand's functional and conceptual attributes.",
+        "The proposal found a way to make visible the value placed in every process of the company: transformation and packaging, in quality as much as in technology and service.",
+        "The strategy: recognising that the company's main differentiator is no longer its machinery, and showing the value behind production instead: the package that protects each client's product, and a team that holds first place.",
+        "Service was the axis of the redesign: communication stopped being organised around machinery and started showing how the company supports each client from development through to packaging, ensuring flawless shelf visibility and care for the product all the way to consumers' homes. The project laid the groundwork for a later culture and innovation programme."
+      ],
+      credits:{
+        title:"Brand ecosystem | Strategy",
+        sub:"Information design | 360 communication",
+        roles:"Creative direction & Design: Gabriel González / Project management & Strategy: Luisina Portillo / Design Support: Luciano Hermida & María Eugenia Robledo"
+      }
+    },
+    desc:"De la maquinaria al servicio.",
+    cats:["Identidad corporativa","Diseño de información"],
+    tag:"Industria del packaging · Ecosistema de marca",
+    cover:"img/envasando/envasando-00.jpg",
+    shots:[
+      "img/envasando/envasando-01.jpg",
+      "img/envasando/envasando-02.jpg",
+      "img/envasando/envasando-03.jpg",
+      "img/envasando/envasando-04.jpg",
+      "img/envasando/envasando-05.jpg",
+      "img/envasando/envasando-06.jpg",
+      "img/envasando/envasando-07.jpg",
+      "img/envasando/envasando-08.jpg",
+      "img/envasando/envasando-09.jpg",
+      "img/envasando/envasando-10.jpg"
+    ],
+    body:[
+      "Con una trayectoria que los ubica primeros en la industria del packaging, Envasando se encuentra con la necesidad de presentar su calidad, posicionamiento y desarrollo. Para que sus clientes regulares y potenciales puedan reconocer la diversidad de servicios sin quedarse en información superficial, o sobrecargarse de tecnicismos se requirió un relevamiento en profundidad de la oferta, la capacidad productiva, los atributos funcionales y conceptuales de la marca.",
+      "La propuesta encontró la forma de hacer ver el valor puesto en todos los procesos de la empresa: la transformación y el proceso de envasado tanto en calidad como tecnología y servicio.",
+      "La estrategia: reconocer el principal diferencial de la empresa que ya dejó de ser la maquinaria para mostrar el valor detrás de la producción: el envase que protege el producto de cada cliente y un equipo que sostiene el primer lugar.",
+      "El eje del rediseño fue el servicio, la comunicación dejó de ordenarse alrededor de la maquinaria y pasó a mostrar cómo la empresa acompaña a cada cliente desde el desarrollo hasta el envasado, asegurando una visibilidad en góndola impecable y un cuidado del producto hasta los hogares de sus consumidores. El proyecto sentó las bases para un posterior desarrollo de cultura e innovación."
+    ],
+    credits:{
+      title:"Ecosistema de marca | Estrategia",
+      sub:"Diseño de información | Comunicación 360",
+      roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto y estrategia: Luisina Portillo / Apoyo de diseño: Luciano Hermida y María Eugenia Robledo"
+    }
+  },
+  {
+    title:"Primicia",
+    en:{
+      desc:"A yerba mate with history, reconnected to its community.",
+      cats:["Brand identity","Consumer goods"],
+      tag:"Yerba mate · Brand ecosystem",
+      body:[
+        "From the southernmost yerba fields in Argentina comes Primicia, a country-milled yerba mate that keeps you company day to day. The product carries a tradition of conversation and contact with nature that we took on as a challenge: to recognise and retell it in its familiar meaning and in its dedication.",
+        "The challenge: how do you connect a popular yerba mate (one with history and a sense of responsibility towards its surroundings) with its community, without losing an identity so deeply rooted in tradition?",
+        "The product's relationship with its culture of origin and its ties to the Iberá wetlands were part of the path we walked in its communication: with stories from the countryside, gatherings with friends, recipes made by grandmothers and moments full of tradition and play.",
+        "Primicia took us through a biodiversity full of colour, connected to the wetlands and native woodlands that surround the yerba fields, and we recognised ourselves in our responsibility towards the environment. Along the way we observed the colourful landscapes of Iberá, with images from the production process of the Tradicional, Tu instante and Selección varieties, and shared encounters with the community at events and fairs.",
+        "The outcome: a brand ecosystem that speaks through values and in the code of the local culture. The story of a company told from many angles, expressing its values in relation to its community, accompanying its commercial actions, its production and its day-to-day work through to its selected milling."
+      ],
+      credits:{
+        title:"Brand ecosystem | Product identity",
+        sub:"Integrated image project | 360 communication, CSR and social media",
+        roles:"Creative direction and design: Gabriel González / Project management and strategy: Luisina Portillo / Illustration and patterns: Fernanda Parchomczuk / Intern: Aldana Galeano"
+      }
+    },
+    desc:"Una yerba con historia, reconectada con su comunidad.",
+    cats:["Identidad de marca","Consumo masivo"],
+    tag:"Yerba mate · Ecosistema de marca",
+    cover:"img/primicia/primicia-00.jpg",
+    shots:[
+      "img/primicia/primicia-02.jpg","img/primicia/primicia-03.jpg",
+      "img/primicia/primicia-04.jpg","img/primicia/primicia-05.jpg","img/primicia/primicia-06.jpg",
+      "img/primicia/primicia-07.jpg","img/primicia/primicia-08.jpg","img/primicia/primicia-09.jpg",
+      "img/primicia/primicia-10.jpg","img/primicia/primicia-11.jpg","img/primicia/primicia-12.jpg",
+      "img/primicia/primicia-13.jpg","img/primicia/primicia-14.jpg"
+    ],
+    body:[
+      "De los yerbales más australes de la Argentina nace la yerba mate Primicia, una molienda de campo que te acompaña en tu día a día. El producto acompaña una tradición de conversaciones y contacto con la naturaleza que se presentó como desafío reconocer y relatar en su sentido conocido y en su dedicación.",
+      "El desafío: ¿cómo conectar una yerba popular, con historia y un sentido de responsabilidad con su entorno, con su comunidad, sin perder la identidad fuertemente arraigada a la tradición?",
+      "La relación del producto con su cultura de origen y su vinculación con los Esteros del Iberá fueron parte del camino a recorrer en la comunicación: con historias de campo, de encuentros con amigos, recetas hechas por las abuelas y momentos cargados de tradición y juego.",
+      "Primicia nos llevó a recorrer una biodiversidad llena de color, en vinculación con los esteros y montes nativos que rodean a los yerbales, y nos reconocimos en nuestra responsabilidad con el medio ambiente. En el proceso observamos los paisajes del Iberá llenos de colores, con postales del proceso de elaboración de las variedades Tradicional, Tu instante y Selección, y compartimos encuentros con la comunidad en eventos y ferias.",
+      "El resultado: un ecosistema de marca que habla con valores y en el código de la cultura local. La historia de una empresa relatada desde diversos ángulos, expresando sus valores en relación con su comunidad, acompañando sus acciones comerciales, de producción y del día a día hasta su molienda seleccionada."
+    ],
+    credits:{
+      title:"Ecosistema de marca | Identidad de producto",
+      sub:"Proyecto integral de imagen | Comunicación 360, RSE y Redes Sociales",
+      roles:"Dirección creativa y diseño: Gabriel González / Gestión de proyecto y estrategia: Luisina Portillo / Ilustraciones y tramas: Fernanda Parchomczuk / Pasante: Aldana Galeano"
+    }
+  },
+  {
+    title:"Estancco",
+    en:{
+      desc:"From metal fabrication to critical-continuity asset.",
+      cats:["Product identity","Information design"],
+      tag:"Hydraulic infrastructure · Product identity",
+      body:[
+        "Estancco develops applied technology in high-quality gates, with the purpose of delivering reliable and efficient solutions for water management and control. Its team designs, manufactures and sells hydraulic gates for infrastructure, water and channelling works, water treatment, and other industries such as food, mining and energy.",
+        "The company's main product, its high-precision gates, features a set of components that enable optimised installation and maintenance, along with high-quality materials, manufacturing and development for an extended service life.",
+        "The challenge: translating high technical value into brand reputation and a solid product identity for a complex industrial product aimed at international markets.",
+        "The strategy: the value of a product built to last, applying engineering technology to infrastructure works. A company betting on innovation, materialised in a single product that makes the difference.",
+        "The outcome is a product identity that communicates the technical knowledge applied to each component, building fluency in the understanding of highly complex information for the multiple actors along the value chain."
+      ],
+      credits:{
+        title:"Strategic and product identity",
+        sub:"Integrated image, 360 communication and technical material project",
+        roles:"Product identity and creative direction: Gabriel González / Project direction: Federico Gunther"
+      }
+    },
+    desc:"De fierro metalúrgico a activo de continuidad crítica.",
+    cats:["Identidad de producto","Diseño de información"],
+    tag:"Infraestructura hidráulica · Identidad de producto",
+    cover:"img/estancco/estancco-00.jpg",
+    shots:[
+      "img/estancco/estancco-01.jpg",
+      "img/estancco/estancco-02.jpg",
+      "img/estancco/estancco-03.jpg",
+      "img/estancco/estancco-04.jpg",
+      "img/estancco/estancco-05.jpg",
+      "img/estancco/estancco-06.jpg",
+      "img/estancco/estancco-07.jpg"
+    ],
+    body:[
+      "Estancco desarrolla su tecnología aplicada en compuertas de alta calidad con el propósito de brindar soluciones confiables y eficientes para el manejo y control del agua. Su equipo diseña, fabrica y comercializa compuertas hidráulicas para la utilización en obras de infraestructura, hídricas y de canalización, de saneamiento de aguas, y de otras industrias como alimentos, minería y energía.",
+      "El principal producto de la empresa, sus compuertas de alta precisión, presenta una serie de componentes que facilitan una instalación y mantenimiento optimizado, alta calidad en materiales, elaboración y desarrollo para una vida útil extendida.",
+      "El desafío: traducir el alto valor técnico en reputación de marca y una identidad sólida de producto técnico industrial de complejidad para la comercialización internacional.",
+      "La estrategia: el valor de un producto pensado para durar, que aplica tecnología de ingeniería a las obras de infraestructura. Una empresa que apuesta por la innovación materializada en un solo producto que hace la diferencia.",
+      "Se desarrolla una identidad de producto que comunica el conocimiento técnico aplicado en cada componente, desarrollando la fluidez en la comprensión de información de alta complejidad para múltiples actores de la cadena de valor."
+    ],
+    credits:{
+      title:"Identidad estratégica y de producto",
+      sub:"Proyecto integral de imagen, comunicación 360 y material técnico",
+      roles:"Identidad de producto y dirección creativa: Gabriel González / Dirección de proyecto: Federico Gunther"
+    }
+  },
+  {
+    title:"Hidra",
+    desc:"Credibilidad institucional para competir en licitaciones públicas.",
+    cats:["Identidad institucional","Diseño de información"],
+    tag:"Obras hídricas · Identidad institucional",
+    cover:"img/hidra/hidra-00.jpg",
+    shots:[
+      "img/hidra/hidra-01.jpg","img/hidra/hidra-02.jpg","img/hidra/hidra-03.jpg",
+      "img/hidra/hidra-04.jpg","img/hidra/hidra-05.jpg","img/hidra/hidra-06.jpg",
+      "img/hidra/hidra-07.jpg","img/hidra/hidra-08.jpg","img/hidra/hidra-09.jpg"
+    ],
+    body:[
+      "Hidra es una empresa de ingeniería especializada en obras hídricas: bombas, tableros y metalmecánica para plantas potabilizadoras, estaciones de bombeo, acueductos y plantas de tratamiento.",
+      "Reuniendo años de experticia y conocimiento, se consolida Hidra como un componente estratégico para la construcción de obras de ingeniería hidráulica de la región. La experiencia integrada y avalada por su trayectoria le habilita a elaborar cálculos y procesos de obras de ingeniería de alta complejidad para el tratamiento de aguas, entre otras obras de infraestructura. La empresa realiza también una serie de servicios especializados y comercializa desde su conocimiento técnico.",
+      "El desafío: constituir una estrategia de posicionamiento y de transferencia de la información técnica para una empresa de ingeniería joven que competía en licitaciones públicas contra estructuras largamente establecidas, haciendo foco en su proceso y su capacidad.",
+      "El desarrollo: se ordenaron la experiencia técnica, las obras previas y los materiales en una señal de confiabilidad legible. El eje fue mapear la cadena de decisión de una obra pública (institución licitante, proyectista, constructora, inspección, usuarios y mantenimiento) y mostrar en qué punto de esa cadena interviene Hidra. Procesamiento y ordenamiento de la información técnica para que esté disponible tanto para licitaciones como para el cálculo de obra y la comercialización de los productos de la empresa.",
+      "El sistema incluyó identidad y sistema gráfico, brochure corporativo y carpeta de antecedentes y obras, señalética y cartelería de obra, stand institucional y presencia digital unificada."
+    ],
+    credits:{
+      title:"Ecosistema de marca | Estrategia",
+      sub:"Diseño de información | Comunicación 360",
+      roles:"Dirección creativa y diseño: Gabriel González / Dirección de proyecto y diseño de logo: Federico Gunther / Pasante: Luciano Hermida"
+    },
+    en:{
+      desc:"Institutional credibility to compete in public tenders.",
+      cats:["Institutional identity","Information design"],
+      tag:"Water infrastructure · Institutional identity",
+      body:[
+        "Hidra is an engineering company specialising in water infrastructure: pumps, control panels and metalwork for water treatment plants, pumping stations, aqueducts and wastewater plants.",
+        "Built on years of accumulated expertise, Hidra has established itself as a strategic component in the construction of hydraulic engineering works across the region. That integrated experience, backed by its track record, allows the company to develop calculations and processes for highly complex water treatment engineering, among other infrastructure works. It also delivers a range of specialised services and trades on its own technical knowledge.",
+        "The challenge: build a positioning and technical-information transfer strategy for a young engineering firm competing in public tenders against long-established structures, with the focus on its process and its capability.",
+        "The work: technical expertise, prior works and materials were packaged into a legible reliability signal. The core move was mapping the decision chain of a public works project (tendering authority, designer, contractor, inspection, users and maintenance) and showing exactly where Hidra intervenes in that chain. Technical information was processed and ordered so that it was available for tenders, for construction calculation and for the commercial side of the business alike.",
+        "The system included identity and graphic system, corporate brochure and a track-record folder, site signage, institutional stand and a unified digital presence."
+      ],
+      credits:{
+        title:"Brand ecosystem | Strategy",
+        sub:"Information design | 360 communication",
+        roles:"Creative direction and design: Gabriel González / Project management and logo design: Federico Gunther / Intern: Luciano Hermida"
+      }
+    }
+  },
+  {
+    title:"Luxus",
+    desc:"Identidad corporativa para una plataforma de distribución de marcas de lujo.",
+    cats:["Arquitectura de marca","Identidad corporativa"],
+    tag:"Importación y distribución · Identidad corporativa",
+    cover:"img/luxus/luxus-portada.jpg",
+    shots:[
+      "img/luxus/luxus-00.jpg","img/luxus/luxus-01.jpg","img/luxus/luxus-02.jpg",
+      "img/luxus/luxus-03.jpg","img/luxus/luxus-04.jpg","img/luxus/luxus-ficha.jpg","img/luxus/luxus-05.jpg"
+    ],
+    body:[
+      "Durante años hubo una premisa que llevó al equipo de Luxus a construir relaciones comerciales sólidas con marcas de alta calidad para importar en Paraguay. Una mirada curada, una selección de productos y la experiencia asesorando a clientes comerciales llevaron a Luxus a su posición actual como representante de marcas.",
+      "Su mayor activo era la confiabilidad hacia clientes y socios: una red construida sobre diez años de presencia y de vínculos.",
+      "El desafío: la empresa llegó con un objetivo claro, desarrollar un posicionamiento fuerte como importadora de indumentaria de alta gama, preparada para portar el valor de sus socios en todo el país.",
+      "La estrategia: esa propuesta exigía visualizar una marca sólida y confiable, capaz de traducir el desarrollo del negocio y de dar soporte al surtido de productos. La respuesta fue una identidad versátil, adaptable a las tendencias, con capacidad de representar a grandes marcas sin competir por visibilidad, y de sostener adecuadamente la reputación de la marca ante la incorporación de nuevos socios.",
+      "El resultado: desarrollamos un sistema flexible de patrones que vincula la marca con los estilos creativos del producto, y construimos mejores relaciones entre los comercios y la empresa, con una diversidad de elementos que aseguran una adecuada transferencia del valor.",
+      "La identidad dejó de describir un producto y empezó a funcionar como un instrumento de negociación. La marca ya no compite con lo que transporta: se convirtió en sinónimo de calidad."
+    ],
+    credits:{
+      title:"Branding estratégico",
+      sub:"Restyling de marca, comunicación y posicionamiento estratégico",
+      roles:"Estrategia y dirección creativa: Gabriel González / Pasantes: Aldana Galeano, Eugenia Lede y Jair Leiva"
+    },
+    en:{
+      desc:"Corporate identity for a luxury brand distribution platform.",
+      cats:["Brand architecture","Corporate identity"],
+      tag:"Import and distribution · Corporate identity",
+      body:[
+        "For years a core belief led the Luxus team to build solid commercial relationships with high-quality brands for import into Paraguay. A curated vision, a selected range of products and experience advising commercial clients brought Luxus to its current position as a brand representative.",
+        "Its core asset was reliability towards customers and partners: a network built on ten years of presence and relationships.",
+        "The challenge: the firm came with a clear objective, to build a strong position as a high-end clothing importer, prepared to carry the value of its partners across the country.",
+        "The strategy: that proposition called for a brand that reads as solid and reliable, able to translate the development of the business and to support the product assortment. The answer was a versatile identity, adaptable to trends, able to represent large brands without competing with them for visibility, and able to hold the reputation of the brand as new partners come in.",
+        "The outcome: we developed a flexible pattern system connecting the brand with the creative styles of the product, and built stronger relationships between retailers and the company, with a range of elements that made sure the value was properly transferred.",
+        "The identity stopped describing a product and started functioning as a negotiating instrument. The brand no longer competes with what it carries: it became a byword for quality."
+      ],
+      credits:{
+        title:"Strategic Branding",
+        sub:"Brand restyling, communication and strategic positioning",
+        roles:"Strategy and creative direction: Gabriel González / Interns: Aldana Galeano, Eugenia Lede and Jair Leiva"
+      }
+    }
+  },
+  {
+    title:"Oda Vinoteca",
+    en:{
+      desc:"Twenty years of craft, with a story that holds them together again.",
+      cats:["Branding","Consumer goods"],
+      tag:"Consumer goods · Rebranding",
+      body:[
+        "Oda Vinoteca is a company with more than 20 years selling Argentine wines and sparkling wines in the triple border region.",
+        "During the redesign process, we developed an identity system around the concept of «mentors in the world of wine», echoing the strokes of a master's poetic and artistic handwriting. Taking the god Bacchus as the trigger for the concept, we used him as a guide and mentor throughout the tasting experience, acknowledging each of its stages.",
+        "The redesign invites you to move through the pages of a master's notebook, with its different notes and points of view. And with the overall proposal in place, Oda recovered its original song: a song to life, dedicated to those who visit."
+      ],
+      credits:{
+        title:"Rebranding &amp; Redesign",
+        sub:"Identity system, lettering and brand assets",
+        roles:"Creative direction: Gabriel González / Project direction: Federico Gunther / Design and illustration: Fernanda Parchomczuk / Lettering: María Eugenia Robledo"
+      }
+    },
+    desc:"Veinte años de oficio con un relato que volvió a sostenerlos.",
+    cats:["Branding","Consumo"],
+    tag:"Consumo · Rebranding",
+    cover:"img/oda/oda-00.jpg",
+    shots:[
+      "img/oda/oda-01.jpg",
+      "img/oda/oda-02.jpg",
+      "img/oda/oda-03.jpg",
+      "img/oda/oda-04.jpg",
+      "img/oda/oda-05.jpg",
+      "img/oda/oda-06.jpg",
+      "img/oda/oda-07.jpg",
+      "img/oda/oda-08.jpg"
+    ],
+    body:[
+      "Oda Vinoteca es una empresa que tiene más de 20 años de actividad comercializando vinos y espumantes argentinos en la triple frontera.",
+      "Durante el proceso de rediseño, se desarrolló un sistema de identidad en torno al concepto de «mentores en el mundo del vino», representando los trazos de escrituras poéticas y artísticas de un maestro. Teniendo como detonante de concepto al dios Baco, lo utilizamos como guía y mentor durante la experiencia de degustación, reconociendo cada una de las etapas de la cata.",
+      "El rediseño invita a un recorrido por las páginas de un cuaderno del maestro con sus diferentes anotaciones y puntos de vista. Y ya con la propuesta global, Oda recuperó su canto original, un canto a la vida dedicado a quienes la visitan."
+    ],
+    credits:{
+      title:"Rebranding &amp; Redesign",
+      sub:"Sistema de identidad, lettering y piezas de marca",
+      roles:"Dirección creativa: Gabriel González / Dirección de proyecto: Federico Gunther / Diseño e ilustración: Fernanda Parchomczuk / Lettering: María Eugenia Robledo"
+    }
+  },
+  {
+    title:"Lenguas de fuego",
+    en:{
+      desc:"Scattered, sensitive evidence, ordered so it can be read.",
+      cats:["Institutional identity","Information design"],
+      tag:"International organisations · Information design",
+      body:[
+        "“Lenguas de fuego” is a report on the impact of hate speech on gender policy and its defenders in Argentina, published by Fundación Derechos Humanos Equidad y Género (FunDheg) with the support of IPPF, the International Planned Parenthood Federation.",
+        "The source material was heterogeneous: definitions from international bodies, Argentine legal framework, testimonies from defenders across different provinces, press coverage and budget figures.",
+        "The challenge: to make a scattered body of evidence legible, without the weight of the subject blocking the reading or the design softening it.",
+        "The strategy: a visual system built on a weaving metaphor. The threads are the fabric of public communication; the dots are hate messages circulating through the media. Where the dots cluster, the discourse concentrates. The cover is that same graphic taken to the scale of the country.",
+        "Each kind of evidence got its own treatment: testimonies in open compositions on full-bleed colour, press clippings as a burning collage, the legal framework in continuous reading type. The reader can tell what each claim is made of before reading it.",
+        "The result is a document that holds sensitive, multi-source information, and that works both read straight through and consulted in fragments."
+      ],
+      credits:{
+        title:"Information and editorial design",
+        sub:"Visual system, layout and data visualisation",
+        roles:"Design: Gabriel González / Authors: Gabriela Ayala, Mariano Leiva, Leticia Gauna and Diana Cabral / Fundación Derechos Humanos Equidad y Género (FunDheg), supported by IPPF under the project La Democracia en tu Cuerpo, 2024"
+      }
+    },
+    desc:"Evidencia dispersa y sensible, ordenada para que se pueda leer.",
+    cats:["Identidad institucional","Diseño de información"],
+    tag:"Organismos internacionales · Diseño de información",
+    cover:"img/ddo/ddo-00.jpg",
+    shots:[
+      "img/ddo/ddo-01.jpg",
+      "img/ddo/ddo-02.jpg",
+      "img/ddo/ddo-03.jpg",
+      "img/ddo/ddo-04.jpg",
+      "img/ddo/ddo-05.jpg",
+      "img/ddo/ddo-06.jpg",
+      "img/ddo/ddo-07.jpg"
+    ],
+    body:[
+      "«Lenguas de fuego» es un informe sobre el impacto de los discursos de odio en las políticas de género y sus defensoras en Argentina, publicado por la Fundación Derechos Humanos Equidad y Género (FunDheg) con el apoyo de IPPF, la federación internacional de planificación familiar.",
+      "El material de partida era heterogéneo: definiciones de organismos internacionales, marco legal argentino, testimonios de defensoras de distintas provincias, cobertura de prensa y datos presupuestarios.",
+      "El desafío: hacer legible un cuerpo de evidencia disperso, sin que la carga del tema tapara la lectura ni el diseño la suavizara.",
+      "La estrategia: un sistema visual construido sobre una metáfora de tejido. Los hilos son la trama de la comunicación pública; los puntos, los mensajes de odio circulando por los medios. Donde los puntos se agrupan, el discurso se concentra. La portada es ese mismo gráfico llevado a la escala del país.",
+      "Cada tipo de evidencia recibió un tratamiento propio: los testimonios en composiciones abiertas sobre fondo pleno, los recortes de prensa como collage encendido, el marco legal en tipografía de lectura continua. El lector distingue de qué está hecha cada afirmación antes de leerla.",
+      "El resultado es un documento que sostiene información sensible y de fuentes múltiples, y que admite tanto la lectura de corrido como la consulta por fragmentos."
+    ],
+    credits:{
+      title:"Diseño de información y editorial",
+      sub:"Sistema visual, diagramación y visualización de datos",
+      roles:"Diseño: Gabriel González / Autoría: Gabriela Ayala, Mariano Leiva, Leticia Gauna y Diana Cabral / Fundación Derechos Humanos Equidad y Género (FunDheg), con el apoyo de IPPF en el marco del proyecto La Democracia en tu Cuerpo, 2024"
+    }
+  }
+];
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Devuelve el campo en el idioma activo
+function T(w, campo){
+  if (typeof lang !== "undefined" && lang === "en" && w.en && w.en[campo] != null) return w.en[campo];
+  return w[campo];
+}
+
+var grid = document.getElementById("grid");
+function render(){
+  grid.innerHTML = "";
+  WORKS.forEach(function(w,i){
+    var b = document.createElement("button");
+    b.className = "card";
+    var cover = w.cover ? '<img src="'+encodeURI(w.cover)+'" alt="'+w.title+' \u00b7 '+T(w,"tag")+'"'+dimAttr(w.cover)+' style="width:100%;height:100%;object-fit:cover">' : '';
+    b.innerHTML = '<div class="thumb">'+cover+'</div><h3>'+w.title+'</h3>'+
+                  '<div class="desc">'+(T(w,"desc")||'')+'</div>'+
+                  '<div class="cats"><span>'+(T(w,"cats")||[]).join('</span><span>')+'</span></div>';
+    b.onclick = function(){ openWork(i); };
+    grid.appendChild(b);
+  });
+}
+render();
+
+var detail = document.getElementById("detail"), dbody = document.getElementById("detail-body");
+var actual = null;
+function openWork(i){
+  var w = WORKS[i];
+  actual = i;
+  var ES = (typeof lang === 'undefined' || lang === 'es');
+  var h = '<div class="dtop">'+
+    '<a href="#" id="volver">'+(ES?'&larr; Volver':'&larr; Back')+'</a>'+
+    '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>'+
+    '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
+  h += '<div class="dhead"><h2>'+w.title+'</h2><span class="tag">'+T(w,"tag")+'</span></div>';
+  if (w.cover) h += '<div class="lead"><img src="'+encodeURI(w.cover)+'" alt="'+w.title+' \u00b7 '+T(w,"tag")+'"'+dimAttr(w.cover)+'></div>';
+  var body = T(w,"body");
+  if (body) {
+    h += '<div class="dbody">';
+    body.forEach(function(p){ h += '<p>'+p+'</p>'; });
+    h += '</div>';
+  }
+  if (w.steps) w.steps.forEach(function(s){ h += '<div class="step"><span class="k">'+s[0]+'</span>'+s[1]+'</div>'; });
+  h += '<div class="shots">';
+  var n = typeof w.shots === "number" ? w.shots : w.shots.length;
+  for (var j=0;j<n;j++){
+    h += typeof w.shots === "number"
+      ? '<div class="shot">imagen '+(j+1)+' — 1600×1000</div>'
+      : '<img src="'+encodeURI(w.shots[j])+'" alt="'+w.title+' \u00b7 pieza '+(j+1)+'" loading="lazy" decoding="async"'+dimAttr(w.shots[j])+' style="width:100%;height:auto;display:block">';
+  }
+  h += '</div>';
+  var cr = T(w,"credits");
+  if (cr) {
+    h += '<div class="credits">';
+    if (cr.title) h += '<h4>'+cr.title+'</h4>';
+    if (cr.sub) h += '<p class="sub">'+cr.sub+'</p>';
+    if (cr.roles) h += '<p class="roles">'+cr.roles+'</p>';
+    h += '</div>';
+  }
+  // Seguir viendo: el resto de los proyectos
+  var otros = WORKS.map(function(_,k){return k}).filter(function(k){return k !== i});
+  if (otros.length) {
+    h += '<div class="next"><div class="eyebrow">'+(ES?'Seguir viendo':'Keep looking')+'</div><div class="next-grid">';
+    otros.forEach(function(k){
+      var o = WORKS[k];
+      h += '<button class="card" data-go="'+k+'">'+
+           '<div class="thumb">'+(o.cover?'<img src="'+encodeURI(o.cover)+'" alt="'+o.title+'" loading="lazy"'+dimAttr(w.cover)+' style="width:100%;height:100%;object-fit:cover">':'')+'</div>'+
+           '<h3>'+o.title+'</h3>'+
+           (T(o,"desc")?'<div class="desc">'+T(o,"desc")+'</div>':'')+
+           '</button>';
+    });
+    h += '</div></div>';
+  }
+
+  dbody.innerHTML = h;
+  var volver = document.getElementById("volver");
+  if (volver) volver.onclick = function(e){ e.preventDefault(); closeWork(); };
+  [].forEach.call(dbody.querySelectorAll("[data-go]"), function(b){
+    b.onclick = function(){ openWork(+b.getAttribute("data-go")); };
+  });
+  detail.classList.add("open");
+  detail.scrollTop = 0;
+  document.body.style.overflow = "hidden";
+}
+function closeWork(){
+  detail.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("close").onclick = closeWork;
+document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork(); });
+
+
+// ============================================================
+// CASOS DE ESTUDIO
+// ============================================================
+// CASOS — cover y shots son opcionales. Si faltan, el caso sale sin imagenes.
+// Para agregarle imagenes a un caso: cover:"img/<carpeta>/<archivo>.jpg" y
+// shots:["img/...","img/..."]. Despues correr:  python build.py
+var CASES = [
+{
+ es:{
+  title:"Vender continuidad, no acero",
+  client:"Ingeniería aplicada para infraestructura crítica y producción",
+  meta:"Sistema de información · Marca · Licitaciones B2B / B2G",
+  blocks:[
+    ["La situación",[
+      "La empresa desarrolla productos de ingeniería aplicada para plantas de tratamiento de agua, industria química y alimenticia, energía y obras de infraestructura crítica. El producto está patentado, ensayado en bancos de prueba propios y monitoreado por un sistema de control automatizado. Incorpora además tecnología propia que resuelve la disponibilidad de repuestos, y una facilidad de mantenimiento y recambio que no tiene equivalente en la región.",
+      "Nada de eso llegaba al comprador. Ni los atributos del producto, ni los años de obra que había detrás de su desarrollo.",
+      "En las licitaciones se lo comparaba por peso de acero y costo de soldadura, que eran los únicos términos que la documentación ponía sobre la mesa. Perdía contra metalúrgicas."
+     ]],
+    ["Dónde estaba la dificultad",[
+      "La ventaja principal no era mecánica sino económica: el producto se mantiene y se reemplaza <strong>sin detener el proceso productivo</strong>. En una ciudad chica que depende de esa infraestructura para abastecerse, eso significa que el servicio no se corta. En una planta, que no hay que parar la línea para hacer un recambio.",
+      "De ahí se desprende el resto: menos agua tratada desperdiciada, menos redosificación de químicos, menos improvisación en obra.",
+      "El problema era transmitirlo. Una obra no la decide una sola persona, y cada una de las que firma llega con una pregunta distinta."
+     ],[
+      "<strong>El contratista</strong> trabaja contra plazos. Quiere montaje simple, repuestos cerca y ninguna sorpresa en la instalación.",
+      "<strong>El ingeniero de obra</strong> pone su firma. Necesita datos de cálculo, patentes y ensayos para dimensionar la pieza según la necesidad de la obra.",
+      "<strong>El comitente</strong> —a veces el dueño de la planta, a veces quien autoriza la obra desde un ente de control— mira paradas de planta, previsibilidad de costos y reputación institucional.",
+      "<strong>Quien hace el mantenimiento</strong> aparece después, cuando ya no queda a quién preguntarle, y necesita poder usar y reparar el producto con lo que tenga a mano."
+     ],[
+      "Un solo activo tenía que poder hablarles a los cuatro, unificando el criterio de selección y transmitiendo el valor del producto. La documentación técnica plana que existía no le hablaba a ninguno."
+     ]],
+    ["Qué decidimos",[
+      "Dejar de describir el objeto y empezar a diseñar la decisión.",
+      "Sacamos al producto de la categoría de los materiales con que está fabricado y lo llevamos a gestión de activos: no es una pieza de metal, es una garantía de continuidad operativa. Después, cada activo de marca se construyó para acompañar un punto específico de la decisión —la compra, el uso, el mantenimiento— y para darle a cada actor lo que necesitaba."
+     ],[
+      "El comitente recibe el costo evitado: sin multas por parada, sin desperdicio de químicos.",
+      "El ingeniero recibe respaldo y autonomía. Con el material en la mano hace sus cálculos y su planificación sin depender de una consulta.",
+      "El contratista recibe velocidad, y una secuencia de montaje que baja al mínimo los errores de instalación, que son los que después comprometen la durabilidad.",
+      "Quien mantiene recibe especificaciones que se leen en obra, sin intermediarios."
+     ],[
+      "Del lado de la empresa eso descargó a su equipo de ingeniería: la asesoría técnica uno a uno, que antes consumía horas por consulta, quedó delegada en el material.",
+      "El stock regional de repuestos dejó de ser un detalle logístico para volverse un mensaje institucional. En infraestructura, un proveedor importado o informal deja la obra huérfana cuando falla una pieza. Decirlo de entrada desarmaba el principal miedo del comprador, y terminó funcionando como barrera de entrada para competidores de afuera."
+     ]],
+    ["El sistema",[],[
+      "<strong>Documentación de licitación por capas.</strong> Cálculos de presión y simulaciones junto a la traducción financiera del mismo hecho, para que un responsable de finanzas y un ingeniero civil pudieran leer el valor cada uno en su propio lenguaje dentro de un mismo documento.",
+      "<strong>Renders 3D.</strong> Cortes que exponen capas internas, materiales y el sistema de sellado: cálculo estructural hecho visible en lugar de abstracto.",
+      "<strong>Video técnico.</strong> El banco de ensayo bajo presión hidráulica, y el reemplazo de piezas sin vaciar la planta. Para los decisores financieros y políticos, esta era la prueba que importaba.",
+      "<strong>Brochure corporativo de venta.</strong> Una pieza editorial construida para mesas de compra, que argumenta el retorno por parada evitada.",
+      "<strong>Fichas técnicas de montaje.</strong> Especificaciones de apertura manual y automatizada, secuencia de montaje, disponibilidad regional de repuestos.",
+      "<strong>Sitio institucional.</strong> Dos ejes: descomprimir la complejidad técnica y transferir el valor del equipo de ingeniería propio de la casa matriz."
+     ]],
+    ["Qué cambió",[
+      "En las mesas de compra, el precio unitario de los materiales dejó de ser el argumento central y empezó a pesar el valor global de la solución. Con eso ganó lugar algo que antes no se veía: el conocimiento técnico acumulado en el producto, y lo que ese desarrollo agrega como industria en la región.",
+      "La marca dejó de explicar una compuerta. Pasó a ser reconocida como una empresa que acerca innovación a las obras donde interviene, porque las empresas que la implementan pueden después desarrollar sus propias mejoras sobre esa base."
+     ]]
+   
+  ]
+ },
+ en:{
+  title:"Selling continuity, not steel",
+  client:"Applied engineering for critical infrastructure and production",
+  meta:"Information design · Brand · B2B / B2G public tenders",
+  blocks:[
+    ["The situation",[
+      "The company develops applied engineering products for water treatment plants, the chemical and food industries, energy, and critical infrastructure works. The product is patented, tested on the company's own benches and monitored by an automated control system. It also carries proprietary technology that solves spare-part availability, and an ease of maintenance and replacement with no equivalent in the region.",
+      "None of that reached the buyer. Neither the attributes of the product, nor the years of site experience behind its development.",
+      "In tenders it was compared by weight of steel and cost of welding, the only terms the documentation put on the table. It was losing to metal workshops."
+     ]],
+    ["Where the difficulty was",[
+      "The main advantage was not mechanical but economic: the product can be serviced and replaced <strong>without stopping the process</strong>. In a small town that depends on that infrastructure for its supply, it means the service is not cut. In a plant, it means the line does not have to stop for a part change.",
+      "Everything else follows from that: less treated water wasted, less re-dosing of chemicals, less improvising on site.",
+      "The problem was conveying it. A public works project is not decided by one person, and each of the people who sign arrives with a different question."
+     ],[
+      "<strong>The contractor</strong> works against deadlines. They want simple assembly, parts nearby and no surprises during installation.",
+      "<strong>The site engineer</strong> signs off on it. They need calculation data, patents and test results to size the piece against what the project requires.",
+      "<strong>The owner</strong> —sometimes the plant owner, sometimes whoever authorises the works from a regulatory body— looks at plant stoppages, cost predictability and institutional reputation.",
+      "<strong>Whoever maintains it</strong> comes later, when there is no one left to ask, and needs to be able to use and repair the product with whatever is at hand."
+     ],[
+      "A single asset had to speak to all four, unify the basis for choosing and carry the value of the product. The flat technical documentation that existed spoke to none of them."
+     ]],
+    ["What we decided",[
+      "Stop describing the object and start designing the decision.",
+      "We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision —purchase, use, maintenance— and to give each party what they needed."
+     ],[
+      "The owner gets the cost avoided: no stoppage penalties, no chemical waste.",
+      "The engineer gets backing and autonomy. With the material at hand they run their calculations and planning without depending on a consultation.",
+      "The contractor gets speed, and an assembly sequence that minimises the installation errors that later compromise durability.",
+      "Whoever maintains it gets specifications that can be read on site, with no intermediary."
+     ],[
+      "On the company's side that took load off its engineering team: one-to-one technical advice, which used to consume hours per enquiry, was delegated to the material.",
+      "Regional spare-part stock stopped being a logistics detail and became an institutional message. In infrastructure, an imported or informal supplier leaves a project orphaned when a part fails. Saying so up front disarmed the buyer's main fear, and ended up working as a barrier to entry for outside competitors."
+     ]],
+    ["The system",[],[
+      "<strong>Layered tender documentation.</strong> Pressure calculations and simulations sitting alongside the financial translation of the same fact, so a finance officer and a civil engineer could each read the value in their own language inside one document.",
+      "<strong>3D renders.</strong> Cutaways exposing internal layers, materials and the sealing system: structural calculation made visible instead of abstract.",
+      "<strong>Technical video.</strong> The test bench under hydraulic pressure, and part replacement performed without draining the plant. For financial and political decision-makers, this was the proof that mattered.",
+      "<strong>Corporate sales brochure.</strong> An editorial piece built for procurement tables, arguing the return on downtime avoided.",
+      "<strong>Assembly datasheets.</strong> Manual and automated opening specs, assembly sequence, regional parts availability.",
+      "<strong>Institutional website.</strong> Two axes: decompressing the technical complexity, and transferring the value of the parent company's in-house engineering team."
+     ]],
+    ["What changed",[
+      "At procurement tables, the unit price of materials stopped being the central argument and the overall value of the solution started to weigh. That made room for something previously invisible: the technical knowledge accumulated in the product, and what the development adds as industry in the region.",
+      "The brand stopped explaining a gate. It came to be recognised as a company that brings innovation to the projects it takes part in, because the firms that install the product can then build their own improvements on top of it."
+     ]]
+   
+  ]
+ }
+},
+{
+ cover:"img/luxus/luxus-portada.jpg",
+ shots:[
+  "img/luxus/luxus-00.jpg",
+  "img/luxus/luxus-01.jpg",
+  "img/luxus/luxus-02.jpg",
+  "img/luxus/luxus-03.jpg",
+  "img/luxus/luxus-04.jpg",
+  "img/luxus/luxus-ficha.jpg",
+  "img/luxus/luxus-05.jpg"
+ ],
+ es:{
+  title:"Una marca que sostiene otras marcas",
+  client:"Importador y distribuidor corporativo de marcas internacionales de lujo",
+  meta:"Arquitectura de marca · Sistema de identidad multiactor · Escala nacional",
+  blocks:[
+    ["La situación",[
+      "La empresa importa y distribuye marcas internacionales de lujo en todo el país: una operación logística sólida, presencia en las principales ciudades, gestión avanzada de cadena de suministro y acuerdos de representación oficial con casas globales.",
+      "Detrás de esa operación hay algo que no figura en ningún inventario: diez años de vínculos con casas globales y con comercios de todo el país. El valor de la conexión era su activo principal, y era el más difícil de mostrar.",
+      "Su identidad no alcanzaba a transmitir esa fuerza. Una marca aislada, sin relato ni estructura, con un estilo que la confundía con los productos que importaba. Toda la escala de la operación quedaba invisible, tanto para los compradores como para los representados."
+     ]],
+    ["Dónde estaba la dificultad",[
+      "Había que reflejar, hacia los compradores y hacia los representados, toda la categoría que la empresa aportaba en operación y en asesoramiento. Trabajar con marcas de lujo supone entender el mercado y el producto, saber cómo se vende y recomendar la mejor manera de presentarlo para que el valor llegue completo.",
+      "Era un error de categoría, no un problema de gusto. La empresa estaba siendo leída como <strong>el producto</strong>, cuando en realidad es <strong>la plataforma que administra el producto</strong>.",
+      "Con diez años de trayectoria, esa mala lectura tenía un costo comercial. Un negocio cuyo trabajo real es sostener y proteger la reputación de casas globales de lujo no puede parecerse a uno de los artículos que distribuye: pierde la autoridad para ser su custodio autorizado.",
+      "Y la identidad tenía que sostener cuatro conjuntos de intereses a la vez, cada uno tirando en una dirección distinta:"
+     ],[
+      "<strong>La fuerza de ventas</strong> necesitaba herramientas de prospección con respaldo institucional y oficialidad evidente.",
+      "<strong>Los comercios minoristas</strong>, de niveles muy distintos, necesitaban una marca de confianza, pautas de manejo premium y asesoramiento.",
+      "<strong>Las casas matrices globales</strong> necesitaban un socio local cuya propia representación reflejara su estatus y asegurara el resguardo de la categoría.",
+      "<strong>El campo competitivo</strong> —importadores tradicionales con logística gris— tenía que quedar visiblemente diferenciado."
+     ]],
+    ["Qué decidimos",[
+      "Mover la marca del estante de producto a la capa de infraestructura.",
+      "El sistema se construyó como un marco corporativo que contiene y avala la reputación de otros, en lugar de competir con lo que transporta. Eso exigió una contención deliberada: neutralidad sofisticada, rigor geométrico y tipográfico, y ninguna firma estilística que envejeciera o chocara con alguna marca que pasara por ahí.",
+      "La prueba que se aplicó durante todo el proceso fue el crecimiento futuro. La empresa estaba en una etapa de expansión planificada hacia otras líneas de producto, y cada decisión se verificó contra si la marca seguiría funcionando al incorporarlas."
+     ]],
+    ["El sistema",[],[
+      "<strong>Sistema de identidad corporativa</strong> construido sobre neutralidad de alta gama, capaz de sentarse junto a casas globales de lujo sin competir con ellas y asegurando una representación adecuada.",
+      "<strong>Arquitectura de información versátil</strong>, estructurada para absorber nuevas verticales de lujo sin rediseño.",
+      "<strong>Herramientas de prospección para la fuerza de ventas</strong>, que le dan a la negociación de campo el peso de la representación oficial.",
+      "<strong>Manuales de gestión de reputación</strong>, que aseguran que la percepción de representación oficial se sostenga consistente en cada punto de contacto físico y digital, entre minoristas de niveles muy distintos."
+     ]],
+    ["Qué cambió",[
+      "La identidad dejó de describir un producto y empezó a funcionar como un instrumento de negociación. La dirección pudo sentarse a cerrar contratos presentes y acuerdos futuros desde la misma posición institucional.",
+      "La marca ya no compite con lo que transporta. Lo avala."
+     ]]
+     ]
+ },
+ en:{
+  title:"A brand that carries other brands",
+  client:"Corporate importer and distributor of international luxury labels",
+  meta:"Brand architecture · Multi-stakeholder identity system · National scale",
+  blocks:[
+    ["The situation",[
+      "The company imports and distributes international luxury labels across the country: a solid logistics operation, presence in every major city, advanced supply-chain management, and official representation agreements with global houses.",
+      "Behind that operation sits something no inventory records: ten years of relationships with global houses and with retailers across the country. The value of the connection was its main asset, and the hardest one to show.",
+      "Its identity did not carry that strength. An isolated mark, no narrative, no structure, in a style that confused it with the products it imported. The whole scale of the operation stayed invisible, both to buyers and to the houses it represented."
+     ]],
+    ["Where the difficulty was",[
+      "What had to be conveyed, to buyers and to represented houses alike, was the full standing the company brought in operations and in advice. Working with luxury labels means understanding the market and the product, knowing how it sells, and recommending how to present it so the value arrives intact.",
+      "It was a category error, not a matter of taste. The company was being read as <strong>the product</strong>, when it is in fact <strong>the platform that manages the product</strong>.",
+      "With ten years of track record, that misreading carried a commercial cost. A business whose real work is to hold and protect the reputation of global luxury houses cannot look like one of the articles it distributes: it loses the authority to be their authorised custodian.",
+      "And the identity had to hold four sets of interests at once, each pulling in a different direction:"
+     ],[
+      "<strong>The sales force</strong> needed prospecting tools with institutional backing and evident officialdom.",
+      "<strong>Retailers</strong>, operating at very different levels, needed a brand they could trust, premium handling guidelines and advice.",
+      "<strong>The global head offices</strong> needed a local partner whose own representation reflected their status and safeguarded the category.",
+      "<strong>The competitive field</strong> —traditional importers with grey logistics— had to be visibly set apart."
+     ]],
+    ["What we decided",[
+      "Move the brand off the product shelf and onto the infrastructure layer.",
+      "The system was built as a corporate frame that holds and endorses the reputation of others, rather than competing with what it carries. That called for deliberate restraint: sophisticated neutrality, geometric and typographic rigour, and no stylistic signature that would age or clash with any label passing through.",
+      "The test applied throughout was future growth. The company was in a planned expansion into other product lines, and every decision was checked against whether the brand would still work once they came in."
+     ]],
+    ["The system",[],[
+      "<strong>Corporate identity system</strong> built on high-end neutrality, able to sit alongside global luxury houses without competing with them while securing proper representation.",
+      "<strong>Versatile information architecture</strong>, structured to absorb new luxury verticals without redesign.",
+      "<strong>Prospecting tools for the sales force</strong>, giving field negotiation the weight of official representation.",
+      "<strong>Reputation management manuals</strong>, ensuring the perception of official representation holds consistently at every physical and digital touchpoint, across retailers operating at very different levels."
+     ]],
+    ["What changed",[
+      "The identity stopped describing a product and started working as an instrument of negotiation. Leadership could sit down and close present contracts and future agreements from the same institutional position.",
+      "The brand no longer competes with what it carries. It endorses it."
+     ]]
+     ]
+ }
+},
+{
+ es:{
+  title:"Tomar un shopping",
+  client:"Festival internacional del vino",
+  meta:"Diseño espacial · Diseño de información · Ecosistema digital · Audiencia internacional",
+  blocks:[
+    ["La situación",[
+      "Un festival anual de degustación de vinos con una larga historia, que convoca a miles de visitantes de tres países vecinos a encontrarse para celebrar el vino, a kilómetros de las Cataratas del Iguazú.",
+      "Para las principales bodegas del país, asistir es una tradición no negociable."
+     ]],
+    ["Dónde estaba la dificultad",[
+      "La sede era el riesgo. Un festival con reputación premium realizado dentro de un centro comercial que tenía que volver a operar al día siguiente.",
+      "Eso fijaba las reglas antes de empezar: el shopping seguía funcionando, así que no había lugar para intervenciones estructurales. Todo tenía que ser efímero. Y tenía que ser ecológico: lo que se imprimía para el evento se compensaba después con plantaciones, con el carbono calculado.",
+      "Dentro de esas condiciones había que montar, en tiempo récord, una instalación capaz de generar el ambiente para un recuerdo memorable.",
+      "Y al mismo tiempo los organizadores querían un salto de escala: campañas nacionales, ticketing digital, una comunidad internacional del vino. No una versión más grande de la misma degustación.",
+      "Dos problemas a la vez: defender el carácter del evento frente a su propia sede, y expandir su alcance más allá del salón."
+     ]],
+    ["Qué decidimos",[
+      "Tomar el control del entorno en lugar de decorar dentro de él.",
+      "La estrategia partió de entender el vino como un arte. Se tomaron obras renacentistas donde el vino aparece y se las resignificó: la Gioconda guiñaba mientras degustaba un mendocino, al lado de un Baco DJ que activaba la noche con colores estridentes.",
+      "El trabajo se codiseñó con arquitectos y constructores, y empezó en el portal de entrada del shopping, para que el visitante cruzara un umbral perceptual antes de llegar a un solo stand. Adentro, cada stand se ajustó a un estándar común y se dispusieron divisores por sector para ordenar el flujo de una multitud en un espacio cerrado.",
+      "La segunda decisión fue tratar las redes como instrumento vivo de una audiencia relacional, no como publicidad. El público del vino es altamente social: la interacción física en el lugar alimentaba el contenido en tiempo real, y ese contenido traía de vuelta a la comunidad internacional hacia el evento. Un circuito, no una emisión."
+     ]],
+    ["El sistema",[],[
+      "<strong>Identidad del festival</strong>, construida para sostenerse independientemente de la sede anfitriona, con un muro de flores inspirado en los rosales que se plantan en los viñedos.",
+      "<strong>Layout espacial e intervención del shopping</strong>: portal de entrada, diseño unificado de stand y divisores estratégicos por sector para gestionar la circulación y el confort del visitante.",
+      "<strong>Personajes en escena</strong>: Baco y la Gioconda, representados por actores dentro del salón.",
+      "<strong>Microsite y ticketing digital.</strong>",
+      "<strong>Estrategia social liderada por la comunidad</strong>, construida para la interacción en tiempo real más que para el anuncio.",
+      "<strong>Material POP</strong> diseñado para ser replicado orgánicamente por asistentes e influencers.",
+      "<strong>Cartelería indicativa en la ciudad</strong> y merchandising del evento."
+     ]],
+    ["Qué cambió",[
+      "El shopping dejó de ser una restricción y se convirtió en el escenario del festival.",
+      "El diseño funcionó como arquitectura de comportamiento: bajó la fricción de una audiencia masiva en un lugar cerrado mientras eleva la exclusividad percibida. Lo físico y lo digital dejaron de ser dos canales.",
+      "El evento pasó a ser un hito cultural regional en lugar de una fecha anual: algo que se tacha en la agenda del año siguiente antes de que lo anuncien."
+     ]]
+     ]
+ },
+ en:{
+  title:"Taking over a shopping mall",
+  client:"International wine festival",
+  meta:"Spatial design · Information design · Digital ecosystem · International audience",
+  blocks:[
+    ["The situation",[
+      "An annual wine tasting festival with a long history, drawing thousands of visitors from three neighbouring countries to meet and celebrate wine, a few kilometres from the Iguazú Falls.",
+      "For the country's leading wineries, attending is a non-negotiable tradition."
+     ]],
+    ["Where the difficulty was",[
+      "The venue was the risk. A festival with a premium reputation held inside a shopping centre that had to be trading again the next day.",
+      "That set the rules before anything began: the centre stayed operational, so there was no room for structural work. Everything had to be temporary. And it had to be ecological: whatever was printed for the event was offset afterwards through planting, with the carbon calculated.",
+      "Within those conditions, an installation capable of producing a memorable evening had to go up in record time.",
+      "At the same time the organisers wanted a jump in scale: national campaigns, digital ticketing, an international wine community. Not a larger version of the same tasting.",
+      "Two problems at once: defending the character of the event against its own venue, and extending its reach beyond the hall."
+     ]],
+    ["What we decided",[
+      "Take control of the environment instead of decorating inside it.",
+      "The strategy started from treating wine as an art. Renaissance works in which wine appears were taken and reworked: the Mona Lisa winking over a glass from Mendoza, next to a Bacchus DJ opening the night in loud colour.",
+      "The work was co-designed with architects and builders, and began at the shopping centre's entrance portal, so that visitors crossed a perceptual threshold before reaching a single stand. Inside, every stand was brought to a common standard and sector dividers were placed to order the flow of a crowd in an enclosed space.",
+      "The second decision was to treat social media as a live instrument of a relational audience, not as advertising. Wine audiences are highly social: physical interaction on site fed content in real time, and that content brought the international community back towards the event. A circuit, not a broadcast."
+     ]],
+    ["The system",[],[
+      "<strong>Festival identity</strong>, built to stand on its own regardless of the host venue, with a flower wall drawn from the rose bushes planted in vineyards.",
+      "<strong>Spatial layout and intervention of the shopping centre</strong>: entrance portal, unified stand design, and strategic sector dividers to manage circulation and visitor comfort.",
+      "<strong>Characters on site</strong>: Bacchus and the Mona Lisa, played by actors inside the hall.",
+      "<strong>Microsite and digital ticketing.</strong>",
+      "<strong>Community-led social strategy</strong>, built for real-time interaction rather than for the announcement.",
+      "<strong>POP material</strong> designed to be replicated organically by attendees and influencers.",
+      "<strong>Wayfinding signage across the city</strong> and event merchandising."
+     ]],
+    ["What changed",[
+      "The shopping centre stopped being a constraint and became the stage of the festival.",
+      "Design worked here as behavioural architecture: it lowered the friction of a mass audience in an enclosed space while raising perceived exclusivity. Physical and digital stopped being two channels.",
+      "The event became a regional cultural landmark rather than an annual date: something people mark in next year's calendar before it is announced."
+     ]]
+     ]
+ }
+},
+{
+ es:{
+  title:"Diseñar confianza para quienes saben leer lo falso",
+  client:"Fintech de préstamos para un nicho profesional, cobertura nacional",
+  meta:"Investigación semiótica · Personaje de marca · Diseño de confianza en interfaz",
+  blocks:[
+    ["La situación",[
+      "Una empresa de préstamos que atiende a un nicho profesional específico en todo el país. Su ventaja real es la velocidad operativa: el dinero se mueve en una fracción del tiempo que tardan los sistemas de crédito estatales.",
+      "Su problema eran las compañías con las que se la asociaba. Las marcas de préstamo rápido tienden a verse estridentes e informales, y esa estética se lee como riesgo.",
+      "Para que alguien entregue sus datos y se vincule con la empresa hace falta una imagen que transmita comprensión y confianza. La audiencia ya tenía diagnosticada la trampa: una imagen genérica no iba a alcanzar."
+     ]],
+    ["Dónde estaba la dificultad",[
+      "El problema no estaba en el producto, estaba en el vínculo. Y había que diseñarlo sin volver a la marca distante, lenta o burocrática, que es exactamente lo que la empresa existía para evitar."
+     ]],
+    ["Qué decidimos",[
+      "Construir la marca desde el lenguaje visual de la audiencia, no desde el de la categoría.",
+      "Hicimos una lectura semiótica del contexto visual y cultural del país: vestimenta, paletas contextuales, la presentación física de figuras públicas de alta visibilidad y reputación estable. También signos vinculados al dinero y al valor de lo que se estaba solicitando.",
+      "De ahí salió un personaje de marca: un híbrido deliberado de dos arquetipos, el buen vecino y el emprendedor. Alguien capaz de ayudar a crecer.",
+      "El personaje no fue una elección de ilustración. Se construyó en un proceso de investigación y diseño para ser leído como parte de la comunidad y no como una empresa."
+     ]],
+    ["El sistema",[],[
+      "<strong>Personaje de marca codificado culturalmente</strong>, que actúa como garante en cada canal.",
+      "<strong>Gráfica de seguridad</strong> tomada de la iconografía de los billetes oficiales del país, que ubica a la marca dentro del imaginario de la solidez financiera legal.",
+      "<strong>Flujo de solicitud humanizado</strong>: el personaje presenta su propia documentación, transmitiendo confianza y seguridad en el proceso.",
+      "<strong>Kit de solicitud omnicanal</strong>: redes interactivas, material de sucursal y merchandising.",
+      "<strong>Estrategia social como educación financiera</strong>, que vuelve tangible la responsabilidad de la empresa enseñando sobre inversión y administración del dinero.",
+      "<strong>Tarjeta física de seguimiento de pagos</strong>, entregada a cada tomador, para organizar la devolución como método y no como recordatorio."
+     ]],
+    ["Qué cambió",[
+      "El servicio dejó de ser una transacción y pasó a ser una relación entre las personas y la empresa. La confianza no se afirmó: se construyó con signos que la audiencia ya reconocía como legítimos.",
+      "Al combinar el crédito con herramientas de seguimiento y educación financiera continua, la marca se alineó con las necesidades y las características de su propio nicho.",
+      "Valorando el conocimiento que habilita el crecimiento, el sistema se convirtió en un puente hacia la legitimidad."
+     ]]
+     ]
+ },
+ en:{
+  title:"Designing trust for people who can spot the fake",
+  client:"Fintech lending to a specific professional niche, national coverage",
+  meta:"Semiotic research · Brand character · Interface trust design",
+  blocks:[
+    ["The situation",[
+      "A lending company serving a specific professional niche across the country. Its real advantage is operational speed: money moves in a fraction of the time state credit systems take.",
+      "Its problem was the company it kept. Fast-lending brands tend to look loud and informal, and that aesthetic reads as risk.",
+      "For someone to hand over their details and enter into a relationship with the company, the image has to convey understanding and trust. The audience had already diagnosed the trap: a generic image was not going to be enough."
+     ]],
+    ["Where the difficulty was",[
+      "The problem was not in the product, it was in the relationship. And it had to be designed without turning the brand into something distant, slow or bureaucratic, which is exactly what the company existed to avoid."
+     ]],
+    ["What we decided",[
+      "Build the brand from the visual language of the audience, not from that of the category.",
+      "We ran a semiotic reading of the country's visual and cultural context: dress, contextual palettes, the physical presentation of public figures with high visibility and stable reputation. Also signs tied to money and to the value of what was being requested.",
+      "Out of that came a brand character: a deliberate hybrid of two archetypes, the good neighbour and the entrepreneur. Someone able to help you grow.",
+      "The character was not an illustration choice. It was built through a process of research and design so that it would be read as part of the community rather than as a company."
+     ]],
+    ["The system",[],[
+      "<strong>Culturally coded brand character</strong>, acting as a guarantor across every channel.",
+      "<strong>Security graphics</strong> drawn from the iconography of the country's official banknotes, placing the brand inside the imagery of legal financial solidity.",
+      "<strong>Humanised application flow</strong>: the character presents their own documentation, carrying confidence and security through the process.",
+      "<strong>Omnichannel application kit</strong>: interactive social, branch material and merchandising.",
+      "<strong>Social strategy as financial education</strong>, making the company's responsibility tangible by teaching about investment and money management.",
+      "<strong>Physical payment tracking card</strong>, handed to every borrower, to organise repayment as a method rather than as a reminder."
+     ]],
+    ["What changed",[
+      "The service stopped being a transaction and became a relationship between people and the company. Trust was not asserted: it was built with signs the audience already recognised as legitimate.",
+      "By pairing credit with tracking tools and ongoing financial education, the brand aligned with the needs and characteristics of its own niche.",
+      "By valuing the knowledge that enables growth, the system became a bridge to legitimacy."
+     ]]
+     ]
+ }
+}
+];
+
+var casesBox = document.getElementById("cases");
+
+// Slugs de las paginas generadas por build.py
+var SLUGS = ["vender-continuidad-no-acero","una-marca-que-sostiene-otras","tomar-un-shopping","disenar-confianza-para-quienes-estan"];
+
+function renderCases(){
+  var L = (lang === "en") ? "en" : "es";
+  casesBox.innerHTML = "";
+  CASES.forEach(function(c, i){
+    var d = c[L];
+    var a = document.createElement("a");
+    a.className = "case";
+    a.href = "casos/" + SLUGS[i] + (L === "en" ? "-en" : "") + ".html";
+    a.innerHTML = '<span class="num">' + (i < 9 ? "0" : "") + (i+1) + '</span>' +
+                  '<span><h3>' + d.title + '</h3><span class="sub">' + d.client + '</span></span>' +
+                  '<span class="go">&#8250;</span>';
+    casesBox.appendChild(a);
+  });
+}
+
+var casoActual = null;
+
+function openCase(i){
+  casoActual = i;
+  actual = null;
+  var L = (lang === "en") ? "en" : "es";
+  var d = CASES[i][L];
+
+  var h = '<div class="dtop">' +
+    '<a href="#" id="volver">&larr; ' + (L === "en" ? "Back" : "Volver") + '</a>' +
+    '<a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>' +
+    '<a href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">Behance</a></div>';
+
+  h += '<div class="dhead"><h2>' + d.title + '</h2>' +
+       '<span class="tag">' + d.client + '</span>' +
+       '<span class="tag">' + d.meta + '</span></div>';
+
+  var c = CASES[i];
+  if (c.cover) {
+    h += '<div class="lead"><img src="' + encodeURI(c.cover) + '" alt="' +
+         d.title + '" decoding="async"' + dimAttr(c.cover) + '></div>';
+  }
+
+  h += '<div class="cbody">';
+  d.blocks.forEach(function(bl){
+    h += '<h3>' + bl[0] + '</h3>';
+    (bl[1] || []).forEach(function(p){ h += '<p>' + p + '</p>'; });
+    if (bl[2] && bl[2].length) {
+      h += '<ul>';
+      bl[2].forEach(function(li){ h += '<li>' + li + '</li>'; });
+      h += '</ul>';
+    }
+    if (bl[3] && bl[3].length) {
+      bl[3].forEach(function(p){ h += '<p>' + p + '</p>'; });
+    }
+  });
+  h += '</div>';
+
+  if (c.shots && c.shots.length) {
+    h += '<div class="shots">';
+    c.shots.forEach(function(src, j){
+      h += '<img src="' + encodeURI(src) + '" alt="' + d.title +
+           ' \u00b7 pieza ' + (j + 1) + '" loading="lazy" decoding="async"' +
+           dimAttr(src) + ' style="width:100%;height:auto;display:block">';
+    });
+    h += '</div>';
+  }
+
+  // Seguir viendo: los otros casos
+  var otros = CASES.map(function(_, k){ return k; }).filter(function(k){ return k !== i; });
+  if (otros.length) {
+    h += '<div class="next"><div class="eyebrow">' +
+         (L === "en" ? "More case studies" : "Más casos de estudio") + '</div><div class="cases">';
+    otros.forEach(function(k){
+      var o = CASES[k][L];
+      h += '<button class="case" data-case="' + k + '">' +
+           '<span class="num">' + (k < 9 ? "0" : "") + (k+1) + '</span>' +
+           '<span><h3>' + o.title + '</h3><span class="sub">' + o.client + '</span></span>' +
+           '<span class="go">&#8250;</span></button>';
+    });
+    h += '</div></div>';
+  }
+
+  dbody.innerHTML = h;
+  var volver = document.getElementById("volver");
+  if (volver) volver.onclick = function(e){ e.preventDefault(); closeWork(); };
+  [].forEach.call(dbody.querySelectorAll("[data-case]"), function(b){
+    b.onclick = function(){ openCase(+b.getAttribute("data-case")); };
+  });
+  detail.classList.add("open");
+  detail.scrollTop = 0;
+  document.body.style.overflow = "hidden";
+}
+
+// --- Carrusel: avanza con el scroll de la página ---
+(function(){
+  var arrow = document.getElementById("arrow");
+
+  function maxScroll(){ return grid.scrollWidth - grid.clientWidth; }
+
+  function paso(){
+    var card = grid.querySelector(".card");
+    return card ? card.offsetWidth + 26 : grid.clientWidth * 0.8;
+  }
+
+  arrow.onclick = function(){
+    var fin = maxScroll();
+    grid.scrollTo({ left: grid.scrollLeft >= fin - 8 ? 0 : grid.scrollLeft + paso(), behavior:"smooth" });
+  };
+
+  function actualizar(){ arrow.hidden = maxScroll() <= 4; }
+  grid.addEventListener("scroll", actualizar, {passive:true});
+  window.addEventListener("resize", actualizar);
+  actualizar();
+})();
+
+// --- Formulario de contacto (Web3Forms) ---
+(function(){
+  var form = document.getElementById("form");
+  if (!form) return;
+  var msg = document.getElementById("form-msg");
+  var btn = form.querySelector("button");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var key = form.access_key.value;
+    if (key === "TU_ACCESS_KEY_ACA") {
+      msg.className = "form-msg err";
+      msg.textContent = "El formulario todavía no está configurado.";
+      return;
+    }
+    btn.disabled = true;
+    msg.className = "form-msg";
+    msg.textContent = "Enviando…";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type":"application/json", Accept:"application/json"},
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        form.reset();
+        msg.className = "form-msg ok";
+        msg.textContent = "Gracias, te respondo pronto.";
+      } else {
+        throw new Error();
+      }
+    })
+    .catch(function(){
+      msg.className = "form-msg err";
+      msg.textContent = "No se pudo enviar. Probá de nuevo o escribime por LinkedIn.";
+    })
+    .finally(function(){ btn.disabled = false; });
+  });
+})();
+
+
+// ===================== IDIOMA (ES / EN) =====================
+var EN = {
+ navc:"Contact", nav1:"Work", nav2:"Services", nav3:"Experience", nav4:"Education", nav5:"About", nav6:"Contact",
+ h1:"I help technically complex companies to align perception with capability",
+ hook:"14+ years and more than 15 documented projects across industry, infrastructure, consumer goods and the public sector.",
+ disp:"Open to remote roles \u00b7 available now",
+ nav_casos:"Case studies",
+ cbtn:"Write to me \u2192",
+ art_etq:"Article",
+ art_tit:"Your product needs to be understood",
+ art_sub:"What happens when the market can finally read what you do.",
+ art2_etq:"Article",
+ art2_tit:"Data does not decide on its own",
+ art2_sub:"Data visualisation for multiple readings",
+ art3_etq:"Article",
+ art3_tit:"Platforms built with business vision",
+ art3_sub:"Websites and applications designed from strategy",
+ art_mas:"Read \u2192",
+ s_casos:"Case studies",
+ casos_int:"Four projects, four different problems.",
+ s_proy:"Projects", s_serv:"Services", s_tray:"Experience", s_form:"Education", s_sobre:"About", s_cont:"Contact",
+ sv1:"Strategic and innovation projects", sv2:"Product and service identity", sv3:"Information design",
+ sv4:"Branding and visual systems", sv5:"Creative direction", sv6:"Applied research",
+ tg1a:"Design Direction", tg1b:"Information Design", tg1c:"Strategy", tg2a:"Creative Direction", tg2b:"Design Systems", tg2c:"Process Design", tg3a:"Corporate Identity", tg3b:"Point of Sale", tg3c:"Brand Communication", tg4a:"Identity", tg4b:"Art Direction", tg5a:"Semiotics", tg5b:"Teaching", tg5c:"Applied Research",
+ j1t:"Design direction and strategy", j1o:"Independent consultant", j1w:"Since 2012",
+ j1p:"Direction of branding, product identity and information design systems, from strategy to implementation, for industry, the public sector and NGOs. I work with executive leadership to align operations, communication and decision-making. Among others, the full redesign of point of sale and communication for a network of more than 35 branches, and 360 communication systems.",
+ j2t:"Co-Director · Creative direction & strategy",
+ j2p:"Creative and strategic direction of branding projects across industry, healthcare, food and customer service. I built workflows and design systems to align teams with business objectives.",
+ j3t:"Corporate visual direction",
+ j3p:"Corporate identity and brand consistency for a regional company, in partnership with Personal. Oversight of corporate and commercial communication, point of sale and online marketing.",
+ j4t:"Co-Founder · Art direction",
+ j4p:"Boutique studio focused on identity design and visual problem-solving for small and medium businesses.",
+ srv_cta:"Let's talk ", j5t:"Associate Professor", j5w:"Since 2015",
+ j5p:"Semiotics, Graphic Design Workshops I and III, and Final Degree Project Workshop. I supervise graduation projects with a focus on real-world application, resource planning and feasibility.",
+ e1t:"MA in Design, Strategy and Innovation Management", e1p:"UNNOBA · Coursework completed, thesis in progress",
+ e2t:"Graphic Designer", e2p:"Universidad Nacional de Misiones · 2008–2012 · 9.12/10 · Gold Medal",
+ e3t:"Research",
+ e3p:"Published in scientific journals and conference proceedings (Editorial Design and Visual Semiotics). Speaker at AISV, ELaDDi, DiSUR, SEMA and APOAVA. Research grants from CEDIT and CIN.",
+ e4t:"Languages", e4p:"Spanish native · English advanced · Cambridge FCE · 9 years of formal study (Saint George Institute · Proyecto Idiomas, UNaM) · Portuguese intermediate",
+ e5t:"Tools", e5p:"Figma · Illustrator and InDesign (advanced) · WordPress (basic) · Claude Code (advanced: I built this site and its page generator with AI)",
+ ab1:"I lead projects that call for strategic thinking, design research and innovation, working with companies across industry, consumer goods and the public sector.",
+ ab2:"There is a gap between what a company does, how it explains it and how it operates. My job is there.",
+ cint:"Do you have a project where technical complexity became hard to explain? Send me a message and let's talk.",
+ f1:"Full name", f2:"Email", f3:"Company", f4:"Your role or relationship to the company",
+ f5:"Number of employees", f5o:"Select an option", f5x:"More than 500", f6:"Message",
+ fbtn:"Send message", ctb:"Also",
+ more:"See more work", next:"Keep looking", back:"← Back"
+};
+
+
+var lang = "en";
+
+function aplicarIdioma(){
+  document.documentElement.lang = lang;
+  document.title = (lang === "en" ? "Gabriel González · Strategic Design" : "Gabriel González · Diseño estratégico");
+  document.getElementById("lang").textContent = (lang === "es" ? "EN" : "ES");
+  document.getElementById("cvlink").href = (lang === "en" ? "cv-gabriel-gonzalez-en.pdf" : "cv-gabriel-gonzalez-es.pdf");
+
+  [].forEach.call(document.querySelectorAll("[data-i]"), function(el){
+    var k = el.getAttribute("data-i");
+    if (!el.dataset.es) {
+      // guardamos el original en español la primera vez
+      el.dataset.es = (k === "h1") ? el.innerHTML : el.childNodes[0].nodeValue;
+    }
+    if (lang === "en" && EN[k]) {
+      if (k === "h1") el.innerHTML = EN[k];
+      else el.childNodes[0].nodeValue = EN[k];
+    } else {
+      if (k === "h1") el.innerHTML = el.dataset.es;
+      else el.childNodes[0].nodeValue = el.dataset.es;
+    }
+  });
+
+  var m = document.querySelector(".more");
+  if (m) m.childNodes[0].nodeValue = (lang === "en" ? "See more work " : "Seguir viendo trabajos ");
+
+  render();
+  renderCases();
+  [].forEach.call(document.querySelectorAll(".lectura"), function(lec){
+    var s = lec.getAttribute("data-art");
+    if (s) lec.href = "articulos/" + s + (lang === "en" ? "-en" : "") + ".html";
+  });
+  var cta = document.querySelector(".cta");
+  if (cta) cta.href = (lang === "en") ? "contact-en.html" : "contacto.html";
+  if (detail.classList.contains("open") && actual !== null) openWork(actual);
+  else if (detail.classList.contains("open") && casoActual !== null) openCase(casoActual);
+}
+
+document.getElementById("lang").onclick = function(){
+  lang = (lang === "es") ? "en" : "es";
+  
+  aplicarIdioma();
+};
+
+aplicarIdioma();
+
+
+// --- Aparicion al scrollear ---
+(function(){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  var objetivos = document.querySelectorAll("section .wrap > *:not(.rail):not(#cases), .rail, #cases, .job, .edu");
+  objetivos.forEach(function(el){ el.classList.add("reveal"); });
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  objetivos.forEach(function(el){ io.observe(el); });
+})();
+
+// Nav activa según scroll
+var links = [].slice.call(document.querySelectorAll("nav a"));
+var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+window.addEventListener("scroll", function(){
+  var y = window.scrollY + window.innerHeight/3, cur = -1;
+  secs.forEach(function(s,i){ if(s && s.offsetTop <= y) cur = i; });
+  links.forEach(function(a,i){ a.classList.toggle("on", i===cur); });
+});
+
+</script>
+</body>
+</html>
