@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Rastreadores de buscadores con IA — permitidos
+# Rastreadores de buscadores con IA: permitidos
 User-agent: GPTBot
 Allow: /
 

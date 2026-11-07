@@ -186,7 +186,7 @@
   .cbody p{margin-bottom:16px;color:#3a3a3c;font-size:17px}
   .cbody ul{list-style:none;margin:0 0 16px}
   .cbody li{position:relative;padding-left:20px;margin-bottom:12px;color:#3a3a3c;font-size:17px}
-  .cbody li:before{content:"—";position:absolute;left:0;color:#a8a8a8}
+  .cbody li:before{content:"·";position:absolute;left:0;color:#a8a8a8}
   .cbody strong{color:#16171a;font-weight:600}
 
   /* Articulo dentro de Casos: misma fila, fondo y acento propios */
@@ -261,7 +261,7 @@
   footer{padding:50px 0 80px;color:var(--fg-dim);font-size:13px}
 
   /* Detalle de caso */
-  /* Vista de proyecto — fondo claro */
+  /* Vista de proyecto: fondo claro */
   #detail{visibility:hidden;pointer-events:none;position:fixed;inset:0;z-index:60;background:#ececec;color:#16171a;overflow-y:auto}
   #detail.open{visibility:visible;pointer-events:auto}
   .close{position:fixed;top:24px;right:28px;z-index:61;background:#fff;border:1px solid #dcdcdc;color:#16171a;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:19px}
@@ -415,7 +415,7 @@
       </div>
       <div class="more-wrap">
         <a class="more" href="https://www.behance.net/Gabriel_HG" target="_blank" rel="noopener">
-          Seguir viendo trabajos <span>&rarr;</span>
+          See more work <span>&rarr;</span>
         </a>
       </div>
     </div>
@@ -461,7 +461,7 @@
       <h2 class="eyebrow" data-i="s_serv">Services</h2>
       <div class="skills">
         <div data-i="sv1">Strategic and innovation projects</div>
-        <div data-i="sv2">Product and service identity</div>
+        <div data-i="sv2">Product designer for web platforms and apps</div>
         <div data-i="sv3">Information design</div>
         <div data-i="sv4">Branding and visual systems</div>
         <div data-i="sv5">Creative direction</div>
@@ -569,12 +569,12 @@
         <p>The problem was conveying it. A public works project is not decided by one person, and each of the people who sign arrives with a different question.</p>
         <p><strong>The contractor</strong> works against deadlines. They want simple assembly, parts nearby and no surprises during installation.</p>
         <p><strong>The site engineer</strong> signs off on it. They need calculation data, patents and test results to size the piece against what the project requires.</p>
-        <p><strong>The owner</strong> —sometimes the plant owner, sometimes whoever authorises the works from a regulatory body— looks at plant stoppages, cost predictability and institutional reputation.</p>
+        <p><strong>The owner</strong> (sometimes the plant owner, sometimes whoever authorises the works from a regulatory body) looks at plant stoppages, cost predictability and institutional reputation.</p>
         <p><strong>Whoever maintains it</strong> comes later, when there is no one left to ask, and needs to be able to use and repair the product with whatever is at hand.</p>
         <p>A single asset had to speak to all four, unify the basis for choosing and carry the value of the product. The flat technical documentation that existed spoke to none of them.</p>
         <h4>What we decided</h4>
         <p>Stop describing the object and start designing the decision.</p>
-        <p>We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision —purchase, use, maintenance— and to give each party what they needed.</p>
+        <p>We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision (purchase, use, maintenance) and to give each party what they needed.</p>
         <p>The owner gets the cost avoided: no stoppage penalties, no chemical waste.</p>
         <p>The engineer gets backing and autonomy. With the material at hand they run their calculations and planning without depending on a consultation.</p>
         <p>The contractor gets speed, and an assembly sequence that minimises the installation errors that later compromise durability.</p>
@@ -607,7 +607,7 @@
         <p><strong>The sales force</strong> needed prospecting tools with institutional backing and evident officialdom.</p>
         <p><strong>Retailers</strong>, operating at very different levels, needed a brand they could trust, premium handling guidelines and advice.</p>
         <p><strong>The global head offices</strong> needed a local partner whose own representation reflected their status and safeguarded the category.</p>
-        <p><strong>The competitive field</strong> —traditional importers with grey logistics— had to be visibly set apart.</p>
+        <p><strong>The competitive field</strong> (traditional importers with grey logistics) had to be visibly set apart.</p>
         <h4>What we decided</h4>
         <p>Move the brand off the product shelf and onto the infrastructure layer.</p>
         <p>The system was built as a corporate frame that holds and endorses the reputation of others, rather than competing with what it carries. That called for deliberate restraint: sophisticated neutrality, geometric and typographic rigour, and no stylistic signature that would age or clash with any label passing through.</p>
@@ -766,7 +766,7 @@
 
 <script>
 // ============================================================
-// TRABAJOS — editá acá. shots: número = placeholders;
+// TRABAJOS: editá acá. shots: número = placeholders;
 // lista de rutas = imágenes reales, ej ["img/est-01.jpg", ...]
 // ============================================================
 
@@ -1131,7 +1131,7 @@ function openWork(i){
   var n = typeof w.shots === "number" ? w.shots : w.shots.length;
   for (var j=0;j<n;j++){
     h += typeof w.shots === "number"
-      ? '<div class="shot">imagen '+(j+1)+' — 1600×1000</div>'
+      ? '<div class="shot">imagen '+(j+1)+' · 1600×1000</div>'
       : '<img src="'+encodeURI(w.shots[j])+'" alt="'+w.title+' \u00b7 pieza '+(j+1)+'" loading="lazy" decoding="async"'+dimAttr(w.shots[j])+' style="width:100%;height:auto;display:block">';
   }
   h += '</div>';
@@ -1179,7 +1179,7 @@ document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeWork
 // ============================================================
 // CASOS DE ESTUDIO
 // ============================================================
-// CASOS — cover y shots son opcionales. Si faltan, el caso sale sin imagenes.
+// CASOS: cover y shots son opcionales. Si faltan, el caso sale sin imagenes.
 // Para agregarle imagenes a un caso: cover:"img/<carpeta>/<archivo>.jpg" y
 // shots:["img/...","img/..."]. Despues correr:  python build.py
 var CASES = [
@@ -1201,14 +1201,14 @@ var CASES = [
      ],[
       "<strong>El contratista</strong> trabaja contra plazos. Quiere montaje simple, repuestos cerca y ninguna sorpresa en la instalación.",
       "<strong>El ingeniero de obra</strong> pone su firma. Necesita datos de cálculo, patentes y ensayos para dimensionar la pieza según la necesidad de la obra.",
-      "<strong>El comitente</strong> —a veces el dueño de la planta, a veces quien autoriza la obra desde un ente de control— mira paradas de planta, previsibilidad de costos y reputación institucional.",
+      "<strong>El comitente</strong> (a veces el dueño de la planta, a veces quien autoriza la obra desde un ente de control) mira paradas de planta, previsibilidad de costos y reputación institucional.",
       "<strong>Quien hace el mantenimiento</strong> aparece después, cuando ya no queda a quién preguntarle, y necesita poder usar y reparar el producto con lo que tenga a mano."
      ],[
       "Un solo activo tenía que poder hablarles a los cuatro, unificando el criterio de selección y transmitiendo el valor del producto. La documentación técnica plana que existía no le hablaba a ninguno."
      ]],
     ["Qué decidimos",[
       "Dejar de describir el objeto y empezar a diseñar la decisión.",
-      "Sacamos al producto de la categoría de los materiales con que está fabricado y lo llevamos a gestión de activos: no es una pieza de metal, es una garantía de continuidad operativa. Después, cada activo de marca se construyó para acompañar un punto específico de la decisión —la compra, el uso, el mantenimiento— y para darle a cada actor lo que necesitaba."
+      "Sacamos al producto de la categoría de los materiales con que está fabricado y lo llevamos a gestión de activos: no es una pieza de metal, es una garantía de continuidad operativa. Después, cada activo de marca se construyó para acompañar un punto específico de la decisión (la compra, el uso, el mantenimiento) y para darle a cada actor lo que necesitaba."
      ],[
       "El comitente recibe el costo evitado: sin multas por parada, sin desperdicio de químicos.",
       "El ingeniero recibe respaldo y autonomía. Con el material en la mano hace sus cálculos y su planificación sin depender de una consulta.",
@@ -1250,14 +1250,14 @@ var CASES = [
      ],[
       "<strong>The contractor</strong> works against deadlines. They want simple assembly, parts nearby and no surprises during installation.",
       "<strong>The site engineer</strong> signs off on it. They need calculation data, patents and test results to size the piece against what the project requires.",
-      "<strong>The owner</strong> —sometimes the plant owner, sometimes whoever authorises the works from a regulatory body— looks at plant stoppages, cost predictability and institutional reputation.",
+      "<strong>The owner</strong> (sometimes the plant owner, sometimes whoever authorises the works from a regulatory body) looks at plant stoppages, cost predictability and institutional reputation.",
       "<strong>Whoever maintains it</strong> comes later, when there is no one left to ask, and needs to be able to use and repair the product with whatever is at hand."
      ],[
       "A single asset had to speak to all four, unify the basis for choosing and carry the value of the product. The flat technical documentation that existed spoke to none of them."
      ]],
     ["What we decided",[
       "Stop describing the object and start designing the decision.",
-      "We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision —purchase, use, maintenance— and to give each party what they needed."
+      "We moved the product out of the category of the materials it is made from and into asset management: it is not a piece of metal, it is a guarantee of operational continuity. Every brand asset was then built to accompany one specific point of the decision (purchase, use, maintenance) and to give each party what they needed."
      ],[
       "The owner gets the cost avoided: no stoppage penalties, no chemical waste.",
       "The engineer gets backing and autonomy. With the material at hand they run their calculations and planning without depending on a consultation.",
@@ -1313,7 +1313,7 @@ var CASES = [
       "<strong>La fuerza de ventas</strong> necesitaba herramientas de prospección con respaldo institucional y oficialidad evidente.",
       "<strong>Los comercios minoristas</strong>, de niveles muy distintos, necesitaban una marca de confianza, pautas de manejo premium y asesoramiento.",
       "<strong>Las casas matrices globales</strong> necesitaban un socio local cuya propia representación reflejara su estatus y asegurara el resguardo de la categoría.",
-      "<strong>El campo competitivo</strong> —importadores tradicionales con logística gris— tenía que quedar visiblemente diferenciado."
+      "<strong>El campo competitivo</strong> (importadores tradicionales con logística gris) tenía que quedar visiblemente diferenciado."
      ]],
     ["Qué decidimos",[
       "Mover la marca del estante de producto a la capa de infraestructura.",
@@ -1351,7 +1351,7 @@ var CASES = [
       "<strong>The sales force</strong> needed prospecting tools with institutional backing and evident officialdom.",
       "<strong>Retailers</strong>, operating at very different levels, needed a brand they could trust, premium handling guidelines and advice.",
       "<strong>The global head offices</strong> needed a local partner whose own representation reflected their status and safeguarded the category.",
-      "<strong>The competitive field</strong> —traditional importers with grey logistics— had to be visibly set apart."
+      "<strong>The competitive field</strong> (traditional importers with grey logistics) had to be visibly set apart."
      ]],
     ["What we decided",[
       "Move the brand off the product shelf and onto the infrastructure layer.",
@@ -1701,7 +1701,7 @@ var EN = {
  s_casos:"Case studies",
  casos_int:"Four projects, four different problems.",
  s_proy:"Projects", s_serv:"Services", s_tray:"Experience", s_form:"Education", s_sobre:"About", s_cont:"Contact",
- sv1:"Strategic and innovation projects", sv2:"Product and service identity", sv3:"Information design",
+ sv1:"Strategic and innovation projects", sv2:"Product designer for web platforms and apps", sv3:"Information design",
  sv4:"Branding and visual systems", sv5:"Creative direction", sv6:"Applied research",
  tg1a:"Design Direction", tg1b:"Information Design", tg1c:"Strategy", tg2a:"Creative Direction", tg2b:"Design Systems", tg2c:"Process Design", tg3a:"Corporate Identity", tg3b:"Point of Sale", tg3c:"Brand Communication", tg4a:"Identity", tg4b:"Art Direction", tg5a:"Semiotics", tg5b:"Teaching", tg5c:"Applied Research",
  j1t:"Design direction and strategy", j1o:"Independent consultant", j1w:"Since 2012",

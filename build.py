@@ -301,13 +301,13 @@ ART = u'''<!DOCTYPE html>
 <body>
 <article class="art">
   <div class="art-top">
-    <a href="../index.html">&larr; Volver al portfolio</a>
+    <a href="../index.html">%(volver)s</a>
     <a href="https://www.linkedin.com/in/dg-gabriel-gonzalez" target="_blank" rel="noopener">LinkedIn</a>
   </div>
   <p class="kicker">%(kicker)s</p>
   <h1>%(title)s</h1>
 %(cuerpo)s
-  <p class="cierre">%(cierre)s <a href="../index.html#contacto" style="color:#16171a">Hablemos</a>.</p>
+  <p class="cierre">%(cierre)s <a href="../index.html#contacto" style="color:#16171a">%(hablemos)s</a>.</p>
   <div class="evidencia">
     <span>%(ev_etq)s</span>
     <a href="%(ev_url)s">%(ev_tit)s</a>
@@ -352,6 +352,8 @@ if os.path.exists(ruta_art):
             'cuerpo': cuerpo, 'cierre': a['cierre'], 'jsonld': jsonld,
             'ev_etq': a['caso']['etiqueta'], 'ev_url': a['caso']['url'],
             'ev_tit': a['caso']['titulo'],
+            'volver': VOLVER[a['lang']],
+            'hablemos': u'Let’s talk' if a['lang'] == 'en' else u'Hablemos',
         }
         io.open(os.path.join(BASE, 'articulos', a['slug'] + '.html'), 'w', encoding='utf-8').write(html)
         generadas.append('articulos/%s.html' % a['slug'])
@@ -362,6 +364,7 @@ if os.path.exists(ruta_art):
 # Vercel la sirve en /en (ver vercel.json). No va al sitemap.
 
 DISP_EN = u'Open to remote roles \u00b7 available now'
+SV2_EN = u'Product designer for web platforms and apps'
 
 def generar_en():
     import html as _h
@@ -377,6 +380,9 @@ def generar_en():
     EN['disp'] = DISP_EN
     s, nd = re.subn(r'disp:"[^"]*"', lambda m: 'disp:' + json.dumps(DISP_EN), s, count=1)
     assert nd == 1, 'disp en EN'
+    EN['sv2'] = SV2_EN
+    s, nd = re.subn(r'sv2:"[^"]*"', lambda m: 'sv2:' + json.dumps(SV2_EN), s, count=1)
+    assert nd == 1, 'sv2 en EN'
 
     # texto en ingles ya en el HTML, para lectores sin JS
     def rep(m):
@@ -390,6 +396,7 @@ def generar_en():
     s = re.sub(r'var lang = localStorage\.getItem\("lang"\) \|\|\s*\([^;]*;', 'var lang = "en";', s, count=1)
     s = s.replace('localStorage.setItem("lang", lang);', '', 1)
     s = s.replace('<html lang="es">', '<html lang="en">', 1)
+    s = s.replace('Seguir viendo trabajos <span>', 'See more work <span>', 1)
     s = s.replace('</head>', '<style>#lang{display:none}</style>\n</head>', 1)
     s = s.replace('href="cv-gabriel-gonzalez-es.pdf"', 'href="cv-gabriel-gonzalez-en.pdf"', 1)
     s = s.replace('href="contacto.html"', 'href="contact-en.html"')
