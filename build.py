@@ -418,7 +418,16 @@ def generar_en():
     # bloque para lectores sin JS: en ingles, con casos y articulos
     a = s.index('<section id="contenido" class="solo-sin-js">')
     b = s.index('</section>', a) + len('</section>')
-    partes = ['<section id="contenido" class="solo-sin-js">\n    <div class="wrap">\n      <h2>Case studies</h2>']
+    partes = ['<section id="contenido" class="solo-sin-js">\n    <div class="wrap">\n      <h2>Projects</h2>']
+    for w in a_json(leer_bloque(io.open(IDX, encoding='utf-8').read(), 'WORKS')):
+        e = w.get('en') or {}
+        partes.append('      <article>\n        <h3>%s</h3>\n        <p><em>%s</em></p>\n        <p>%s</p>' % (w['title'], e.get('tag', ''), e.get('desc', '')))
+        for par in e.get('body', []):
+            partes.append('        <p>%s</p>' % par)
+        if e.get('credits'):
+            partes.append('        <p>%s</p>' % e['credits'])
+        partes.append('      </article>')
+    partes.append('      <h2>Case studies</h2>')
     for c, sl in zip(CASES, SLUGS):
         e = c['en']
         partes.append('      <article>\n        <h3><a href="casos/%s-en.html">%s</a></h3>\n        <p><em>%s \u00b7 %s</em></p>' % (sl, e['title'], e.get('client', ''), e.get('meta', '')))
