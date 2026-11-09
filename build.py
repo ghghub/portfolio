@@ -412,6 +412,20 @@ def generar_en():
     s = re.sub(r'<meta property="og:description" content="[^"]*"', '<meta property="og:description" content="%s"' % desc, s, count=1)
     s = re.sub(r'<meta property="og:title" content="[^"]*"', u'<meta property="og:title" content="Gabriel Gonz\u00e1lez \u00b7 Strategic Design"', s, count=1)
     s = s.replace('<meta property="og:locale" content="es_AR" />', '<meta property="og:locale" content="en_US" />', 1)
+    s = s.replace('<meta property="og:locale:alternate" content="en_US" />',
+                  '<meta property="og:locale:alternate" content="es_AR" />', 1)
+    # og:url tiene que apuntar a /en, si no LinkedIn resuelve la portada en espanol
+    s = s.replace('<meta property="og:url" content="%s" />' % URL,
+                  '<meta property="og:url" content="%sen" />' % URL, 1)
+    alt_en = u'Product identity system for hydraulic gates in critical infrastructure'
+    s = re.sub(r'<meta property="og:image:alt" content="[^"]*"',
+               '<meta property="og:image:alt" content="%s"' % alt_en, s, count=1)
+    s = re.sub(r'<meta name="twitter:title" content="[^"]*"',
+               u'<meta name="twitter:title" content="Gabriel González · Strategic Design"', s, count=1)
+    s = re.sub(r'<meta name="twitter:description" content="[^"]*"',
+               '<meta name="twitter:description" content="%s"' % desc, s, count=1)
+    # una sola directiva robots: fuera de Google, es la version para postulaciones
+    s = s.replace('<meta name="robots" content="index, follow, max-image-preview:large" />\n', '', 1)
     s = s.replace('<link rel="canonical" href="%s" />' % URL,
                   '<link rel="canonical" href="%sen" />\n<meta name="robots" content="noindex" />' % URL, 1)
 
